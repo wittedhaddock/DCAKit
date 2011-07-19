@@ -11,7 +11,7 @@
 
 #define GET_STR_BYTES(DATA) [[[NSString alloc] initWithBytes:[DATA bytes] length:[DATA length] encoding:NSUTF8StringEncoding] autorelease]
 
-@interface PlistRequest ()
+@interface HTTPRequest ()
 {
     NSMutableData *receivedData;
     NSURLConnection *connection;
@@ -29,7 +29,7 @@
 @property (nonatomic, assign) BOOL post;
 @end
 
-@implementation PlistRequest
+@implementation HTTPRequest
 @synthesize receivedData;
 @synthesize connection;
 @synthesize params;

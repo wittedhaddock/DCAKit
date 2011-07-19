@@ -13,7 +13,7 @@ typedef enum {
     kFAIL
 } recovery_method;
 
-@interface PlistRequest : NSObject {
+@interface HTTPRequest : NSObject {
     recovery_method recoveryMethod;
     NSString *baseURL;
 }
