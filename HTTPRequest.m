@@ -8,6 +8,7 @@
 
 #import "HTTPRequest.h"
 #import "LogBuddy.h"
+#import "SBJson.h"
 
 #define GET_STR_BYTES(DATA) [[[NSString alloc] initWithBytes:[DATA bytes] length:[DATA length] encoding:NSUTF8StringEncoding] autorelease]
 
@@ -34,6 +35,7 @@
 @synthesize connection;
 @synthesize params;
 @synthesize recoveryMethod;
+@synthesize responseType;
 @synthesize prefix;
 @synthesize post;
 @synthesize baseURL;
@@ -45,11 +47,12 @@
         block = [newBlock copy];
         self.params = [[[NSMutableDictionary alloc] initWithCapacity:5] autorelease];
         self.recoveryMethod = kFAIL;
+        self.responseType = kPLIST;
     }
     return self;
 }
 
-+ (NSString*) fixtheString:(NSString*) fixMe
++ (NSString*) fixTheString:(NSString*) fixMe
 {
     NSString *fixed = (NSString *)CFURLCreateStringByAddingPercentEscapes(NULL, (CFStringRef)fixMe, NULL, (CFStringRef)@"!*'();:@&=+$,/?%#[]", kCFStringEncodingUTF8);
     return [fixed autorelease];
@@ -77,14 +80,15 @@
 
 -(void) requestWithPrefix:(NSString*)uprefix params:(NSDictionary*)parameters post:(BOOL)upost
 {
+    assert([self.baseURL hasSuffix:@"/"]);
     self.prefix = uprefix;
     self.post = upost;
     [self.params setValuesForKeysWithDictionary:parameters];
     
-    NSString *urlString = [[[NSMutableString alloc] initWithString:[NSString stringWithFormat:self.baseURL, prefix]] autorelease];
+    NSString *urlString = [[[NSMutableString alloc] initWithString:[NSString stringWithFormat:@"%@%@", self.baseURL, prefix]] autorelease];
     NSMutableString *paramString = [[[NSMutableString alloc] initWithString:@"php=future"] autorelease];
     [params enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
-        [paramString appendString:[NSString stringWithFormat:@"&%@=%@", [[self class] fixtheString: key], [[self class] fixtheString: [NSString stringWithFormat:@"%@",obj]]]];
+        [paramString appendString:[NSString stringWithFormat:@"&%@=%@", [[self class] fixTheString: key], [[self class] fixTheString: [NSString stringWithFormat:@"%@",obj]]]];
     }];
     if(!post)
     {
@@ -165,16 +169,36 @@
     if(receivedData && [receivedData length] > 0)
     {
         NSError *serror = nil;
-        NSString *result = GET_STR_BYTES(self.receivedData);
-        NSObject *plist = [NSPropertyListSerialization propertyListWithData:[result dataUsingEncoding:NSUTF8StringEncoding] options:NSPropertyListImmutable format:NULL error:&serror];
-        if(serror != nil)
-        {
-            [LogBuddy reportErrorString:result];
+        NSObject *arg;
+        switch (responseType) {
+            case kPLIST:
+                {
+                    NSString *result = GET_STR_BYTES(self.receivedData);
+                    arg = [NSPropertyListSerialization propertyListWithData:[result dataUsingEncoding:NSUTF8StringEncoding] options:NSPropertyListImmutable format:NULL error:&serror];
+                    if(serror)
+                    {
+                        [LogBuddy reportNSError:serror];
+                    }
+                }
+                break;
+            case kJSON:
+                {
+                    DCASBJsonParser *parser = [[[DCASBJsonParser alloc] init] autorelease];
+                    arg = [parser objectWithData:self.receivedData];
+                    if(!arg)
+                    {
+                        serror = [[[NSError alloc] initWithDomain:parser.error code:41 userInfo:nil] autorelease];
+                        [LogBuddy reportNSError:serror];
+                    }
+                }
+                break;
+            default:
+                break;
         }
-        else
+        if(!serror)
         {
             dispatch_async(dispatch_get_main_queue(), ^(void) {
-                block(plist);
+                block(arg);
             });
         }
         self.receivedData = nil;
