@@ -55,7 +55,7 @@
 + (NSString*) fixTheString:(NSString*) fixMe
 {
     //No periods. You can't escape them, because everyone not FF ignores your escaping and says, "Oh, I bet you actually wanted a period. I'll fix that for you!", leaving you to sit and cry, "NO! I escaped it for a reason dang it!!!". And then you get logbuddy tracebacks and your life generally sucks. So no periods.
-    return [(NSString *)CFURLCreateStringByAddingPercentEscapes(NULL, (CFStringRef)fixMe, NULL, (CFStringRef)@"!*'();:@&=+$,/?%#[]", kCFStringEncodingUTF8) stringByReplacingOccurrencesOfString:@"." withString:@""];
+    return [(NSString *)CFURLCreateStringByAddingPercentEscapes(NULL, (CFStringRef)[fixMe stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]], NULL, (CFStringRef)@"!*'();:@&=+$,/?%#[]", kCFStringEncodingUTF8) stringByReplacingOccurrencesOfString:@"." withString:@""];
 }
 
 -(void) setParameter:(NSObject*)value forKey:(NSString*)key
