@@ -54,8 +54,8 @@
 
 + (NSString*) fixTheString:(NSString*) fixMe
 {
-    NSString *fixed = (NSString *)CFURLCreateStringByAddingPercentEscapes(NULL, (CFStringRef)fixMe, NULL, (CFStringRef)@"!*'();:@&=+$,/?%#[]", kCFStringEncodingUTF8);
-    return [fixed autorelease];
+    //No periods. You can't escape them, because everyone not FF ignores your escaping and says, "Oh, I bet you actually wanted a period. I'll fix that for you!", leaving you to sit and cry, "NO! I escaped it for a reason dang it!!!". And then you get logbuddy tracebacks and your life generally sucks. So no periods.
+    return [(NSString *)CFURLCreateStringByAddingPercentEscapes(NULL, (CFStringRef)fixMe, NULL, (CFStringRef)@"!*'();:@&=+$,/?%#[]", kCFStringEncodingUTF8) stringByReplacingOccurrencesOfString:@"." withString:@""];
 }
 
 -(void) setParameter:(NSObject*)value forKey:(NSString*)key
@@ -187,7 +187,8 @@
                     arg = [parser objectWithData:self.receivedData];
                     if(!arg)
                     {
-                        serror = [[[NSError alloc] initWithDomain:parser.error code:41 userInfo:nil] autorelease];
+                        NSDictionary *userInfo = [NSDictionary dictionaryWithObject:parser.error forKey:NSLocalizedDescriptionKey];
+                        serror = [[[NSError alloc] initWithDomain:@"HTTPRequest" code:41 userInfo:userInfo] autorelease];
                         [LogBuddy reportNSError:serror];
                     }
                 }
