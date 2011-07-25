@@ -22,12 +22,18 @@
     //state variables to retry requests
     NSString *prefix;
     BOOL post;
+    int retainCount;
 }
+
 @property (nonatomic, retain) NSMutableData *receivedData;
 @property (nonatomic, retain) NSURLConnection *connection;
 @property (nonatomic, retain) NSMutableDictionary *params;
 @property (nonatomic, retain) NSString* prefix;
 @property (nonatomic, assign) BOOL post;
+
+-(void) internalRetain;
+-(void) internalRelease;
+
 @end
 
 @implementation HTTPRequest
@@ -48,14 +54,32 @@
         self.params = [[[NSMutableDictionary alloc] initWithCapacity:5] autorelease];
         self.recoveryMethod = kFAIL;
         self.responseType = kPLIST;
+        retainCount = 0;
+        [self internalRetain];
     }
     return self;
 }
 
+-(void) internalRetain
+{
+    [self retain];
+    retainCount++;
+    assert(retainCount <= 1 || retainCount <= 2 && self.recoveryMethod == kRETRY);
+}
+
+-(void) internalRelease
+{
+    [self release];
+    retainCount--;
+    assert(retainCount >= 0);
+}
+
 + (NSString*) fixTheString:(NSString*) fixMe
 {
+    NSString *ret = (NSString *)CFURLCreateStringByAddingPercentEscapes(NULL, (CFStringRef)[fixMe stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]], NULL, (CFStringRef)@"!*'();:@&=+$,/?%#[]", kCFStringEncodingUTF8);
     //No periods. You can't escape them, because everyone not FF ignores your escaping and says, "Oh, I bet you actually wanted a period. I'll fix that for you!", leaving you to sit and cry, "NO! I escaped it for a reason dang it!!!". And then you get logbuddy tracebacks and your life generally sucks. So no periods.
-    return [(NSString *)CFURLCreateStringByAddingPercentEscapes(NULL, (CFStringRef)[fixMe stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]], NULL, (CFStringRef)@"!*'();:@&=+$,/?%#[]", kCFStringEncodingUTF8) stringByReplacingOccurrencesOfString:@"." withString:@""];
+    //I've authorized this analyzer warning. It's a bug in clang, moving the autorelease out of the return statement and onto its own line fixes it.
+    return [[ret stringByReplacingOccurrencesOfString:@"." withString:@""] autorelease];
 }
 
 -(void) setParameter:(NSObject*)value forKey:(NSString*)key
@@ -118,6 +142,7 @@
         else
         {
             [LogBuddy reportErrorString: @"Unable to connect to appengine :("];
+            [self internalRelease];
         }
         //wait for a response
         CFRunLoopRun();
@@ -162,6 +187,7 @@
         [self requestWithPrefix:self.prefix params:nil post:self.post];
         NSLog(@"retrying %@...", self.prefix);
     }
+    [self internalRelease];
 }
 
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection
@@ -206,6 +232,7 @@
 		CFRunLoopStop(CFRunLoopGetCurrent());
     }
     self.connection = nil;
+    [self internalRelease];
 }
 
 - (void)dealloc
