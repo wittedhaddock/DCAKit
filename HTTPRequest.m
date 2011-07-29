@@ -77,9 +77,9 @@
 + (NSString*) fixTheString:(NSString*) fixMe
 {
     NSString *ret = (NSString *)CFURLCreateStringByAddingPercentEscapes(NULL, (CFStringRef)[fixMe stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]], NULL, (CFStringRef)@"!*'();:@&=+$,/?%#[]", kCFStringEncodingUTF8);
+    [ret autorelease];
     //No periods. You can't escape them, because everyone not FF ignores your escaping and says, "Oh, I bet you actually wanted a period. I'll fix that for you!", leaving you to sit and cry, "NO! I escaped it for a reason dang it!!!". And then you get logbuddy tracebacks and your life generally sucks. So no periods.
-    //I've authorized this analyzer warning. It's a bug in clang, moving the autorelease out of the return statement and onto its own line fixes it.
-    return [[ret stringByReplacingOccurrencesOfString:@"." withString:@""] autorelease];
+    return [ret stringByReplacingOccurrencesOfString:@"." withString:@""];
 }
 
 -(void) setParameter:(NSObject*)value forKey:(NSString*)key
