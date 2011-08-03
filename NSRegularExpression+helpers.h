@@ -17,6 +17,8 @@
 
 -(NSArray*) split:(NSString*)subject;
 
+- (void)enumerateMatchesToArrayInString:(NSString *)string usingBlock:(void (^)(NSArray* matches, NSMatchingFlags flags, BOOL *stop))bloc;
 - (void)enumerateMatchesToArrayInString:(NSString *)string options:(NSMatchingOptions)options range:(NSRange)range usingBlock:(void (^)(NSArray* matches, NSMatchingFlags flags, BOOL *stop))bloc;
+- (NSArray *)matchesToArrayInString:(NSString *)string;
 - (NSArray *)matchesToArrayInString:(NSString *)string options:(NSMatchingOptions)options range:(NSRange)range;
 @end

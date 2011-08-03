@@ -65,6 +65,11 @@
 }
 
 #pragma mark matching sanely
+- (void)enumerateMatchesToArrayInString:(NSString *)string usingBlock:(void (^)(NSArray* matches, NSMatchingFlags flags, BOOL *stop))bloc
+{
+    [self enumerateMatchesToArrayInString:string options:0 range:NSMakeRange(0, string.length) usingBlock:bloc];
+}
+
 - (void)enumerateMatchesToArrayInString:(NSString *)string options:(NSMatchingOptions)options range:(NSRange)range usingBlock:(void (^)(NSArray* matches, NSMatchingFlags flags, BOOL *stop))bloc
 {
     [self enumerateMatchesInString:string options:options range:range usingBlock:^(NSTextCheckingResult *result, NSMatchingFlags flags, BOOL *stop) {
@@ -75,6 +80,11 @@
         }
         bloc(ret, flags, stop);
     }];
+}
+
+- (NSArray *)matchesToArrayInString:(NSString *)string
+{
+    return [self matchesToArrayInString:string options:0 range:NSMakeRange(0, string.length)];
 }
 
 - (NSArray *)matchesToArrayInString:(NSString *)string options:(NSMatchingOptions)options range:(NSRange)range
