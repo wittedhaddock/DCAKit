@@ -18,23 +18,22 @@ typedef enum {
     kJSON
 } response_type;
 
-@interface HTTPRequest : NSObject {
-    recovery_method recoveryMethod;
-    response_type responseType;
-    NSString *baseURL;
-}
+@interface HTTPRequest : NSObject
 
 @property (nonatomic, assign) recovery_method recoveryMethod;
 @property (nonatomic, assign) response_type responseType;
 @property (nonatomic, retain) NSString *baseURL;
+@property (nonatomic, retain) NSString *requestMethod;
 
 -(id)initWithBlock:(void (^)(NSObject*))newBlock;
-+ (NSString*) fixTheString:(NSString*) fixMe;
 +(bool) testConnection;
--(void) setParameter:(NSObject*)value forKey:(NSString*)key;
--(void) requestWithPrefix:(NSString*)prefix;
--(void) requestWithPrefix:(NSString*)prefix params:(NSDictionary*)parameters;
--(void) requestWithPrefix:(NSString*)prefix post:(BOOL)post;
--(void) requestWithPrefix:(NSString*)prefix params:(NSDictionary*)parameters post:(BOOL)post;
+-(void) setGetParameter:(NSObject*)value forKey:(NSString*)key;
+-(void) setPostParameter:(NSObject*)value forKey:(NSString*)key;
+-(void) clearGetParameters;
+-(void) clearPostParameters;
+-(void) requestWithPrefix:(NSString*)uprefix;
+-(void) requestWithPrefix:(NSString*)uprefix method:(NSString*)method;
+-(void) requestWithPrefix:(NSString*)uprefix getParams:(NSDictionary*)ugetParams postParams:(NSDictionary*)upostParams;
+-(void) requestWithPrefix:(NSString*)uprefix method:(NSString*)method getParams:(NSDictionary*)ugetParams postParams:(NSDictionary*)upostParams;
 
 @end

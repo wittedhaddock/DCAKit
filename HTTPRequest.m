@@ -14,23 +14,19 @@
 
 @interface HTTPRequest ()
 {
-    NSMutableData *receivedData;
-    NSURLConnection *connection;
-    void (^block)(NSObject*);
-    NSMutableDictionary *params;
-    
-    //state variables to retry requests
-    NSString *prefix;
-    BOOL post;
     int retainCount;
 }
 
 @property (nonatomic, retain) NSMutableData *receivedData;
 @property (nonatomic, retain) NSURLConnection *connection;
-@property (nonatomic, retain) NSMutableDictionary *params;
+//state variables to retry requests
+@property (nonatomic, retain) NSMutableDictionary *getParams;
+@property (nonatomic, retain) NSMutableDictionary *postParams;
 @property (nonatomic, retain) NSString* prefix;
-@property (nonatomic, assign) BOOL post;
+@property (nonatomic, copy) void (^block)(NSObject*);
 
++(NSString*) fixTheString:(NSString*)fixMe;
++(NSString*)paramStringFromParams:(NSDictionary*)params;
 -(void) internalRetain;
 -(void) internalRelease;
 
@@ -39,21 +35,25 @@
 @implementation HTTPRequest
 @synthesize receivedData;
 @synthesize connection;
-@synthesize params;
+@synthesize getParams;
+@synthesize postParams;
 @synthesize recoveryMethod;
 @synthesize responseType;
 @synthesize prefix;
-@synthesize post;
 @synthesize baseURL;
+@synthesize requestMethod;
+@synthesize block;
 
 - (id)initWithBlock:(void (^)(NSObject*))newBlock
 {
     if((self = [super init]))
     {
-        block = [newBlock copy];
-        self.params = [[[NSMutableDictionary alloc] initWithCapacity:5] autorelease];
+        self.block = newBlock;
+        self.getParams = [[[NSMutableDictionary alloc] init] autorelease];
+        self.postParams = [[[NSMutableDictionary alloc] init] autorelease];
         self.recoveryMethod = kFAIL;
         self.responseType = kPLIST;
+        self.requestMethod = @"GET";
         retainCount = 0;
         [self internalRetain];
     }
@@ -74,7 +74,7 @@
     assert(retainCount >= 0);
 }
 
-+ (NSString*) fixTheString:(NSString*) fixMe
++(NSString*) fixTheString:(NSString*)fixMe
 {
     NSString *ret = (NSString *)CFURLCreateStringByAddingPercentEscapes(NULL, (CFStringRef)[fixMe stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]], NULL, (CFStringRef)@"!*'();:@&=+$,/?%#[]", kCFStringEncodingUTF8);
     [ret autorelease];
@@ -82,50 +82,77 @@
     return [ret stringByReplacingOccurrencesOfString:@"." withString:@""];
 }
 
--(void) setParameter:(NSObject*)value forKey:(NSString*)key
++(NSString*)paramStringFromParams:(NSDictionary*)params
 {
-    [self.params setValue:value forKey:key];
+    NSMutableString *ret = [[[NSMutableString alloc] initWithString:@"php=future"] autorelease];
+    [params enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
+        [ret appendString:[NSString stringWithFormat:@"&%@=%@", [[self class] fixTheString: key], [[self class] fixTheString: [NSString stringWithFormat:@"%@",obj]]]];
+    }];
+    return ret;
+}
+
+-(void) setGetParameter:(NSObject*)value forKey:(NSString*)key
+{
+    [self.getParams setValue:value forKey:key];
+}
+
+-(void) setPostParameter:(NSObject*)value forKey:(NSString*)key
+{
+    [self.postParams setValue:value forKey:key];
+}
+
+-(void) clearGetParameters
+{
+    [getParams removeAllObjects];
+}
+
+-(void) clearPostParameters
+{
+    [postParams removeAllObjects];
 }
 
 -(void) requestWithPrefix:(NSString*)uprefix
 {
-    [self requestWithPrefix:uprefix params:nil];
+    [self requestWithPrefix:uprefix method:requestMethod];
 }
 
--(void) requestWithPrefix:(NSString*)uprefix post:(BOOL)upost
+-(void) requestWithPrefix:(NSString*)uprefix method:(NSString*)method
 {
-    [self requestWithPrefix:uprefix params:nil post:upost];
+    [self requestWithPrefix:uprefix method:method getParams:nil postParams:nil];
 }
 
--(void) requestWithPrefix:(NSString*)uprefix params:(NSDictionary*)parameters
+-(void) requestWithPrefix:(NSString*)uprefix getParams:(NSDictionary*)ugetParams postParams:(NSDictionary*)upostParams;
 {
-    [self requestWithPrefix:uprefix params:parameters post:NO];
+    [self requestWithPrefix:uprefix method:requestMethod getParams:ugetParams postParams:upostParams];
 }
 
--(void) requestWithPrefix:(NSString*)uprefix params:(NSDictionary*)parameters post:(BOOL)upost
+-(void) requestWithPrefix:(NSString*)uprefix method:(NSString*)method getParams:(NSDictionary*)ugetParams postParams:(NSDictionary*)upostParams;
 {
-    assert([self.baseURL hasSuffix:@"/"]);
+    assert(self.baseURL);
+    assert([self.baseURL hasSuffix:@"/"] ^ [uprefix hasPrefix:@"/"]);
+    assert(self.requestMethod || method);
+    
     self.prefix = uprefix;
-    self.post = upost;
-    [self.params setValuesForKeysWithDictionary:parameters];
+    if(method)
+    {
+        self.requestMethod = method;
+    }
+    [getParams addEntriesFromDictionary:getParams];
+    [postParams addEntriesFromDictionary:postParams];
     
     NSString *urlString = [[[NSMutableString alloc] initWithString:[NSString stringWithFormat:@"%@%@", self.baseURL, prefix]] autorelease];
-    NSMutableString *paramString = [[[NSMutableString alloc] initWithString:@"php=future"] autorelease];
-    [params enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
-        [paramString appendString:[NSString stringWithFormat:@"&%@=%@", [[self class] fixTheString: key], [[self class] fixTheString: [NSString stringWithFormat:@"%@",obj]]]];
-    }];
-    if(!post)
+    if(getParams.count > 0)
     {
-        urlString = [NSString stringWithFormat:@"%@?%@", urlString, paramString];
+        urlString = [NSString stringWithFormat:@"%@?%@", urlString, [HTTPRequest paramStringFromParams:getParams]];
     }
     
     NSLog(@"URL = %@", urlString);
     
     NSMutableURLRequest *theRequest=[NSMutableURLRequest requestWithURL:[NSURL URLWithString:urlString] cachePolicy:NSURLRequestReloadIgnoringCacheData timeoutInterval:10.0];
-    if(post)
+    [theRequest setHTTPMethod:self.requestMethod];
+    if(postParams.count > 0)
     {
-        [theRequest setHTTPMethod:@"POST"];
-        [theRequest setHTTPBody:[paramString dataUsingEncoding:NSUTF8StringEncoding]];
+        [theRequest setHTTPBody:[[HTTPRequest paramStringFromParams:postParams] dataUsingEncoding:NSUTF8StringEncoding]];
     }
     
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
@@ -184,7 +211,7 @@
     {
         NSLog(@"%@",error);
         sleep(2);
-        [self requestWithPrefix:self.prefix params:nil post:self.post];
+        [self requestWithPrefix:self.prefix];
         NSLog(@"retrying %@...", self.prefix);
     }
     [self internalRelease];
@@ -237,9 +264,12 @@
 
 - (void)dealloc
 {
+    self.block = nil;
     self.baseURL = nil;
     self.prefix = nil;
-    self.params = nil;
+    self.getParams = nil;
+    self.postParams = nil;
+    self.requestMethod = nil;
     self.receivedData = nil;
     self.connection = nil;
     [super dealloc];
