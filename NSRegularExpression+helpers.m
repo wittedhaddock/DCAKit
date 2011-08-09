@@ -73,11 +73,7 @@
 - (void)enumerateMatchesToArrayInString:(NSString *)string options:(NSMatchingOptions)options range:(NSRange)range usingBlock:(void (^)(NSArray* matches, NSMatchingFlags flags, BOOL *stop))bloc
 {
     [self enumerateMatchesInString:string options:options range:range usingBlock:^(NSTextCheckingResult *result, NSMatchingFlags flags, BOOL *stop) {
-        NSMutableArray *ret = [NSMutableArray arrayWithCapacity:result.numberOfRanges];
-        for(int i = 0; i < result.numberOfRanges; i++)
-        {
-            [ret addObject:[string substringWithRange:[result rangeAtIndex:i]]];
-        }
+        NSArray *ret = [result matchesForString:string];
         bloc(ret, flags, stop);
     }];
 }

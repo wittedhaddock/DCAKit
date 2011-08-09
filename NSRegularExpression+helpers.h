@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "NSTextCheckingResult+helpers.h"
 
 @interface NSRegularExpression (helpers)
 +(NSRegularExpression*) regularExpressionWithSafePattern:(NSString*)pattern;
