@@ -25,8 +25,6 @@
 @property (nonatomic, retain) NSString* prefix;
 @property (nonatomic, copy) void (^block)(NSObject*);
 
-+(NSString*) fixTheString:(NSString*)fixMe;
-+(NSString*)paramStringFromParams:(NSDictionary*)params;
 -(void) internalRetain;
 -(void) internalRelease;
 

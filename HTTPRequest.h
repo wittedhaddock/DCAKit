@@ -27,6 +27,9 @@ typedef enum {
 
 -(id)initWithBlock:(void (^)(NSObject*))newBlock;
 +(bool) testConnection;
++(NSString*)fixTheString:(NSString*)fixMe;
++(NSString*)paramStringFromParams:(NSDictionary*)params;
+
 -(void) setGetParameter:(NSObject*)value forKey:(NSString*)key;
 -(void) setPostParameter:(NSObject*)value forKey:(NSString*)key;
 -(void) clearGetParameters;
