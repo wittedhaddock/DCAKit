@@ -22,8 +22,8 @@ typedef enum {
 
 @property (nonatomic, assign) recovery_method recoveryMethod;
 @property (nonatomic, assign) response_type responseType;
-@property (nonatomic, retain) NSString *baseURL;
-@property (nonatomic, retain) NSString *requestMethod;
+@property (nonatomic, copy) NSString *baseURL;
+@property (nonatomic, copy) NSString *requestMethod;
 
 -(id)initWithBlock:(void (^)(NSObject*))newBlock;
 +(bool) testConnection;

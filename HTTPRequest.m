@@ -84,7 +84,10 @@
 {
     NSMutableString *ret = [[[NSMutableString alloc] initWithString:@"php=future"] autorelease];
     [params enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
-        [ret appendString:[NSString stringWithFormat:@"&%@=%@", [[self class] fixTheString: key], [[self class] fixTheString: [NSString stringWithFormat:@"%@",obj]]]];
+        if(obj) //ignore null entries
+        {
+            [ret appendString:[NSString stringWithFormat:@"&%@=%@", [[self class] fixTheString: key], [[self class] fixTheString: [NSString stringWithFormat:@"%@",obj]]]];
+        }
     }];
     return ret;
 }
