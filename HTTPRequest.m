@@ -15,6 +15,7 @@
 @interface HTTPRequest ()
 {
     int retainCount;
+    BOOL connectionInProgress;
 }
 
 @property (nonatomic, retain) NSMutableData *receivedData;
@@ -77,7 +78,7 @@
     NSString *ret = (NSString *)CFURLCreateStringByAddingPercentEscapes(NULL, (CFStringRef)[fixMe stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]], NULL, (CFStringRef)@"!*'();:@&=+$,/?%#[]", kCFStringEncodingUTF8);
     [ret autorelease];
     //No periods. You can't escape them, because everyone not FF ignores your escaping and says, "Oh, I bet you actually wanted a period. I'll fix that for you!", leaving you to sit and cry, "NO! I escaped it for a reason dang it!!!". And then you get logbuddy tracebacks and your life generally sucks. So no periods.
-    return [ret stringByReplacingOccurrencesOfString:@"." withString:@""];
+    return ret;
 }
 
 +(NSString*)paramStringFromParams:(NSDictionary*)params
@@ -92,47 +93,54 @@
     return ret;
 }
 
--(void) setGetParameter:(NSObject*)value forKey:(NSString*)key
+-(void) setURLParameter:(NSObject*)value forKey:(NSString*)key
 {
     [self.getParams setValue:value forKey:key];
 }
 
--(void) setPostParameter:(NSObject*)value forKey:(NSString*)key
+-(void) setBodyParameter:(NSObject*)value forKey:(NSString*)key
 {
     [self.postParams setValue:value forKey:key];
 }
 
--(void) clearGetParameters
+-(void) clearURLParameters
 {
     [getParams removeAllObjects];
 }
 
--(void) clearPostParameters
+-(void) clearBodyParameters
 {
     [postParams removeAllObjects];
 }
-
--(void) requestWithPrefix:(NSString*)uprefix
+-(void) beginSynchronousRequestWithPrefix:(NSString*) uprefix
 {
-    [self requestWithPrefix:uprefix method:requestMethod];
+    [self beginRequestWithPrefix:uprefix];
+    while (connectionInProgress)
+    {
+        [[NSRunLoop currentRunLoop] runUntilDate:[NSDate dateWithTimeIntervalSinceNow:1.0]];
+    }
+}
+-(void) beginRequestWithPrefix:(NSString*)uprefix
+{
+    [self beginRequestWithPrefix:uprefix method:requestMethod];
 }
 
--(void) requestWithPrefix:(NSString*)uprefix method:(NSString*)method
+-(void) beginRequestWithPrefix:(NSString*)uprefix method:(NSString*)method
 {
-    [self requestWithPrefix:uprefix method:method getParams:nil postParams:nil];
+    [self beginRequestWithPrefix:uprefix method:method URLParams:nil bodyParams:nil];
 }
 
--(void) requestWithPrefix:(NSString*)uprefix getParams:(NSDictionary*)ugetParams postParams:(NSDictionary*)upostParams;
+-(void) beginRequestWithPrefix:(NSString*)uprefix URLParams:(NSDictionary*)uURLParams bodyParams:(NSDictionary*)uBodyParams;
 {
-    [self requestWithPrefix:uprefix method:requestMethod getParams:ugetParams postParams:upostParams];
+    [self beginRequestWithPrefix:uprefix method:requestMethod URLParams:uURLParams bodyParams:uBodyParams];
 }
 
--(void) requestWithPrefix:(NSString*)uprefix method:(NSString*)method getParams:(NSDictionary*)ugetParams postParams:(NSDictionary*)upostParams;
+-(void) beginRequestWithPrefix:(NSString*)uprefix method:(NSString*)method URLParams:(NSDictionary*)ugetParams bodyParams:(NSDictionary*)uBodyParams;
 {
     assert(self.baseURL);
     assert([self.baseURL hasSuffix:@"/"] ^ [uprefix hasPrefix:@"/"]);
     assert(self.requestMethod || method);
-    
+    connectionInProgress = YES;
     self.prefix = uprefix;
     if(method)
     {
@@ -204,6 +212,7 @@
     self.receivedData = nil;
     CFRunLoopStop(CFRunLoopGetCurrent());
     self.connection = nil;
+    connectionInProgress = NO;
     if(self.recoveryMethod == kFAIL)
     {
         NSLog(@"ERROR: %@", error);
@@ -212,7 +221,7 @@
     {
         NSLog(@"%@",error);
         sleep(2);
-        [self requestWithPrefix:self.prefix];
+        [self beginRequestWithPrefix:self.prefix];
         NSLog(@"retrying %@...", self.prefix);
     }
     [self internalRelease];
@@ -220,6 +229,7 @@
 
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection
 {
+    connectionInProgress = NO;
     if(receivedData && [receivedData length] > 0)
     {
         NSError *serror = nil;
