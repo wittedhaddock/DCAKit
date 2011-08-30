@@ -54,7 +54,6 @@
         self.responseType = kPLIST;
         self.requestMethod = @"GET";
         retainCount = 0;
-        [self internalRetain];
     }
     return self;
 }
@@ -137,6 +136,7 @@
 
 -(void) beginRequestWithPrefix:(NSString*)uprefix method:(NSString*)method URLParams:(NSDictionary*)ugetParams bodyParams:(NSDictionary*)uBodyParams;
 {
+    [self internalRetain];
     assert(self.baseURL);
     assert([self.baseURL hasSuffix:@"/"] ^ [uprefix hasPrefix:@"/"]);
     assert(self.requestMethod || method);
