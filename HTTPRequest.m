@@ -113,11 +113,14 @@
 }
 -(void) beginSynchronousRequestWithPrefix:(NSString*) uprefix
 {
+    void (^myBlock)(NSObject*)  = [self.block retain];
+    self.block = ^(NSObject * obj) {
+        myBlock(obj);
+        CFRunLoopStop(CFRunLoopGetMain());
+    };
     [self beginRequestWithPrefix:uprefix];
-    while (connectionInProgress)
-    {
-        [[NSRunLoop currentRunLoop] runUntilDate:[NSDate dateWithTimeIntervalSinceNow:1.0]];
-    }
+    CFRunLoopRun();
+    
 }
 -(void) beginRequestWithPrefix:(NSString*)uprefix
 {
@@ -136,10 +139,15 @@
 
 -(void) beginRequestWithPrefix:(NSString*)uprefix method:(NSString*)method URLParams:(NSDictionary*)ugetParams bodyParams:(NSDictionary*)uBodyParams;
 {
-    [self internalRetain];
     assert(self.baseURL);
     assert([self.baseURL hasSuffix:@"/"] ^ [uprefix hasPrefix:@"/"]);
     assert(self.requestMethod || method);
+    if (connectionInProgress)
+    {
+        NSLog(@"Ignoring this request because a connection is already in progress.");
+        return;
+    }
+    [self internalRetain];
     connectionInProgress = YES;
     self.prefix = uprefix;
     if(method)
