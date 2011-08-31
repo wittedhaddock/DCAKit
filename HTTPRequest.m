@@ -121,7 +121,8 @@
     };
     [self beginRequestWithPrefix:uprefix];
     NSLog(@"Beginning run.");
-    CFRunLoopRun();
+    while (connectionInProgress)
+        CFRunLoopRun();
     NSLog(@"Ending run...");
     
 }
