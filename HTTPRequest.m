@@ -114,15 +114,15 @@
 -(void) beginSynchronousRequestWithPrefix:(NSString*) uprefix
 {
     void (^myBlock)(NSObject*)  = [self.block retain];
+    dispatch_semaphore_t holdOn = dispatch_semaphore_create(0);
     self.block = ^(NSObject * obj) {
         myBlock(obj);
         NSLog(@"Runloop stop (SHOULD SEE ENDING RUN)");
-        CFRunLoopStop(CFRunLoopGetMain());
+        dispatch_semaphore_signal(holdOn);
     };
     [self beginRequestWithPrefix:uprefix];
     NSLog(@"Beginning run.");
-    while (connectionInProgress)
-        CFRunLoopRun();
+    dispatch_semaphore_wait(holdOn, DISPATCH_TIME_FOREVER);
     NSLog(@"Ending run...");
     
 }
