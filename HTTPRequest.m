@@ -116,10 +116,13 @@
     void (^myBlock)(NSObject*)  = [self.block retain];
     self.block = ^(NSObject * obj) {
         myBlock(obj);
+        NSLog(@"Runloop stop (SHOULD SEE ENDING RUN)");
         CFRunLoopStop(CFRunLoopGetMain());
     };
     [self beginRequestWithPrefix:uprefix];
+    NSLog(@"Beginning run.");
     CFRunLoopRun();
+    NSLog(@"Ending run...");
     
 }
 -(void) beginRequestWithPrefix:(NSString*)uprefix
