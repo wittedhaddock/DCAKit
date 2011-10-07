@@ -57,7 +57,7 @@ typedef enum {
 
 @interface DCASBJsonTokeniser : NSObject 
 
-@property (retain) DCASBJsonUTF8Stream *stream;
+@property (strong) DCASBJsonUTF8Stream *stream;
 @property (copy) NSString *error;
 
 - (void)appendData:(NSData*)data_;

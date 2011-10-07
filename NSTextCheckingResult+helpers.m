@@ -11,7 +11,7 @@
 @implementation NSTextCheckingResult (helpers)
 -(NSArray*)matchesForString:(NSString*)string
 {
-    NSMutableArray *ret = [[[NSMutableArray alloc] initWithCapacity:[self numberOfRanges]] autorelease];
+    NSMutableArray *ret = [[NSMutableArray alloc] initWithCapacity:[self numberOfRanges]];
     for(NSUInteger i = 0; i < [self numberOfRanges]; i++)
     {
         [ret addObject:[string substringWithRange:[self rangeAtIndex:i]]];

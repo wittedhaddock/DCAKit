@@ -34,7 +34,7 @@
 @implementation NSObject (NSObject_SBJsonWriting)
 
 - (NSString *)JSONRepresentation {
-    DCASBJsonWriter *writer = [[[DCASBJsonWriter alloc] init] autorelease];    
+    DCASBJsonWriter *writer = [[DCASBJsonWriter alloc] init];    
     NSString *json = [writer stringWithObject:self];
     if (!json)
         NSLog(@"-JSONRepresentation failed. Error is: %@", writer.error);
@@ -48,7 +48,7 @@
 @implementation NSString (NSString_SBJsonParsing)
 
 - (id)JSONValue {
-    DCASBJsonParser *parser = [[[DCASBJsonParser alloc] init] autorelease];
+    DCASBJsonParser *parser = [[DCASBJsonParser alloc] init];
     id repr = [parser objectWithString:self];
     if (!repr)
         NSLog(@"-JSONValue failed. Error is: %@", parser.error);

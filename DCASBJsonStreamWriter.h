@@ -86,14 +86,14 @@
     NSMutableDictionary *cache;
 }
 
-@property (nonatomic, assign) DCASBJsonStreamWriterState *state; // Internal
-@property (nonatomic, readonly, retain) NSMutableArray *stateStack; // Internal 
+@property (nonatomic, unsafe_unretained) DCASBJsonStreamWriterState *state; // Internal
+@property (nonatomic, readonly, strong) NSMutableArray *stateStack; // Internal 
 
 /**
  @brief delegate to receive JSON output
  Delegate that will receive messages with output.
  */
-@property (assign) id<DCASBJsonStreamWriterDelegate> delegate;
+@property (unsafe_unretained) id<DCASBJsonStreamWriterDelegate> delegate;
 
 /**
  @brief The maximum recursing depth.

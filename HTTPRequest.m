@@ -10,20 +10,21 @@
 #import "LogBuddy.h"
 #import "SBJson.h"
 
-#define GET_STR_BYTES(DATA) [[[NSString alloc] initWithBytes:[DATA bytes] length:[DATA length] encoding:NSUTF8StringEncoding] autorelease]
+#define GET_STR_BYTES(DATA) [[NSString alloc] initWithBytes:[DATA bytes] length:[DATA length] encoding:NSUTF8StringEncoding]
 
 @interface HTTPRequest ()
 {
     int retainCount;
     BOOL connectionInProgress;
+    HTTPRequest __strong *internalReference;
 }
 
-@property (nonatomic, retain) NSMutableData *receivedData;
-@property (nonatomic, retain) NSURLConnection *connection;
+@property (nonatomic, strong) NSMutableData *receivedData;
+@property (nonatomic, strong) NSURLConnection *connection;
 //state variables to retry requests
-@property (nonatomic, retain) NSMutableDictionary *getParams;
-@property (nonatomic, retain) NSMutableDictionary *postParams;
-@property (nonatomic, retain) NSString* prefix;
+@property (nonatomic, strong) NSMutableDictionary *getParams;
+@property (nonatomic, strong) NSMutableDictionary *postParams;
+@property (nonatomic, strong) NSString* prefix;
 @property (nonatomic, copy) void (^block)(NSObject*);
 
 -(void) internalRetain;
@@ -48,8 +49,8 @@
     if((self = [super init]))
     {
         self.block = newBlock;
-        self.getParams = [[[NSMutableDictionary alloc] init] autorelease];
-        self.postParams = [[[NSMutableDictionary alloc] init] autorelease];
+        self.getParams = [[NSMutableDictionary alloc] init];
+        self.postParams = [[NSMutableDictionary alloc] init];
         self.recoveryMethod = kFAIL;
         self.responseType = kPLIST;
         self.requestMethod = @"GET";
@@ -60,29 +61,28 @@
 
 -(void) internalRetain
 {
-    [self retain];
+    internalReference = self;
     retainCount++;
-    assert(retainCount <= 1 || retainCount <= 2 && self.recoveryMethod == kRETRY);
+    assert(retainCount <= 1 || (retainCount <= 2 && self.recoveryMethod == kRETRY));
 }
 
 -(void) internalRelease
 {
-    [self release];
     retainCount--;
+    if (retainCount==0) internalReference = nil;
     assert(retainCount >= 0);
 }
 
 +(NSString*) fixTheString:(NSString*)fixMe
 {
-    NSString *ret = (NSString *)CFURLCreateStringByAddingPercentEscapes(NULL, (CFStringRef)[fixMe stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]], NULL, (CFStringRef)@"!*'();:@&=+$,/?%#[]", kCFStringEncodingUTF8);
-    [ret autorelease];
+    NSString *ret = (__bridge_transfer NSString *)CFURLCreateStringByAddingPercentEscapes(NULL, (__bridge CFStringRef)[fixMe stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]], NULL, (CFStringRef)@"!*'();:@&=+$,/?%#[]", kCFStringEncodingUTF8);
     //No periods. You can't escape them, because everyone not FF ignores your escaping and says, "Oh, I bet you actually wanted a period. I'll fix that for you!", leaving you to sit and cry, "NO! I escaped it for a reason dang it!!!". And then you get logbuddy tracebacks and your life generally sucks. So no periods.
     return ret;
 }
 
 +(NSString*)paramStringFromParams:(NSDictionary*)params
 {
-    NSMutableString *ret = [[[NSMutableString alloc] initWithString:@"php=future"] autorelease];
+    NSMutableString *ret = [[NSMutableString alloc] initWithString:@"php=future"];
     [params enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
         if(obj) //ignore null entries
         {
@@ -113,7 +113,7 @@
 }
 -(void) beginSynchronousRequestWithPrefix:(NSString*) uprefix
 {
-    void (^myBlock)(NSObject*)  = [self.block retain];
+    void (^myBlock)(NSObject*)  = self.block;
     dispatch_semaphore_t holdOn = dispatch_semaphore_create(0);
     self.block = ^(NSObject * obj) {
         myBlock(obj);
@@ -121,7 +121,6 @@
     };
     [self beginRequestWithPrefix:uprefix];
     dispatch_semaphore_wait(holdOn, DISPATCH_TIME_FOREVER);
-    [myBlock release];
     
 }
 -(void) beginRequestWithPrefix:(NSString*)uprefix
@@ -159,7 +158,7 @@
     [getParams addEntriesFromDictionary:getParams];
     [postParams addEntriesFromDictionary:postParams];
     
-    NSString *urlString = [[[NSMutableString alloc] initWithString:[NSString stringWithFormat:@"%@%@", self.baseURL, prefix]] autorelease];
+    NSString *urlString = [[NSMutableString alloc] initWithString:[NSString stringWithFormat:@"%@%@", self.baseURL, prefix]];
     if(getParams.count > 0)
     {
         urlString = [NSString stringWithFormat:@"%@?%@", urlString, [HTTPRequest paramStringFromParams:getParams]];
@@ -176,13 +175,13 @@
     
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
         [self.connection cancel];
-        self.connection = [[[NSURLConnection alloc] initWithRequest:theRequest delegate:self] autorelease];
+        self.connection = [[NSURLConnection alloc] initWithRequest:theRequest delegate:self];
         
         if (connection)
         {
             // Create the NSMutableData to hold the received data.        
             // receivedData is an instance variable declared elsewhere.
-            self.receivedData = [[[NSMutableData alloc] init] autorelease];
+            self.receivedData = [[NSMutableData alloc] init];
             NSLog(@"Plist request sent");
         }
         else
@@ -197,8 +196,8 @@
 
 +(bool) testConnection
 {
-    NSURL* url = [[[NSURL alloc] initWithString:@"http://www.google.com/"] autorelease];
-    NSURLRequest* request = [[[NSURLRequest alloc] initWithURL:url] autorelease];
+    NSURL* url = [[NSURL alloc] initWithString:@"http://www.google.com/"];
+    NSURLRequest* request = [[NSURLRequest alloc] initWithURL:url];
     if(![NSURLConnection canHandleRequest:request])
     {
         return false;
@@ -257,12 +256,12 @@
                 break;
             case kJSON:
                 {
-                    DCASBJsonParser *parser = [[[DCASBJsonParser alloc] init] autorelease];
+                    DCASBJsonParser *parser = [[DCASBJsonParser alloc] init];
                     arg = [parser objectWithData:self.receivedData];
                     if(!arg)
                     {
                         NSDictionary *userInfo = [NSDictionary dictionaryWithObject:parser.error forKey:NSLocalizedDescriptionKey];
-                        serror = [[[NSError alloc] initWithDomain:@"HTTPRequest" code:41 userInfo:userInfo] autorelease];
+                        serror = [[NSError alloc] initWithDomain:@"HTTPRequest" code:41 userInfo:userInfo];
                         [LogBuddy reportNSError:serror];
                     }
                 }
@@ -283,17 +282,5 @@
     [self internalRelease];
 }
 
-- (void)dealloc
-{
-    self.block = nil;
-    self.baseURL = nil;
-    self.prefix = nil;
-    self.getParams = nil;
-    self.postParams = nil;
-    self.requestMethod = nil;
-    self.receivedData = nil;
-    self.connection = nil;
-    [super dealloc];
-}
 
 @end

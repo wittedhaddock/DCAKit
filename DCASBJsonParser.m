@@ -44,10 +44,6 @@
     return self;
 }
 
-- (void)dealloc {
-    [error release];
-    [super dealloc];
-}
 
 #pragma mark Methods
 
@@ -58,12 +54,12 @@
         return nil;
     }
 
-	DCASBJsonStreamParserAccumulator *accumulator = [[[DCASBJsonStreamParserAccumulator alloc] init] autorelease];
+	DCASBJsonStreamParserAccumulator *accumulator = [[DCASBJsonStreamParserAccumulator alloc] init];
     
-    DCASBJsonStreamParserAdapter *adapter = [[[DCASBJsonStreamParserAdapter alloc] init] autorelease];
+    DCASBJsonStreamParserAdapter *adapter = [[DCASBJsonStreamParserAdapter alloc] init];
     adapter.delegate = accumulator;
 	
-	DCASBJsonStreamParser *parser = [[[DCASBJsonStreamParser alloc] init] autorelease];
+	DCASBJsonStreamParser *parser = [[DCASBJsonStreamParser alloc] init];
 	parser.maxDepth = self.maxDepth;
 	parser.delegate = adapter;
 	

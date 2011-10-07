@@ -142,6 +142,6 @@ typedef enum {
  @brief Your delegate object
  Set this to the object you want to receive the SBJsonStreamParserAdapterDelegate messages.
  */
-@property (assign) id<DCASBJsonStreamParserAdapterDelegate> delegate;
+@property (unsafe_unretained) id<DCASBJsonStreamParserAdapterDelegate> delegate;
 
 @end
