@@ -7,23 +7,23 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "DCAUIView.h"
+#import "FormField.h"
 
 @interface FormBuilder : NSObject
-{
-    int width;
-    int height;
-    int top_padding;
-    int left_padding;
-    int bottom_padding;
-    int right_padding;
-    int fieldOffset;
-    int elementPadding;
-}
+
+@property (nonatomic) int width;
+@property (nonatomic) int height;
+//top, right, bottom, left - same as in CSS
+@property (nonatomic) CGRect padding;
+@property (nonatomic) CGRect elementPadding;
 
 @property (nonatomic, strong, readonly) UIView *view;
 
+- (id)init;
 - (id)initWithView:(UIView*)newView;
-- (void)addObject:(DCAUIView*)obj withName:(NSString*)name;
+
+- (void)addField:(FormField*)obj;
+- (void)reset;
+- (void)layout;
 
 @end

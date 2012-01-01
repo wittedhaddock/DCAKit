@@ -7,83 +7,81 @@
 //
 
 #import "FormBuilder.h"
-#import "UITableView+resize.h"
-#import "DCAUILabel.h"
 
-#define VPADDING 10
-#define HPADDING 0
+#define TOP(rect) rect.origin.x
+#define RIGHT(rect) rect.origin.y
+#define BOTTOM(rect) rect.size.width
+#define LEFT(rect) rect.size.height
 
 @interface FormBuilder ()
 
-@property (nonatomic, strong) NSMutableDictionary *elements;
-@property (nonatomic, strong) NSMutableArray *elementOrder;
+@property (nonatomic, strong) NSMutableArray *elements;
+
+-(void)setup;
 
 @end
 
 @implementation FormBuilder
 @synthesize view;
+@synthesize width;
+@synthesize height;
+@synthesize padding;
+@synthesize elementPadding;
 @synthesize elements;
-@synthesize elementOrder;
 
-- (id)initWithView:(UIView*)newView
-{
-    if((self = [super init]))
-    {
-        view = newView;
-        self.elements = [[NSMutableDictionary alloc] init];
-        self.elementOrder = [[NSMutableArray alloc] init];
-        
-        width = view.frame.size.width;
-        top_padding = VPADDING;
-        left_padding = HPADDING;
-        bottom_padding = VPADDING;
-        right_padding = HPADDING;
-        fieldOffset = 145;
-        elementPadding = 10;
-        height = -1;
+- (id)init {
+    if(self = [super init]) {
+        view = [[UIView alloc] init];
+        [self setup];
     }
     return self;
 }
 
-- (void)addObject:(DCAUIView*)obj withName:(NSString*)name {
-    [self.elements setObject:obj forKey:name];
-    [self.elementOrder addObject:name];
+- (id)initWithView:(UIView*)newView {
+    if((self = [super init])) {
+        view = newView;
+        [self setup];
+    }
+    return self;
 }
 
-- (UIView*)view
-{
-    if(height < 0)
-    {
-        height = top_padding;
-        int offset = top_padding;
+- (void)setup {
+    self.elements = [[NSMutableArray alloc] init];
+    
+    self.width = view.frame.size.width;
+    self.padding = CGRectMake(10, 0, 10, 0);
+    self.elementPadding = CGRectMake(0, 10, 0, 10);
+    self.height = view.frame.size.height;
+}
+
+- (void)addField:(FormField*)obj {
+    [self.elements addObject:obj];
+}
+
+- (void)reset {
+    [self.elements removeAllObjects];
+}
+
+- (void)layout {
+    height = TOP(self.padding);
+    
+    for(FormField *field in self.elements) {
+        int xoffset = LEFT(self.padding);
+        self.height += TOP(self.elementPadding);
         
-        for (NSString *name in elementOrder)
-        {
-            DCAUILabel *nameField = [DCAUILabel init];
-            UILabel *nameLabel = (UILabel*)nameField.field;
-            nameLabel.text = name;
-            [nameLabel sizeToFit];
-            nameLabel.frame = CGRectMake(left_padding, offset, nameLabel.frame.size.width, nameLabel.frame.size.height);
-            [view addSubview:nameLabel];
-            
-            UIView *element = [elements valueForKey:name];
-            [element sizeToFit];
-            int elementHeight = element.frame.size.height;
-            if(elementHeight <= 0)
-            {
-                elementHeight = nameLabel.frame.size.height;
-            }
-            element.frame = CGRectMake(fieldOffset, offset, width-(left_padding+fieldOffset+right_padding), elementHeight);
-            [view addSubview:element];
-            
-            offset += (nameLabel.frame.size.height > element.frame.size.height)?nameLabel.frame.size.height:element.frame.size.height;
-            offset += elementPadding;
+        [field layoutInWidth:self.width xoffset:xoffset yoffset:self.height padding:self.padding elementPadding:self.elementPadding];
+        if(field.label) {
+            [self.view addSubview:field.label];
         }
+        [view addSubview:field.field];
         
-        //finally, set the frame
-        view.frame = CGRectMake(view.frame.origin.x, view.frame.origin.y, width, height+offset+bottom_padding);
+        self.height += field.field.frame.size.height;
+        self.height += BOTTOM(self.elementPadding);
     }
-    return view;
+    
+    self.height += BOTTOM(self.padding);
+    //finally, set the frame
+    self.view.frame = CGRectMake(self.view.frame.origin.x, self.view.frame.origin.y, self.width, self.height);
 }
 
 @end
