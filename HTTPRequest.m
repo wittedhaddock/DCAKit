@@ -7,7 +7,6 @@
 //
 
 #import "HTTPRequest.h"
-#import "LogBuddy.h"
 #import "SBJson.h"
 
 #define GET_STR_BYTES(DATA) [[NSString alloc] initWithBytes:[DATA bytes] length:[DATA length] encoding:NSUTF8StringEncoding]
@@ -186,7 +185,7 @@
         }
         else
         {
-            [LogBuddy reportErrorString: @"Unable to connect to appengine :("];
+            NSLog(@"Unable to connect to appengine :(");
             [self internalRelease];
         }
         //wait for a response
@@ -250,7 +249,7 @@
                     arg = [NSPropertyListSerialization propertyListWithData:[result dataUsingEncoding:NSUTF8StringEncoding] options:NSPropertyListImmutable format:NULL error:&serror];
                     if(serror)
                     {
-                        [LogBuddy reportNSError:serror];
+                        NSLog(@"ERROR: %@", serror);
                     }
                 }
                 break;
@@ -262,7 +261,7 @@
                     {
                         NSDictionary *userInfo = [NSDictionary dictionaryWithObject:parser.error forKey:NSLocalizedDescriptionKey];
                         serror = [[NSError alloc] initWithDomain:@"HTTPRequest" code:41 userInfo:userInfo];
-                        [LogBuddy reportNSError:serror];
+                        NSLog(@"Error: %@", serror);
                     }
                 }
                 break;
