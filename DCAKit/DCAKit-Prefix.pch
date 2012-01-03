@@ -1,0 +1,7 @@
+//
+// Prefix header for all source files of the 'DCAKit' target in the 'DCAKit' project
+//
+
+#ifdef __OBJC__
+    #import <Foundation/Foundation.h>
+#endif
