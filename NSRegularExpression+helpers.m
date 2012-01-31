@@ -3,7 +3,7 @@
 //  DCA-libs
 //
 //  Created by Bion Oren on 8/2/11.
-//  Copyright 2011 __MyCompanyName__. All rights reserved.
+//  Copyright 2011 DrewCrawfordApps LLC. All rights reserved.
 //
 
 #import "NSRegularExpression+helpers.h"

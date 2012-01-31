@@ -3,7 +3,7 @@
 //  DCA-libs
 //
 //  Created by Bion Oren on 8/9/11.
-//  Copyright 2011 DrewCrawfordApps. All rights reserved.
+//  Copyright 2011 DrewCrawfordApps LLC. All rights reserved.
 //
 
 #import "NSTextCheckingResult+helpers.h"

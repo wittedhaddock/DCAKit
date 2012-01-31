@@ -3,7 +3,7 @@
 //  briefcasewars
 //
 //  Created by Bion Oren on 4/20/11.
-//  Copyright 2011 __MyCompanyName__. All rights reserved.
+//  Copyright 2011 DrewCrawfordApps LLC. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>

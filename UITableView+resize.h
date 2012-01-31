@@ -3,7 +3,7 @@
 //  semaps
 //
 //  Created by Bion Oren on 7/29/11.
-//  Copyright 2011 __MyCompanyName__. All rights reserved.
+//  Copyright 2011 DrewCrawfordApps LLC. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
