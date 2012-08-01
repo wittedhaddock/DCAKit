@@ -7,7 +7,6 @@
 //
 
 #import "HTTPRequest.h"
-#import "SBJson.h"
 
 #define GET_STR_BYTES(DATA) [[NSString alloc] initWithBytes:[DATA bytes] length:[DATA length] encoding:NSUTF8StringEncoding]
 
@@ -255,13 +254,10 @@
                 break;
             case kJSON:
                 {
-                    DCASBJsonParser *parser = [[DCASBJsonParser alloc] init];
-                    arg = [parser objectWithData:self.receivedData];
-                    if(!arg)
-                    {
-                        NSDictionary *userInfo = [NSDictionary dictionaryWithObject:parser.error forKey:NSLocalizedDescriptionKey];
-                        serror = [[NSError alloc] initWithDomain:@"HTTPRequest" code:41 userInfo:userInfo];
-                        NSLog(@"Error: %@", serror);
+                    NSError *err = nil;
+                    arg = [NSJSONSerialization JSONObjectWithData:self.receivedData options:0 error:&err];
+                    if(!arg) {
+                        NSLog(@"Error: %@", err);
                     }
                 }
                 break;
