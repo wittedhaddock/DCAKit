@@ -3,6 +3,8 @@
 
 # Install with
 # ln -sf ../../pre-commit.py .git/hooks/pre-commit
+# or (if submodule)
+# ln -sf ../../../../[path from root of repo]/pre-commit.py [path to root .git]/modules/NAME/hooks/pre-commit
 
 #configuration
 PROJECT_NAME = "DCAKit"
@@ -16,6 +18,10 @@ TEST_SUITE_NAME = "DCAKitTests.octest"
 #version history
 # v0.1 - submodule support
 # v0.2 - improved test output regex
+# v0.3 - better git_index_file workaround
+
+import os
+print os.getcwd()
 
 
 def getSO(cmd):
@@ -56,7 +62,8 @@ try:
         #verify clean status
         #we must unset GIT_INDEX_FILE since it is set by the commit hook and it interferes with our ability to get anything done
         import os
-        del os.environ["GIT_INDEX_FILE"]
+        if os.environ.has_key("GIT_INDEX_FILE"):
+            del os.environ["GIT_INDEX_FILE"]
         o = getO("""cd {PATH} && git status --porcelain""".format(PATH=path))
         if (o!=""):
             fail("Submodule {PATH} has non-clean status {STATUS}".format(PATH=path,STATUS=o))

@@ -2,8 +2,8 @@
 //  DCAKitTests.m
 //  DCAKitTests
 //
-//  Created by Bion Oren on 1/3/12.
-//  Copyright (c) 2012 DrewCrawfordApps. All rights reserved.
+//  Created by Drew Crawford on 2/20/13.
+//  Copyright (c) 2013 DrewCrawfordApps. All rights reserved.
 //
 
 #import "DCAKitTests.h"
@@ -26,7 +26,6 @@
 
 - (void)testExample
 {
-    //STFail(@"Unit tests are not implemented yet in DCAKitTests");
 }
 
 @end

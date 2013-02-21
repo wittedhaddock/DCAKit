@@ -14,8 +14,8 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "BE4181C614B38C93000251A7"
-               BuildableName = "DCAKit.framework"
+               BlueprintIdentifier = "3A84833616D5DBB200927A33"
+               BuildableName = "libDCAKit.a"
                BlueprintName = "DCAKit"
                ReferencedContainer = "container:DCAKit.xcodeproj">
             </BuildableReference>
