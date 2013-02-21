@@ -77,10 +77,10 @@
 		BE4181E414B38C93000251A7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		BE4181E614B38C93000251A7 /* DCAKitTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DCAKitTests.h; sourceTree = "<group>"; };
 		BE4181E714B38C93000251A7 /* DCAKitTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DCAKitTests.m; sourceTree = "<group>"; };
-		BE754E4814B3907F007F23B9 /* NSRegularExpression+helpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSRegularExpression+helpers.h"; sourceTree = SOURCE_ROOT; };
-		BE754E4914B3907F007F23B9 /* NSRegularExpression+helpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSRegularExpression+helpers.m"; sourceTree = SOURCE_ROOT; };
-		BE754E4A14B3907F007F23B9 /* NSTextCheckingResult+helpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSTextCheckingResult+helpers.h"; sourceTree = SOURCE_ROOT; };
-		BE754E4B14B3907F007F23B9 /* NSTextCheckingResult+helpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSTextCheckingResult+helpers.m"; sourceTree = SOURCE_ROOT; };
+		BE754E4814B3907F007F23B9 /* NSRegularExpression+helpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSRegularExpression+helpers.h"; path = "DCAKit/NSRegularExpression+helpers.h"; sourceTree = SOURCE_ROOT; };
+		BE754E4914B3907F007F23B9 /* NSRegularExpression+helpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSRegularExpression+helpers.m"; path = "DCAKit/NSRegularExpression+helpers.m"; sourceTree = SOURCE_ROOT; };
+		BE754E4A14B3907F007F23B9 /* NSTextCheckingResult+helpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSTextCheckingResult+helpers.h"; path = "DCAKit/NSTextCheckingResult+helpers.h"; sourceTree = SOURCE_ROOT; };
+		BE754E4B14B3907F007F23B9 /* NSTextCheckingResult+helpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSTextCheckingResult+helpers.m"; path = "DCAKit/NSTextCheckingResult+helpers.m"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +109,12 @@
 		3A84833916D5DBB200927A33 /* DCAKit */ = {
 			isa = PBXGroup;
 			children = (
+				BE754E4814B3907F007F23B9 /* NSRegularExpression+helpers.h */,
+				BE754E4914B3907F007F23B9 /* NSRegularExpression+helpers.m */,
+				BE754E4A14B3907F007F23B9 /* NSTextCheckingResult+helpers.h */,
+				BE754E4B14B3907F007F23B9 /* NSTextCheckingResult+helpers.m */,
+				3A84832F16D5DB2200927A33 /* DCASimpleKeychain.h */,
+				3A84833016D5DB2200927A33 /* DCASimpleKeychain.m */,
 				3A84833C16D5DBB200927A33 /* DCAKit.h */,
 				3A84833E16D5DBB200927A33 /* DCAKit.m */,
 				3A84833A16D5DBB200927A33 /* Supporting Files */,
@@ -187,8 +193,6 @@
 		BE4181C914B38C93000251A7 /* DCAKit */ = {
 			isa = PBXGroup;
 			children = (
-				3A84832F16D5DB2200927A33 /* DCASimpleKeychain.h */,
-				3A84833016D5DB2200927A33 /* DCASimpleKeychain.m */,
 				BE754E9D14B390E0007F23B9 /* NSRegularExpression */,
 				BE4181CA14B38C93000251A7 /* Supporting Files */,
 			);
@@ -237,10 +241,6 @@
 		BE754E9D14B390E0007F23B9 /* NSRegularExpression */ = {
 			isa = PBXGroup;
 			children = (
-				BE754E4814B3907F007F23B9 /* NSRegularExpression+helpers.h */,
-				BE754E4914B3907F007F23B9 /* NSRegularExpression+helpers.m */,
-				BE754E4A14B3907F007F23B9 /* NSTextCheckingResult+helpers.h */,
-				BE754E4B14B3907F007F23B9 /* NSTextCheckingResult+helpers.m */,
 			);
 			name = NSRegularExpression;
 			sourceTree = "<group>";
