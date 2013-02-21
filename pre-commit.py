@@ -10,7 +10,9 @@
 PROJECT_NAME = "DCAKit"
 WORKSPACE_NAME = "DCAKit.xcodeproj/project.xcworkspace"
 TEST_SCHEME = "DCAKit"
+TEST_CUSTOMFLAGS = ""
 BUILD_SCHEME = "DCAKit"
+BUILD_CUSTOMFLAGS = ""
 TEST_SUITE_NAME = "DCAKitTests.octest"
 
 #no config below - paste over me
@@ -19,13 +21,12 @@ TEST_SUITE_NAME = "DCAKitTests.octest"
 # v0.1 - submodule support
 # v0.2 - improved test output regex
 # v0.3 - better git_index_file workaround
-
-import os
-print os.getcwd()
+# v0.4 - support custom flags
 
 
 def getSO(cmd):
     import subprocess
+    print "run",cmd
     proc = subprocess.Popen(cmd, shell=True, stdout=subprocess.PIPE)
     output,stderr = proc.communicate()
     proc.wait()  # this might hang with a LOT of output
@@ -34,6 +35,7 @@ def getSO(cmd):
 
 def getO(cmd):
     import subprocess
+    print "run",cmd
     return subprocess.check_output(cmd, shell=True)
 
 
@@ -87,7 +89,7 @@ try:
 
 
     print "build/analyze/warning check"
-    (code,output) = getSO("xcodebuild -configuration Release -sdk iphonesimulator -workspace {WORKSPACE_NAME} -IDEBuildOperationMaxNumberOfConcurrentCompile=1 -scheme {SCHEME_NAME} RUN_CLANG_STATIC_ANALYZER=YES clean build ".format(SCHEME_NAME=BUILD_SCHEME,WORKSPACE_NAME=WORKSPACE_NAME))
+    (code,output) = getSO("xcodebuild -configuration Release -sdk iphonesimulator -workspace {WORKSPACE_NAME} -IDEBuildOperationMaxNumberOfConcurrentCompile=1 -scheme {SCHEME_NAME} RUN_CLANG_STATIC_ANALYZER=YES {CUSTOM_FLAGS} clean build ".format(SCHEME_NAME=BUILD_SCHEME,WORKSPACE_NAME=WORKSPACE_NAME,CUSTOM_FLAGS=BUILD_CUSTOMFLAGS))
 
 
 
@@ -110,7 +112,7 @@ try:
 
     print "unit test check"
     #run the unit tests
-    (code,output) = getSO("xcodebuild -sdk iphonesimulator -configuration UnitTest -workspace {WORKSPACE_NAME} -scheme {SCHEME_NAME}  RUN_UNIT_TEST_WITH_IOS_SIM=YES clean build".format(SCHEME_NAME=TEST_SCHEME,WORKSPACE_NAME=WORKSPACE_NAME))
+    (code,output) = getSO("xcodebuild -sdk iphonesimulator -configuration UnitTest -workspace {WORKSPACE_NAME} -scheme {SCHEME_NAME}  RUN_UNIT_TEST_WITH_IOS_SIM=YES {CUSTOM_FLAGS} clean build".format(SCHEME_NAME=TEST_SCHEME,WORKSPACE_NAME=WORKSPACE_NAME,CUSTOM_FLAGS=TEST_CUSTOMFLAGS))
 
     if code != 0:
         print output
