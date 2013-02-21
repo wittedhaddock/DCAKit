@@ -20,6 +20,9 @@
 		3A84837116D5DFCF00927A33 /* DCASimpleKeychain.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A84832F16D5DB2200927A33 /* DCASimpleKeychain.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3A84837216D5DFD600927A33 /* DCAKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A84833C16D5DBB200927A33 /* DCAKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3A84837616D5E66D00927A33 /* DCAKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A84833E16D5DBB200927A33 /* DCAKit.m */; };
+		3A84838016D5EA4A00927A33 /* NSError+LessTerrible.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A84837E16D5EA4A00927A33 /* NSError+LessTerrible.h */; };
+		3A84838116D5EA4A00927A33 /* NSError+LessTerrible.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A84837F16D5EA4A00927A33 /* NSError+LessTerrible.m */; };
+		3A84838216D5EA4D00927A33 /* NSError+LessTerrible.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A84837E16D5EA4A00927A33 /* NSError+LessTerrible.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +70,8 @@
 		3A84836816D5DFB100927A33 /* DCAKitHeaders-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DCAKitHeaders-Prefix.pch"; sourceTree = "<group>"; };
 		3A84836916D5DFB100927A33 /* DCAKitHeaders.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DCAKitHeaders.h; sourceTree = "<group>"; };
 		3A84836B16D5DFB100927A33 /* DCAKitHeaders.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DCAKitHeaders.m; sourceTree = "<group>"; };
+		3A84837E16D5EA4A00927A33 /* NSError+LessTerrible.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSError+LessTerrible.h"; sourceTree = "<group>"; };
+		3A84837F16D5EA4A00927A33 /* NSError+LessTerrible.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSError+LessTerrible.m"; sourceTree = "<group>"; };
 		BE4181CB14B38C93000251A7 /* DCAKit-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DCAKit-Info.plist"; sourceTree = "<group>"; };
 		BE4181CD14B38C93000251A7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		BE4181CF14B38C93000251A7 /* DCAKit-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DCAKit-Prefix.pch"; sourceTree = "<group>"; };
@@ -109,12 +114,9 @@
 		3A84833916D5DBB200927A33 /* DCAKit */ = {
 			isa = PBXGroup;
 			children = (
-				BE754E4814B3907F007F23B9 /* NSRegularExpression+helpers.h */,
-				BE754E4914B3907F007F23B9 /* NSRegularExpression+helpers.m */,
-				BE754E4A14B3907F007F23B9 /* NSTextCheckingResult+helpers.h */,
-				BE754E4B14B3907F007F23B9 /* NSTextCheckingResult+helpers.m */,
-				3A84832F16D5DB2200927A33 /* DCASimpleKeychain.h */,
-				3A84833016D5DB2200927A33 /* DCASimpleKeychain.m */,
+				3A84837D16D5EA3A00927A33 /* NSError */,
+				3A84837C16D5EA0D00927A33 /* DCASimpleKeychain */,
+				3A84837B16D5E9FD00927A33 /* NSRegularExpression */,
 				3A84833C16D5DBB200927A33 /* DCAKit.h */,
 				3A84833E16D5DBB200927A33 /* DCAKit.m */,
 				3A84833A16D5DBB200927A33 /* Supporting Files */,
@@ -165,6 +167,35 @@
 				3A84836816D5DFB100927A33 /* DCAKitHeaders-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3A84837B16D5E9FD00927A33 /* NSRegularExpression */ = {
+			isa = PBXGroup;
+			children = (
+				BE754E4814B3907F007F23B9 /* NSRegularExpression+helpers.h */,
+				BE754E4914B3907F007F23B9 /* NSRegularExpression+helpers.m */,
+				BE754E4A14B3907F007F23B9 /* NSTextCheckingResult+helpers.h */,
+				BE754E4B14B3907F007F23B9 /* NSTextCheckingResult+helpers.m */,
+			);
+			name = NSRegularExpression;
+			sourceTree = "<group>";
+		};
+		3A84837C16D5EA0D00927A33 /* DCASimpleKeychain */ = {
+			isa = PBXGroup;
+			children = (
+				3A84832F16D5DB2200927A33 /* DCASimpleKeychain.h */,
+				3A84833016D5DB2200927A33 /* DCASimpleKeychain.m */,
+			);
+			name = DCASimpleKeychain;
+			sourceTree = "<group>";
+		};
+		3A84837D16D5EA3A00927A33 /* NSError */ = {
+			isa = PBXGroup;
+			children = (
+				3A84837E16D5EA4A00927A33 /* NSError+LessTerrible.h */,
+				3A84837F16D5EA4A00927A33 /* NSError+LessTerrible.m */,
+			);
+			name = NSError;
 			sourceTree = "<group>";
 		};
 		BE4181B914B38C92000251A7 = {
@@ -253,6 +284,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3A84835D16D5DBE200927A33 /* DCASimpleKeychain.h in Headers */,
+				3A84838016D5EA4A00927A33 /* NSError+LessTerrible.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -262,6 +294,7 @@
 			files = (
 				3A84837116D5DFCF00927A33 /* DCASimpleKeychain.h in Headers */,
 				3A84837216D5DFD600927A33 /* DCAKit.h in Headers */,
+				3A84838216D5EA4D00927A33 /* NSError+LessTerrible.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -385,6 +418,7 @@
 			files = (
 				3A84833F16D5DBB200927A33 /* DCAKit.m in Sources */,
 				3A84835B16D5DBC800927A33 /* DCASimpleKeychain.m in Sources */,
+				3A84838116D5EA4A00927A33 /* NSError+LessTerrible.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
