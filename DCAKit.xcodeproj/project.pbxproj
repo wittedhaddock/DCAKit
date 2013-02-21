@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		3A84833816D5DBB200927A33 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE4181DB14B38C93000251A7 /* Foundation.framework */; };
-		3A84833D16D5DBB200927A33 /* DCAKit.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3A84833C16D5DBB200927A33 /* DCAKit.h */; };
 		3A84833F16D5DBB200927A33 /* DCAKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A84833E16D5DBB200927A33 /* DCAKit.m */; };
 		3A84834616D5DBB200927A33 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE4181D714B38C93000251A7 /* SenTestingKit.framework */; };
 		3A84834716D5DBB200927A33 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE4181D914B38C93000251A7 /* UIKit.framework */; };
@@ -20,6 +19,7 @@
 		3A84835D16D5DBE200927A33 /* DCASimpleKeychain.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A84832F16D5DB2200927A33 /* DCASimpleKeychain.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3A84837116D5DFCF00927A33 /* DCASimpleKeychain.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A84832F16D5DB2200927A33 /* DCASimpleKeychain.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3A84837216D5DFD600927A33 /* DCAKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A84833C16D5DBB200927A33 /* DCAKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3A84837616D5E66D00927A33 /* DCAKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A84833E16D5DBB200927A33 /* DCAKit.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,7 +46,6 @@
 			dstPath = "include/${PRODUCT_NAME}";
 			dstSubfolderSpec = 16;
 			files = (
-				3A84833D16D5DBB200927A33 /* DCAKit.h in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -312,6 +311,7 @@
 			buildConfigurationList = 3A84836F16D5DFB100927A33 /* Build configuration list for PBXNativeTarget "DCAKitHeaders" */;
 			buildPhases = (
 				3A84837016D5DFC200927A33 /* Headers */,
+				3A84837516D5E66700927A33 /* Sources */,
 			);
 			buildRules = (
 			);
@@ -396,6 +396,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		3A84837516D5E66700927A33 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3A84837616D5E66D00927A33 /* DCAKit.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -460,6 +468,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = nowhere;
 				SKIP_INSTALL = YES;
 			};
 			name = Debug;
@@ -480,6 +489,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = nowhere;
 				SKIP_INSTALL = YES;
 			};
 			name = Release;
@@ -572,6 +582,112 @@
 			};
 			name = Release;
 		};
+		3A84837716D5E7AB00927A33 /* UnitTest */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					DCA_DEBUG,
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				PUBLIC_HEADERS_FOLDER_PATH = include/DCAKit;
+				SDKROOT = iphoneos;
+			};
+			name = UnitTest;
+		};
+		3A84837816D5E7AB00927A33 /* UnitTest */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_EMPTY_BODY = YES;
+				DSTROOT = /tmp/DCAKit.dst;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SYSTEM_APPS_DIR)/Xcode.app/Contents/Developer/Library/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DCAKit/DCAKit-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = nowhere;
+				SKIP_INSTALL = YES;
+			};
+			name = UnitTest;
+		};
+		3A84837916D5E7AB00927A33 /* UnitTest */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_EMPTY_BODY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DCAKit/DCAKit-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "DCAKitTests/DCAKitTests-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				ONLY_ACTIVE_ARCH = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = UnitTest;
+		};
+		3A84837A16D5E7AB00927A33 /* UnitTest */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_EMPTY_BODY = YES;
+				DSTROOT = /tmp/DCAKitHeaders.dst;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SYSTEM_APPS_DIR)/Xcode.app/Contents/Developer/Library/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DCAKitHeaders/DCAKitHeaders-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = UnitTest;
+		};
 		BE4181E914B38C93000251A7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -635,6 +751,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3A84835616D5DBB200927A33 /* Debug */,
+				3A84837816D5E7AB00927A33 /* UnitTest */,
 				3A84835716D5DBB200927A33 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -644,6 +761,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3A84835916D5DBB200927A33 /* Debug */,
+				3A84837916D5E7AB00927A33 /* UnitTest */,
 				3A84835A16D5DBB200927A33 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -653,6 +771,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3A84836D16D5DFB100927A33 /* Debug */,
+				3A84837A16D5E7AB00927A33 /* UnitTest */,
 				3A84836E16D5DFB100927A33 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -661,6 +780,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				BE4181E914B38C93000251A7 /* Debug */,
+				3A84837716D5E7AB00927A33 /* UnitTest */,
 				BE4181EA14B38C93000251A7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
