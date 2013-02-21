@@ -14,67 +14,12 @@
 		BE4181DF14B38C93000251A7 /* DCAKit.framework in Resources */ = {isa = PBXBuildFile; fileRef = BE4181C714B38C93000251A7 /* DCAKit.framework */; };
 		BE4181E514B38C93000251A7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = BE4181E314B38C93000251A7 /* InfoPlist.strings */; };
 		BE4181E814B38C93000251A7 /* DCAKitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BE4181E714B38C93000251A7 /* DCAKitTests.m */; };
-		BE754E5514B3907F007F23B9 /* DCASBJsonParser.h in Headers */ = {isa = PBXBuildFile; fileRef = BE754E2514B3907F007F23B9 /* DCASBJsonParser.h */; };
-		BE754E5614B3907F007F23B9 /* DCASBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = BE754E2614B3907F007F23B9 /* DCASBJsonParser.m */; };
-		BE754E5714B3907F007F23B9 /* DCASBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = BE754E2614B3907F007F23B9 /* DCASBJsonParser.m */; };
-		BE754E5814B3907F007F23B9 /* DCASBJsonStreamParser.h in Headers */ = {isa = PBXBuildFile; fileRef = BE754E2714B3907F007F23B9 /* DCASBJsonStreamParser.h */; };
-		BE754E5914B3907F007F23B9 /* DCASBJsonStreamParser.m in Sources */ = {isa = PBXBuildFile; fileRef = BE754E2814B3907F007F23B9 /* DCASBJsonStreamParser.m */; };
-		BE754E5A14B3907F007F23B9 /* DCASBJsonStreamParser.m in Sources */ = {isa = PBXBuildFile; fileRef = BE754E2814B3907F007F23B9 /* DCASBJsonStreamParser.m */; };
-		BE754E5B14B3907F007F23B9 /* DCASBJsonStreamParserAccumulator.h in Headers */ = {isa = PBXBuildFile; fileRef = BE754E2914B3907F007F23B9 /* DCASBJsonStreamParserAccumulator.h */; };
-		BE754E5C14B3907F007F23B9 /* DCASBJsonStreamParserAccumulator.m in Sources */ = {isa = PBXBuildFile; fileRef = BE754E2A14B3907F007F23B9 /* DCASBJsonStreamParserAccumulator.m */; };
-		BE754E5D14B3907F007F23B9 /* DCASBJsonStreamParserAccumulator.m in Sources */ = {isa = PBXBuildFile; fileRef = BE754E2A14B3907F007F23B9 /* DCASBJsonStreamParserAccumulator.m */; };
-		BE754E5E14B3907F007F23B9 /* DCASBJsonStreamParserAdapter.h in Headers */ = {isa = PBXBuildFile; fileRef = BE754E2B14B3907F007F23B9 /* DCASBJsonStreamParserAdapter.h */; };
-		BE754E5F14B3907F007F23B9 /* DCASBJsonStreamParserState.h in Headers */ = {isa = PBXBuildFile; fileRef = BE754E2C14B3907F007F23B9 /* DCASBJsonStreamParserState.h */; };
-		BE754E6014B3907F007F23B9 /* DCASBJsonStreamParserState.m in Sources */ = {isa = PBXBuildFile; fileRef = BE754E2D14B3907F007F23B9 /* DCASBJsonStreamParserState.m */; };
-		BE754E6114B3907F007F23B9 /* DCASBJsonStreamParserState.m in Sources */ = {isa = PBXBuildFile; fileRef = BE754E2D14B3907F007F23B9 /* DCASBJsonStreamParserState.m */; };
-		BE754E6214B3907F007F23B9 /* DCASBJsonStreamWriter.h in Headers */ = {isa = PBXBuildFile; fileRef = BE754E2E14B3907F007F23B9 /* DCASBJsonStreamWriter.h */; };
-		BE754E6314B3907F007F23B9 /* DCASBJsonStreamWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = BE754E2F14B3907F007F23B9 /* DCASBJsonStreamWriter.m */; };
-		BE754E6414B3907F007F23B9 /* DCASBJsonStreamWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = BE754E2F14B3907F007F23B9 /* DCASBJsonStreamWriter.m */; };
-		BE754E6514B3907F007F23B9 /* DCASBJsonStreamWriterAccumulator.h in Headers */ = {isa = PBXBuildFile; fileRef = BE754E3014B3907F007F23B9 /* DCASBJsonStreamWriterAccumulator.h */; };
-		BE754E6614B3907F007F23B9 /* DCASBJsonStreamWriterAccumulator.m in Sources */ = {isa = PBXBuildFile; fileRef = BE754E3114B3907F007F23B9 /* DCASBJsonStreamWriterAccumulator.m */; };
-		BE754E6714B3907F007F23B9 /* DCASBJsonStreamWriterAccumulator.m in Sources */ = {isa = PBXBuildFile; fileRef = BE754E3114B3907F007F23B9 /* DCASBJsonStreamWriterAccumulator.m */; };
-		BE754E6814B3907F007F23B9 /* DCASBJsonStreamWriterState.h in Headers */ = {isa = PBXBuildFile; fileRef = BE754E3214B3907F007F23B9 /* DCASBJsonStreamWriterState.h */; };
-		BE754E6914B3907F007F23B9 /* DCASBJsonStreamWriterState.m in Sources */ = {isa = PBXBuildFile; fileRef = BE754E3314B3907F007F23B9 /* DCASBJsonStreamWriterState.m */; };
-		BE754E6A14B3907F007F23B9 /* DCASBJsonStreamWriterState.m in Sources */ = {isa = PBXBuildFile; fileRef = BE754E3314B3907F007F23B9 /* DCASBJsonStreamWriterState.m */; };
-		BE754E6B14B3907F007F23B9 /* DCASBJsonTokeniser.h in Headers */ = {isa = PBXBuildFile; fileRef = BE754E3414B3907F007F23B9 /* DCASBJsonTokeniser.h */; };
-		BE754E6C14B3907F007F23B9 /* DCASBJsonTokeniser.m in Sources */ = {isa = PBXBuildFile; fileRef = BE754E3514B3907F007F23B9 /* DCASBJsonTokeniser.m */; };
-		BE754E6D14B3907F007F23B9 /* DCASBJsonTokeniser.m in Sources */ = {isa = PBXBuildFile; fileRef = BE754E3514B3907F007F23B9 /* DCASBJsonTokeniser.m */; };
-		BE754E6E14B3907F007F23B9 /* DCASBJsonUTF8Stream.h in Headers */ = {isa = PBXBuildFile; fileRef = BE754E3614B3907F007F23B9 /* DCASBJsonUTF8Stream.h */; };
-		BE754E6F14B3907F007F23B9 /* DCASBJsonUTF8Stream.m in Sources */ = {isa = PBXBuildFile; fileRef = BE754E3714B3907F007F23B9 /* DCASBJsonUTF8Stream.m */; };
-		BE754E7014B3907F007F23B9 /* DCASBJsonUTF8Stream.m in Sources */ = {isa = PBXBuildFile; fileRef = BE754E3714B3907F007F23B9 /* DCASBJsonUTF8Stream.m */; };
-		BE754E7114B3907F007F23B9 /* DCASBJsonWriter.h in Headers */ = {isa = PBXBuildFile; fileRef = BE754E3814B3907F007F23B9 /* DCASBJsonWriter.h */; };
-		BE754E7214B3907F007F23B9 /* DCASBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = BE754E3914B3907F007F23B9 /* DCASBJsonWriter.m */; };
-		BE754E7314B3907F007F23B9 /* DCASBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = BE754E3914B3907F007F23B9 /* DCASBJsonWriter.m */; };
-		BE754E7714B3907F007F23B9 /* FormBuilder.h in Headers */ = {isa = PBXBuildFile; fileRef = BE754E3C14B3907F007F23B9 /* FormBuilder.h */; };
-		BE754E7814B3907F007F23B9 /* FormBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = BE754E3D14B3907F007F23B9 /* FormBuilder.m */; };
-		BE754E7914B3907F007F23B9 /* FormBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = BE754E3D14B3907F007F23B9 /* FormBuilder.m */; };
-		BE754E7A14B3907F007F23B9 /* FormField.h in Headers */ = {isa = PBXBuildFile; fileRef = BE754E3E14B3907F007F23B9 /* FormField.h */; };
-		BE754E7B14B3907F007F23B9 /* FormField.m in Sources */ = {isa = PBXBuildFile; fileRef = BE754E3F14B3907F007F23B9 /* FormField.m */; };
-		BE754E7C14B3907F007F23B9 /* FormField.m in Sources */ = {isa = PBXBuildFile; fileRef = BE754E3F14B3907F007F23B9 /* FormField.m */; };
-		BE754E7D14B3907F007F23B9 /* FormField+TextFieldDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = BE754E4014B3907F007F23B9 /* FormField+TextFieldDelegate.h */; };
-		BE754E7E14B3907F007F23B9 /* FormField+TextFieldDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BE754E4114B3907F007F23B9 /* FormField+TextFieldDelegate.m */; };
-		BE754E7F14B3907F007F23B9 /* FormField+TextFieldDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BE754E4114B3907F007F23B9 /* FormField+TextFieldDelegate.m */; };
-		BE754E8014B3907F007F23B9 /* HTTPRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = BE754E4214B3907F007F23B9 /* HTTPRequest.h */; };
-		BE754E8114B3907F007F23B9 /* HTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = BE754E4314B3907F007F23B9 /* HTTPRequest.m */; };
-		BE754E8214B3907F007F23B9 /* HTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = BE754E4314B3907F007F23B9 /* HTTPRequest.m */; };
-		BE754E8614B3907F007F23B9 /* NSObject+SBJson.h in Headers */ = {isa = PBXBuildFile; fileRef = BE754E4614B3907F007F23B9 /* NSObject+SBJson.h */; };
-		BE754E8714B3907F007F23B9 /* NSObject+SBJson.m in Sources */ = {isa = PBXBuildFile; fileRef = BE754E4714B3907F007F23B9 /* NSObject+SBJson.m */; };
-		BE754E8814B3907F007F23B9 /* NSObject+SBJson.m in Sources */ = {isa = PBXBuildFile; fileRef = BE754E4714B3907F007F23B9 /* NSObject+SBJson.m */; };
 		BE754E8914B3907F007F23B9 /* NSRegularExpression+helpers.h in Headers */ = {isa = PBXBuildFile; fileRef = BE754E4814B3907F007F23B9 /* NSRegularExpression+helpers.h */; };
 		BE754E8A14B3907F007F23B9 /* NSRegularExpression+helpers.m in Sources */ = {isa = PBXBuildFile; fileRef = BE754E4914B3907F007F23B9 /* NSRegularExpression+helpers.m */; };
 		BE754E8B14B3907F007F23B9 /* NSRegularExpression+helpers.m in Sources */ = {isa = PBXBuildFile; fileRef = BE754E4914B3907F007F23B9 /* NSRegularExpression+helpers.m */; };
 		BE754E8C14B3907F007F23B9 /* NSTextCheckingResult+helpers.h in Headers */ = {isa = PBXBuildFile; fileRef = BE754E4A14B3907F007F23B9 /* NSTextCheckingResult+helpers.h */; };
 		BE754E8D14B3907F007F23B9 /* NSTextCheckingResult+helpers.m in Sources */ = {isa = PBXBuildFile; fileRef = BE754E4B14B3907F007F23B9 /* NSTextCheckingResult+helpers.m */; };
 		BE754E8E14B3907F007F23B9 /* NSTextCheckingResult+helpers.m in Sources */ = {isa = PBXBuildFile; fileRef = BE754E4B14B3907F007F23B9 /* NSTextCheckingResult+helpers.m */; };
-		BE754E8F14B3907F007F23B9 /* SBJson.h in Headers */ = {isa = PBXBuildFile; fileRef = BE754E4C14B3907F007F23B9 /* SBJson.h */; };
-		BE754E9014B3907F007F23B9 /* SBJsonStreamParserAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = BE754E4D14B3907F007F23B9 /* SBJsonStreamParserAdapter.m */; };
-		BE754E9114B3907F007F23B9 /* SBJsonStreamParserAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = BE754E4D14B3907F007F23B9 /* SBJsonStreamParserAdapter.m */; };
-		BE754E9214B3907F007F23B9 /* UIControl+CaptureUIControlEvents.h in Headers */ = {isa = PBXBuildFile; fileRef = BE754E4E14B3907F007F23B9 /* UIControl+CaptureUIControlEvents.h */; };
-		BE754E9314B3907F007F23B9 /* UIControl+CaptureUIControlEvents.m in Sources */ = {isa = PBXBuildFile; fileRef = BE754E4F14B3907F007F23B9 /* UIControl+CaptureUIControlEvents.m */; };
-		BE754E9414B3907F007F23B9 /* UIControl+CaptureUIControlEvents.m in Sources */ = {isa = PBXBuildFile; fileRef = BE754E4F14B3907F007F23B9 /* UIControl+CaptureUIControlEvents.m */; };
-		BE754E9514B3907F007F23B9 /* UITableView+resize.h in Headers */ = {isa = PBXBuildFile; fileRef = BE754E5014B3907F007F23B9 /* UITableView+resize.h */; };
-		BE754E9614B3907F007F23B9 /* UITableView+resize.m in Sources */ = {isa = PBXBuildFile; fileRef = BE754E5114B3907F007F23B9 /* UITableView+resize.m */; };
-		BE754E9714B3907F007F23B9 /* UITableView+resize.m in Sources */ = {isa = PBXBuildFile; fileRef = BE754E5114B3907F007F23B9 /* UITableView+resize.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -100,47 +45,10 @@
 		BE4181E414B38C93000251A7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		BE4181E614B38C93000251A7 /* DCAKitTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DCAKitTests.h; sourceTree = "<group>"; };
 		BE4181E714B38C93000251A7 /* DCAKitTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DCAKitTests.m; sourceTree = "<group>"; };
-		BE754E2514B3907F007F23B9 /* DCASBJsonParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCASBJsonParser.h; sourceTree = SOURCE_ROOT; };
-		BE754E2614B3907F007F23B9 /* DCASBJsonParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCASBJsonParser.m; sourceTree = SOURCE_ROOT; };
-		BE754E2714B3907F007F23B9 /* DCASBJsonStreamParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCASBJsonStreamParser.h; sourceTree = SOURCE_ROOT; };
-		BE754E2814B3907F007F23B9 /* DCASBJsonStreamParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCASBJsonStreamParser.m; sourceTree = SOURCE_ROOT; };
-		BE754E2914B3907F007F23B9 /* DCASBJsonStreamParserAccumulator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCASBJsonStreamParserAccumulator.h; sourceTree = SOURCE_ROOT; };
-		BE754E2A14B3907F007F23B9 /* DCASBJsonStreamParserAccumulator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCASBJsonStreamParserAccumulator.m; sourceTree = SOURCE_ROOT; };
-		BE754E2B14B3907F007F23B9 /* DCASBJsonStreamParserAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCASBJsonStreamParserAdapter.h; sourceTree = SOURCE_ROOT; };
-		BE754E2C14B3907F007F23B9 /* DCASBJsonStreamParserState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCASBJsonStreamParserState.h; sourceTree = SOURCE_ROOT; };
-		BE754E2D14B3907F007F23B9 /* DCASBJsonStreamParserState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCASBJsonStreamParserState.m; sourceTree = SOURCE_ROOT; };
-		BE754E2E14B3907F007F23B9 /* DCASBJsonStreamWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCASBJsonStreamWriter.h; sourceTree = SOURCE_ROOT; };
-		BE754E2F14B3907F007F23B9 /* DCASBJsonStreamWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCASBJsonStreamWriter.m; sourceTree = SOURCE_ROOT; };
-		BE754E3014B3907F007F23B9 /* DCASBJsonStreamWriterAccumulator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCASBJsonStreamWriterAccumulator.h; sourceTree = SOURCE_ROOT; };
-		BE754E3114B3907F007F23B9 /* DCASBJsonStreamWriterAccumulator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCASBJsonStreamWriterAccumulator.m; sourceTree = SOURCE_ROOT; };
-		BE754E3214B3907F007F23B9 /* DCASBJsonStreamWriterState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCASBJsonStreamWriterState.h; sourceTree = SOURCE_ROOT; };
-		BE754E3314B3907F007F23B9 /* DCASBJsonStreamWriterState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCASBJsonStreamWriterState.m; sourceTree = SOURCE_ROOT; };
-		BE754E3414B3907F007F23B9 /* DCASBJsonTokeniser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCASBJsonTokeniser.h; sourceTree = SOURCE_ROOT; };
-		BE754E3514B3907F007F23B9 /* DCASBJsonTokeniser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCASBJsonTokeniser.m; sourceTree = SOURCE_ROOT; };
-		BE754E3614B3907F007F23B9 /* DCASBJsonUTF8Stream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCASBJsonUTF8Stream.h; sourceTree = SOURCE_ROOT; };
-		BE754E3714B3907F007F23B9 /* DCASBJsonUTF8Stream.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCASBJsonUTF8Stream.m; sourceTree = SOURCE_ROOT; };
-		BE754E3814B3907F007F23B9 /* DCASBJsonWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCASBJsonWriter.h; sourceTree = SOURCE_ROOT; };
-		BE754E3914B3907F007F23B9 /* DCASBJsonWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCASBJsonWriter.m; sourceTree = SOURCE_ROOT; };
-		BE754E3C14B3907F007F23B9 /* FormBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FormBuilder.h; sourceTree = SOURCE_ROOT; };
-		BE754E3D14B3907F007F23B9 /* FormBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FormBuilder.m; sourceTree = SOURCE_ROOT; };
-		BE754E3E14B3907F007F23B9 /* FormField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FormField.h; sourceTree = SOURCE_ROOT; };
-		BE754E3F14B3907F007F23B9 /* FormField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FormField.m; sourceTree = SOURCE_ROOT; };
-		BE754E4014B3907F007F23B9 /* FormField+TextFieldDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FormField+TextFieldDelegate.h"; sourceTree = SOURCE_ROOT; };
-		BE754E4114B3907F007F23B9 /* FormField+TextFieldDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "FormField+TextFieldDelegate.m"; sourceTree = SOURCE_ROOT; };
-		BE754E4214B3907F007F23B9 /* HTTPRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTPRequest.h; sourceTree = SOURCE_ROOT; };
-		BE754E4314B3907F007F23B9 /* HTTPRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTTPRequest.m; sourceTree = SOURCE_ROOT; };
-		BE754E4614B3907F007F23B9 /* NSObject+SBJson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+SBJson.h"; sourceTree = SOURCE_ROOT; };
-		BE754E4714B3907F007F23B9 /* NSObject+SBJson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+SBJson.m"; sourceTree = SOURCE_ROOT; };
 		BE754E4814B3907F007F23B9 /* NSRegularExpression+helpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSRegularExpression+helpers.h"; sourceTree = SOURCE_ROOT; };
 		BE754E4914B3907F007F23B9 /* NSRegularExpression+helpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSRegularExpression+helpers.m"; sourceTree = SOURCE_ROOT; };
 		BE754E4A14B3907F007F23B9 /* NSTextCheckingResult+helpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSTextCheckingResult+helpers.h"; sourceTree = SOURCE_ROOT; };
 		BE754E4B14B3907F007F23B9 /* NSTextCheckingResult+helpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSTextCheckingResult+helpers.m"; sourceTree = SOURCE_ROOT; };
-		BE754E4C14B3907F007F23B9 /* SBJson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJson.h; sourceTree = SOURCE_ROOT; };
-		BE754E4D14B3907F007F23B9 /* SBJsonStreamParserAdapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonStreamParserAdapter.m; sourceTree = SOURCE_ROOT; };
-		BE754E4E14B3907F007F23B9 /* UIControl+CaptureUIControlEvents.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIControl+CaptureUIControlEvents.h"; sourceTree = SOURCE_ROOT; };
-		BE754E4F14B3907F007F23B9 /* UIControl+CaptureUIControlEvents.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIControl+CaptureUIControlEvents.m"; sourceTree = SOURCE_ROOT; };
-		BE754E5014B3907F007F23B9 /* UITableView+resize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+resize.h"; sourceTree = SOURCE_ROOT; };
-		BE754E5114B3907F007F23B9 /* UITableView+resize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+resize.m"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -186,10 +94,7 @@
 		BE4181C914B38C93000251A7 /* DCAKit */ = {
 			isa = PBXGroup;
 			children = (
-				BE754E9B14B390AA007F23B9 /* FormBuilder */,
-				BE754E9C14B390BF007F23B9 /* HTTPRequest */,
 				BE754E9D14B390E0007F23B9 /* NSRegularExpression */,
-				BE754E9914B39087007F23B9 /* SBJSON */,
 				BE4181CA14B38C93000251A7 /* Supporting Files */,
 			);
 			path = DCAKit;
@@ -234,64 +139,6 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		BE754E9914B39087007F23B9 /* SBJSON */ = {
-			isa = PBXGroup;
-			children = (
-				BE754E4C14B3907F007F23B9 /* SBJson.h */,
-				BE754E4D14B3907F007F23B9 /* SBJsonStreamParserAdapter.m */,
-				BE754E4614B3907F007F23B9 /* NSObject+SBJson.h */,
-				BE754E4714B3907F007F23B9 /* NSObject+SBJson.m */,
-				BE754E2514B3907F007F23B9 /* DCASBJsonParser.h */,
-				BE754E2614B3907F007F23B9 /* DCASBJsonParser.m */,
-				BE754E2714B3907F007F23B9 /* DCASBJsonStreamParser.h */,
-				BE754E2814B3907F007F23B9 /* DCASBJsonStreamParser.m */,
-				BE754E2914B3907F007F23B9 /* DCASBJsonStreamParserAccumulator.h */,
-				BE754E2A14B3907F007F23B9 /* DCASBJsonStreamParserAccumulator.m */,
-				BE754E2B14B3907F007F23B9 /* DCASBJsonStreamParserAdapter.h */,
-				BE754E2C14B3907F007F23B9 /* DCASBJsonStreamParserState.h */,
-				BE754E2D14B3907F007F23B9 /* DCASBJsonStreamParserState.m */,
-				BE754E2E14B3907F007F23B9 /* DCASBJsonStreamWriter.h */,
-				BE754E2F14B3907F007F23B9 /* DCASBJsonStreamWriter.m */,
-				BE754E3014B3907F007F23B9 /* DCASBJsonStreamWriterAccumulator.h */,
-				BE754E3114B3907F007F23B9 /* DCASBJsonStreamWriterAccumulator.m */,
-				BE754E3214B3907F007F23B9 /* DCASBJsonStreamWriterState.h */,
-				BE754E3314B3907F007F23B9 /* DCASBJsonStreamWriterState.m */,
-				BE754E3414B3907F007F23B9 /* DCASBJsonTokeniser.h */,
-				BE754E3514B3907F007F23B9 /* DCASBJsonTokeniser.m */,
-				BE754E3614B3907F007F23B9 /* DCASBJsonUTF8Stream.h */,
-				BE754E3714B3907F007F23B9 /* DCASBJsonUTF8Stream.m */,
-				BE754E3814B3907F007F23B9 /* DCASBJsonWriter.h */,
-				BE754E3914B3907F007F23B9 /* DCASBJsonWriter.m */,
-			);
-			name = SBJSON;
-			sourceTree = "<group>";
-		};
-		BE754E9B14B390AA007F23B9 /* FormBuilder */ = {
-			isa = PBXGroup;
-			children = (
-				BE754E4E14B3907F007F23B9 /* UIControl+CaptureUIControlEvents.h */,
-				BE754E4F14B3907F007F23B9 /* UIControl+CaptureUIControlEvents.m */,
-				BE754E5014B3907F007F23B9 /* UITableView+resize.h */,
-				BE754E5114B3907F007F23B9 /* UITableView+resize.m */,
-				BE754E3C14B3907F007F23B9 /* FormBuilder.h */,
-				BE754E3D14B3907F007F23B9 /* FormBuilder.m */,
-				BE754E3E14B3907F007F23B9 /* FormField.h */,
-				BE754E3F14B3907F007F23B9 /* FormField.m */,
-				BE754E4014B3907F007F23B9 /* FormField+TextFieldDelegate.h */,
-				BE754E4114B3907F007F23B9 /* FormField+TextFieldDelegate.m */,
-			);
-			name = FormBuilder;
-			sourceTree = "<group>";
-		};
-		BE754E9C14B390BF007F23B9 /* HTTPRequest */ = {
-			isa = PBXGroup;
-			children = (
-				BE754E4214B3907F007F23B9 /* HTTPRequest.h */,
-				BE754E4314B3907F007F23B9 /* HTTPRequest.m */,
-			);
-			name = HTTPRequest;
-			sourceTree = "<group>";
-		};
 		BE754E9D14B390E0007F23B9 /* NSRegularExpression */ = {
 			isa = PBXGroup;
 			children = (
@@ -310,27 +157,8 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BE754E5514B3907F007F23B9 /* DCASBJsonParser.h in Headers */,
-				BE754E5814B3907F007F23B9 /* DCASBJsonStreamParser.h in Headers */,
-				BE754E5B14B3907F007F23B9 /* DCASBJsonStreamParserAccumulator.h in Headers */,
-				BE754E5E14B3907F007F23B9 /* DCASBJsonStreamParserAdapter.h in Headers */,
-				BE754E5F14B3907F007F23B9 /* DCASBJsonStreamParserState.h in Headers */,
-				BE754E6214B3907F007F23B9 /* DCASBJsonStreamWriter.h in Headers */,
-				BE754E6514B3907F007F23B9 /* DCASBJsonStreamWriterAccumulator.h in Headers */,
-				BE754E6814B3907F007F23B9 /* DCASBJsonStreamWriterState.h in Headers */,
-				BE754E6B14B3907F007F23B9 /* DCASBJsonTokeniser.h in Headers */,
-				BE754E6E14B3907F007F23B9 /* DCASBJsonUTF8Stream.h in Headers */,
-				BE754E7114B3907F007F23B9 /* DCASBJsonWriter.h in Headers */,
-				BE754E7714B3907F007F23B9 /* FormBuilder.h in Headers */,
-				BE754E7A14B3907F007F23B9 /* FormField.h in Headers */,
-				BE754E7D14B3907F007F23B9 /* FormField+TextFieldDelegate.h in Headers */,
-				BE754E8014B3907F007F23B9 /* HTTPRequest.h in Headers */,
-				BE754E8614B3907F007F23B9 /* NSObject+SBJson.h in Headers */,
 				BE754E8914B3907F007F23B9 /* NSRegularExpression+helpers.h in Headers */,
 				BE754E8C14B3907F007F23B9 /* NSTextCheckingResult+helpers.h in Headers */,
-				BE754E8F14B3907F007F23B9 /* SBJson.h in Headers */,
-				BE754E9214B3907F007F23B9 /* UIControl+CaptureUIControlEvents.h in Headers */,
-				BE754E9514B3907F007F23B9 /* UITableView+resize.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -382,7 +210,7 @@
 		BE4181BB14B38C92000251A7 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0420;
+				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = DrewCrawfordApps;
 			};
 			buildConfigurationList = BE4181BE14B38C92000251A7 /* Build configuration list for PBXProject "DCAKit" */;
@@ -461,7 +289,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+			shellScript = "set -e\nif [ \"$RUN_UNIT_TEST_WITH_IOS_SIM\" = \"YES\" ]; then\ntest_bundle_path=\"$BUILT_PRODUCTS_DIR/$PRODUCT_NAME.$WRAPPER_EXTENSION\"\nSOURCE_DIRECTORY=$SRCROOT\nMYSDK=${SDK_NAME#\"iphonesimulator\"} #should be like \"6.1\"\n    echo sim --sdk=$MYSDK  $SDKROOT/Developer/usr/bin/otest -NSTreatUnknownArgumentsAsOpen NO -ApplePersistenceIgnoreState YES -SenTest Self $CODESIGNING_FOLDER_PATH\n    sim --sdk=$MYSDK  $SDKROOT/Developer/usr/bin/otest -NSTreatUnknownArgumentsAsOpen NO -ApplePersistenceIgnoreState YES -SenTest Self $CODESIGNING_FOLDER_PATH\n    else\n    \"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\nfi";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -470,26 +298,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BE754E5614B3907F007F23B9 /* DCASBJsonParser.m in Sources */,
-				BE754E5914B3907F007F23B9 /* DCASBJsonStreamParser.m in Sources */,
-				BE754E5C14B3907F007F23B9 /* DCASBJsonStreamParserAccumulator.m in Sources */,
-				BE754E6014B3907F007F23B9 /* DCASBJsonStreamParserState.m in Sources */,
-				BE754E6314B3907F007F23B9 /* DCASBJsonStreamWriter.m in Sources */,
-				BE754E6614B3907F007F23B9 /* DCASBJsonStreamWriterAccumulator.m in Sources */,
-				BE754E6914B3907F007F23B9 /* DCASBJsonStreamWriterState.m in Sources */,
-				BE754E6C14B3907F007F23B9 /* DCASBJsonTokeniser.m in Sources */,
-				BE754E6F14B3907F007F23B9 /* DCASBJsonUTF8Stream.m in Sources */,
-				BE754E7214B3907F007F23B9 /* DCASBJsonWriter.m in Sources */,
-				BE754E7814B3907F007F23B9 /* FormBuilder.m in Sources */,
-				BE754E7B14B3907F007F23B9 /* FormField.m in Sources */,
-				BE754E7E14B3907F007F23B9 /* FormField+TextFieldDelegate.m in Sources */,
-				BE754E8114B3907F007F23B9 /* HTTPRequest.m in Sources */,
-				BE754E8714B3907F007F23B9 /* NSObject+SBJson.m in Sources */,
 				BE754E8A14B3907F007F23B9 /* NSRegularExpression+helpers.m in Sources */,
 				BE754E8D14B3907F007F23B9 /* NSTextCheckingResult+helpers.m in Sources */,
-				BE754E9014B3907F007F23B9 /* SBJsonStreamParserAdapter.m in Sources */,
-				BE754E9314B3907F007F23B9 /* UIControl+CaptureUIControlEvents.m in Sources */,
-				BE754E9614B3907F007F23B9 /* UITableView+resize.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -498,26 +308,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				BE4181E814B38C93000251A7 /* DCAKitTests.m in Sources */,
-				BE754E5714B3907F007F23B9 /* DCASBJsonParser.m in Sources */,
-				BE754E5A14B3907F007F23B9 /* DCASBJsonStreamParser.m in Sources */,
-				BE754E5D14B3907F007F23B9 /* DCASBJsonStreamParserAccumulator.m in Sources */,
-				BE754E6114B3907F007F23B9 /* DCASBJsonStreamParserState.m in Sources */,
-				BE754E6414B3907F007F23B9 /* DCASBJsonStreamWriter.m in Sources */,
-				BE754E6714B3907F007F23B9 /* DCASBJsonStreamWriterAccumulator.m in Sources */,
-				BE754E6A14B3907F007F23B9 /* DCASBJsonStreamWriterState.m in Sources */,
-				BE754E6D14B3907F007F23B9 /* DCASBJsonTokeniser.m in Sources */,
-				BE754E7014B3907F007F23B9 /* DCASBJsonUTF8Stream.m in Sources */,
-				BE754E7314B3907F007F23B9 /* DCASBJsonWriter.m in Sources */,
-				BE754E7914B3907F007F23B9 /* FormBuilder.m in Sources */,
-				BE754E7C14B3907F007F23B9 /* FormField.m in Sources */,
-				BE754E7F14B3907F007F23B9 /* FormField+TextFieldDelegate.m in Sources */,
-				BE754E8214B3907F007F23B9 /* HTTPRequest.m in Sources */,
-				BE754E8814B3907F007F23B9 /* NSObject+SBJson.m in Sources */,
 				BE754E8B14B3907F007F23B9 /* NSRegularExpression+helpers.m in Sources */,
 				BE754E8E14B3907F007F23B9 /* NSTextCheckingResult+helpers.m in Sources */,
-				BE754E9114B3907F007F23B9 /* SBJsonStreamParserAdapter.m in Sources */,
-				BE754E9414B3907F007F23B9 /* UIControl+CaptureUIControlEvents.m in Sources */,
-				BE754E9714B3907F007F23B9 /* UITableView+resize.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -557,6 +349,10 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -570,6 +366,7 @@
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				SDKROOT = iphoneos;
@@ -582,12 +379,17 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_PREPROCESSOR_DEFINITIONS = DCA_RELEASE;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				SDKROOT = iphoneos;
