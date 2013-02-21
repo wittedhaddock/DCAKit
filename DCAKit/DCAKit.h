@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <DCAKit/DCASimpleKeychain.h>
 #import <DCAKit/NSError+LessTerrible.h>
+#import <DCAKit/NSObject+KVOHelp.h>
 @interface DCAKit : NSObject
 
 @end
