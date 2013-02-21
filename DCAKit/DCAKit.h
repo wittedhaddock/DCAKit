@@ -10,6 +10,7 @@
 #import <DCAKit/DCASimpleKeychain.h>
 #import <DCAKit/NSError+LessTerrible.h>
 #import <DCAKit/NSObject+KVOHelp.h>
+#import <DCAKit/NSMapTable+Literals.h>
 @interface DCAKit : NSObject
 
 @end

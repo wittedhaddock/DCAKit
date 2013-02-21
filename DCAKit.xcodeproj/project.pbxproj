@@ -26,6 +26,9 @@
 		3A84838816D6035900927A33 /* NSObject+KVOHelp.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A84838616D6035900927A33 /* NSObject+KVOHelp.h */; };
 		3A84838916D6035900927A33 /* NSObject+KVOHelp.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A84838716D6035900927A33 /* NSObject+KVOHelp.m */; };
 		3A84838A16D6035C00927A33 /* NSObject+KVOHelp.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A84838616D6035900927A33 /* NSObject+KVOHelp.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3A84839816D61F0200927A33 /* NSMapTable+Literals.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A84839616D61F0200927A33 /* NSMapTable+Literals.h */; };
+		3A84839916D61F0200927A33 /* NSMapTable+Literals.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A84839716D61F0200927A33 /* NSMapTable+Literals.m */; };
+		3A84839A16D61F5A00927A33 /* NSMapTable+Literals.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A84839616D61F0200927A33 /* NSMapTable+Literals.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,9 +80,8 @@
 		3A84837F16D5EA4A00927A33 /* NSError+LessTerrible.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSError+LessTerrible.m"; sourceTree = "<group>"; };
 		3A84838616D6035900927A33 /* NSObject+KVOHelp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+KVOHelp.h"; sourceTree = "<group>"; };
 		3A84838716D6035900927A33 /* NSObject+KVOHelp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+KVOHelp.m"; sourceTree = "<group>"; };
-		BE4181CB14B38C93000251A7 /* DCAKit-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DCAKit-Info.plist"; sourceTree = "<group>"; };
-		BE4181CD14B38C93000251A7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		BE4181CF14B38C93000251A7 /* DCAKit-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DCAKit-Prefix.pch"; sourceTree = "<group>"; };
+		3A84839616D61F0200927A33 /* NSMapTable+Literals.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMapTable+Literals.h"; sourceTree = "<group>"; };
+		3A84839716D61F0200927A33 /* NSMapTable+Literals.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMapTable+Literals.m"; sourceTree = "<group>"; };
 		BE4181D714B38C93000251A7 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		BE4181D914B38C93000251A7 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		BE4181DB14B38C93000251A7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
@@ -119,6 +121,7 @@
 		3A84833916D5DBB200927A33 /* DCAKit */ = {
 			isa = PBXGroup;
 			children = (
+				3A84839516D61EF300927A33 /* NSMapTable */,
 				3A84838516D6034C00927A33 /* KVOHelp */,
 				3A84837D16D5EA3A00927A33 /* NSError */,
 				3A84837C16D5EA0D00927A33 /* DCASimpleKeychain */,
@@ -213,10 +216,18 @@
 			name = KVOHelp;
 			sourceTree = "<group>";
 		};
+		3A84839516D61EF300927A33 /* NSMapTable */ = {
+			isa = PBXGroup;
+			children = (
+				3A84839616D61F0200927A33 /* NSMapTable+Literals.h */,
+				3A84839716D61F0200927A33 /* NSMapTable+Literals.m */,
+			);
+			name = NSMapTable;
+			sourceTree = "<group>";
+		};
 		BE4181B914B38C92000251A7 = {
 			isa = PBXGroup;
 			children = (
-				BE4181C914B38C93000251A7 /* DCAKit */,
 				BE4181E014B38C93000251A7 /* DCAKitTests */,
 				3A84833916D5DBB200927A33 /* DCAKit */,
 				3A84834C16D5DBB200927A33 /* DCAKitTests */,
@@ -234,24 +245,6 @@
 				3A84836416D5DFB000927A33 /* libDCAKitHeaders.a */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		BE4181C914B38C93000251A7 /* DCAKit */ = {
-			isa = PBXGroup;
-			children = (
-				BE4181CA14B38C93000251A7 /* Supporting Files */,
-			);
-			path = DCAKit;
-			sourceTree = "<group>";
-		};
-		BE4181CA14B38C93000251A7 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				BE4181CB14B38C93000251A7 /* DCAKit-Info.plist */,
-				BE4181CC14B38C93000251A7 /* InfoPlist.strings */,
-				BE4181CF14B38C93000251A7 /* DCAKit-Prefix.pch */,
-			);
-			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		BE4181D614B38C93000251A7 /* Frameworks */ = {
@@ -293,6 +286,7 @@
 				3A84835D16D5DBE200927A33 /* DCASimpleKeychain.h in Headers */,
 				3A84838016D5EA4A00927A33 /* NSError+LessTerrible.h in Headers */,
 				3A84838816D6035900927A33 /* NSObject+KVOHelp.h in Headers */,
+				3A84839816D61F0200927A33 /* NSMapTable+Literals.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -304,6 +298,7 @@
 				3A84837216D5DFD600927A33 /* DCAKit.h in Headers */,
 				3A84838216D5EA4D00927A33 /* NSError+LessTerrible.h in Headers */,
 				3A84838A16D6035C00927A33 /* NSObject+KVOHelp.h in Headers */,
+				3A84839A16D61F5A00927A33 /* NSMapTable+Literals.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -429,6 +424,7 @@
 				3A84835B16D5DBC800927A33 /* DCASimpleKeychain.m in Sources */,
 				3A84838116D5EA4A00927A33 /* NSError+LessTerrible.m in Sources */,
 				3A84838916D6035900927A33 /* NSObject+KVOHelp.m in Sources */,
+				3A84839916D61F0200927A33 /* NSMapTable+Literals.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -468,14 +464,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				3A84835016D5DBB200927A33 /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		BE4181CC14B38C93000251A7 /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				BE4181CD14B38C93000251A7 /* en */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
