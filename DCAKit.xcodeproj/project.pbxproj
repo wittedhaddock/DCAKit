@@ -224,7 +224,6 @@
 		BE4181C914B38C93000251A7 /* DCAKit */ = {
 			isa = PBXGroup;
 			children = (
-				BE754E9D14B390E0007F23B9 /* NSRegularExpression */,
 				BE4181CA14B38C93000251A7 /* Supporting Files */,
 			);
 			path = DCAKit;
@@ -267,13 +266,6 @@
 				BE4181E314B38C93000251A7 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		BE754E9D14B390E0007F23B9 /* NSRegularExpression */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = NSRegularExpression;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -809,6 +801,7 @@
 				3A84836E16D5DFB100927A33 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		BE4181BE14B38C92000251A7 /* Build configuration list for PBXProject "DCAKit" */ = {
 			isa = XCConfigurationList;

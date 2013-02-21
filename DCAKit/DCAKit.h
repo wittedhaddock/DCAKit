@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <DCAKit/DCASimpleKeychain.h>
+#import <DCAKit/NSError+LessTerrible.h>
 @interface DCAKit : NSObject
 
 @end
