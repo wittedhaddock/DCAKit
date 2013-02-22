@@ -31,7 +31,10 @@ static NSMutableDictionary *environment;
 
 -(void) present {
     [self log];
-    UIAlertView *uav = [[UIAlertView alloc] initWithTitle:[self lessTerribleFailureReason] message:[self lessTerribleRecoverySuggestion] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
+    NSString *title = [NSString stringWithFormat:@"%@ code %d",self.domain,self.code];
+    NSString *message = [NSString stringWithFormat:@"%@\n%@",self.lessTerribleFailureReason,self.lessTerribleRecoverySuggestion];
+    
+    UIAlertView *uav = [[UIAlertView alloc] initWithTitle:title message:message delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
     dispatch_async(dispatch_get_main_queue(), ^{
         [uav show];
     });
