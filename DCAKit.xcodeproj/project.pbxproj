@@ -411,7 +411,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "set -e\nif [ \"$RUN_UNIT_TEST_WITH_IOS_SIM\" = \"YES\" ]; then\ntest_bundle_path=\"$BUILT_PRODUCTS_DIR/$PRODUCT_NAME.$WRAPPER_EXTENSION\"\nSOURCE_DIRECTORY=$SRCROOT\nMYSDK=${SDK_NAME#\"iphonesimulator\"} #should be like \"6.1\"\n    echo sim --sdk=$MYSDK  $SDKROOT/Developer/usr/bin/otest -NSTreatUnknownArgumentsAsOpen NO -ApplePersistenceIgnoreState YES -SenTest Self $CODESIGNING_FOLDER_PATH\n    sim --sdk=$MYSDK  $SDKROOT/Developer/usr/bin/otest -NSTreatUnknownArgumentsAsOpen NO -ApplePersistenceIgnoreState YES -SenTest Self $CODESIGNING_FOLDER_PATH\n    else\n    \"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\nfi";
+			shellScript = "set -e\nif [ \"$RUN_UNIT_TEST_WITH_IOS_SIM\" = \"YES\" ]; then\ntest_bundle_path=\"$BUILT_PRODUCTS_DIR/$PRODUCT_NAME.$WRAPPER_EXTENSION\"\nSOURCE_DIRECTORY=$SRCROOT\nMYSDK=${SDK_NAME#\"iphonesimulator\"} #should be like \"6.1\"\n    echo sim --sdk=$MYSDK  $SDKROOT/Developer/usr/bin/otest -NSTreatUnknownArgumentsAsOpen NO -ApplePersistenceIgnoreState YES -SenTest Self $CODESIGNING_FOLDER_PATH\n    $SRCROOT/develop-environment/ios-sim --sdk=$MYSDK  $SDKROOT/Developer/usr/bin/otest -NSTreatUnknownArgumentsAsOpen NO -ApplePersistenceIgnoreState YES -SenTest Self $CODESIGNING_FOLDER_PATH\n    else\n    \"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\nfi";
 		};
 /* End PBXShellScriptBuildPhase section */
 
