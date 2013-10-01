@@ -31,7 +31,7 @@ static NSMutableDictionary *environment;
 
 -(void) present {
     [self log];
-    NSString *title = [NSString stringWithFormat:@"%@ code %d",self.domain,self.code];
+    NSString *title = [NSString stringWithFormat:@"%@ code %ld",self.domain,(long)self.code];
     NSString *message = [NSString stringWithFormat:@"%@\n%@",self.lessTerribleFailureReason,self.lessTerribleRecoverySuggestion];
     
     UIAlertView *uav = [[UIAlertView alloc] initWithTitle:title message:message delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
@@ -51,7 +51,8 @@ static NSMutableDictionary *environment;
         sISO8601 = [[NSDateFormatter alloc] init];
         
         NSTimeZone *timeZone = [NSTimeZone localTimeZone];
-        int offset = [timeZone secondsFromGMT];
+        NSAssert([timeZone secondsFromGMT] < INT_MAX, @"Overflow condition.");
+        int offset = (int) [timeZone secondsFromGMT];
         
         NSMutableString *strFormat = [NSMutableString stringWithString:@"yyyyMMdd'T'HH:mm:ss"];
         offset /= 60; //bring down to minutes

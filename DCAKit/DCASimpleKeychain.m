@@ -45,7 +45,7 @@
         NSDictionary *updateData = @{(__bridge id)kSecValueData:[obj dataUsingEncoding:NSUTF8StringEncoding]};
         OSStatus result = SecItemUpdate((__bridge CFDictionaryRef)(searchDictionary), (__bridge CFDictionaryRef)(updateData));
         if (result != errSecSuccess) {
-            NSLog(@"Keychain error code %ld",result);
+            NSLog(@"Keychain error code %d",(int)result);
             abort();
         }
     }
@@ -55,7 +55,7 @@
         
         OSStatus result = SecItemAdd((__bridge CFDictionaryRef)(addData), NULL);
         if (result != errSecSuccess) {
-            NSLog(@"Keychain error code %ld",result);
+            NSLog(@"Keychain error code %d",(int)result);
             abort();
         }
     }
