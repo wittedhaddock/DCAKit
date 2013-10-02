@@ -11,7 +11,12 @@
 @interface NSError (LessSuck)
 /**Less terrible errors */
 -(NSString*) lessTerribleFailureReason;
+
+/**Displays the error and logs it to the backing store if necessary*/
 -(void) present;
+
+/**Indicates that errors with this domain and code should not be logged or displayed.*/
+-(void) whitelist;
 
 //any keys you set in here will get reported with errors...
 @property (readonly) NSMutableDictionary *environment;

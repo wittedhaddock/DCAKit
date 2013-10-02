@@ -10,9 +10,13 @@
 
 #import "NSError+LessTerrible.h"
 #import <UIKit/UIKit.h>
+#import "DCAPaperTrail.h"
 
 static NSString *exceptionalAPIKey;
 static NSMutableDictionary *environment;
+
+/**Contains Domain_Code for all errors that we whitelist (ignore) */
+static NSMutableSet *whitelistedErrors;
 
 @implementation NSError (LessSuck)
 - (NSString *)lessTerribleFailureReason {
@@ -29,7 +33,22 @@ static NSMutableDictionary *environment;
     return [self localizedRecoverySuggestion];
 }
 
+-(void) whitelist {
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        whitelistedErrors = [[NSMutableSet alloc] init];
+    });
+    @synchronized(whitelistedErrors) {
+        [whitelistedErrors addObject:[NSString stringWithFormat:@"%@_%d",self.domain,self.code]];
+    }
+}
+
 -(void) present {
+    @synchronized(whitelistedErrors) {
+        if ([whitelistedErrors containsObject:[NSString stringWithFormat:@"%@_%d",self.domain,self.code]]) {
+            return;
+        }
+    }
     [self log];
     NSString *title = [NSString stringWithFormat:@"%@ code %ld",self.domain,(long)self.code];
     NSString *message = [NSString stringWithFormat:@"%@\n%@",self.lessTerribleFailureReason,self.lessTerribleRecoverySuggestion];
@@ -68,39 +87,26 @@ static NSMutableDictionary *environment;
 }
 
 +(void) setExceptionalAPIKey:(NSString*) exceptionalKey {
-    exceptionalAPIKey = exceptionalKey;
-    environment = [[NSMutableDictionary alloc] init];
 }
 
--(NSMutableDictionary*) environment {
-    return environment;
-}
-
-//http://docs.exceptional.io/api/publish/
 -(void) log {
-    if (!exceptionalAPIKey) {
-        NSLog(@"Cannot log an error because no exceptional API key is set.  Consider creating one.");
-        return;
-    }
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        environment = [[NSMutableDictionary alloc] init];
+    });
     NSDictionary *appDict = [[NSBundle mainBundle] infoDictionary];
     NSDictionary *client = @{@"name":appDict[@"CFBundleName"],@"version":appDict[@"CFBundleVersion"],@"build":appDict[@"CFBundleShortVersionString"],@"deviceName":UIDevice.currentDevice.name,@"OSVersion":UIDevice.currentDevice.systemVersion,@"model":UIDevice.currentDevice.model,@"orientation":@(UIDevice.currentDevice.orientation),@"userInfo":[self.userInfo description]};
     for (id key in client.allKeys) {
         environment[[NSString stringWithFormat:@"__client_%@",key]]=client[key];
     }
     
-    
-    
     NSDictionary *dict = @{@"exception":@{@"backtrace" : [NSThread callStackSymbols],@"exception_class":self.domain,@"message":self.lessTerribleFailureReason,@"occurred_at":[self strFromISO8601:[NSDate date]]},@"application_environment":@{@"application_root_directory":@"Steve Jobs says no",@"env":environment}};
-    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://api.exceptional.io/api/errors?api_key=%@&protocol_version=6",exceptionalAPIKey]]];
     NSAssert([NSJSONSerialization isValidJSONObject:dict], @"Not a valid json object?");
     
     NSError *jsonErr = nil;
     NSData *errData = [NSJSONSerialization dataWithJSONObject:dict options:0 error:&jsonErr];
-    [request setHTTPBody:errData];
-    [request setHTTPMethod:@"POST"];
-    NSURLResponse *response = nil;
-    NSError *err = nil;
-    [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&err];
+    NSString *errString = [[NSString alloc] initWithData:errData encoding:NSUTF8StringEncoding];
+    PTLog(@"%@",errString);
     
     
 }

@@ -11,6 +11,7 @@
 #import <DCAKit/NSError+LessTerrible.h>
 #import <DCAKit/NSObject+KVOHelp.h>
 #import <DCAKit/NSMapTable+Literals.h>
+#import <DCAKit/DCAPaperTrail.h>
 @interface DCAKit : NSObject
 
 @end

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0460"
+   LastUpgradeVersion = "0500"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -28,7 +28,7 @@
             buildForAnalyzing = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "BE4181D414B38C93000251A7"
+               BlueprintIdentifier = "3A84834416D5DBB200927A33"
                BuildableName = "DCAKitTests.octest"
                BlueprintName = "DCAKitTests"
                ReferencedContainer = "container:DCAKit.xcodeproj">
@@ -46,7 +46,7 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "BE4181D414B38C93000251A7"
+               BlueprintIdentifier = "3A84834416D5DBB200927A33"
                BuildableName = "DCAKitTests.octest"
                BlueprintName = "DCAKitTests"
                ReferencedContainer = "container:DCAKit.xcodeproj">
