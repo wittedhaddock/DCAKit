@@ -6,7 +6,7 @@
 //  Copyright (c) 2013 DrewCrawfordApps. All rights reserved.
 //
 
-@import Foundation;
+#import <Foundation/Foundation.h>
 
 
 @interface DCAPaperTrail : NSObject
