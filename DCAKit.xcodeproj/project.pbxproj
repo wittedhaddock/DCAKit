@@ -10,6 +10,8 @@
 		3A38C56317FFEE9700B93764 /* DCAPrivateObj.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A38C56117FFEE9700B93764 /* DCAPrivateObj.h */; };
 		3A38C56417FFEE9700B93764 /* DCAPrivateObj.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A38C56217FFEE9700B93764 /* DCAPrivateObj.m */; };
 		3A38C56517FFEEAD00B93764 /* DCAPrivateObj.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A38C56217FFEE9700B93764 /* DCAPrivateObj.m */; };
+		3A38C56B17FFF02600B93764 /* DCAPaperTrail.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A38C56917FFF02600B93764 /* DCAPaperTrail.h */; };
+		3A38C56C17FFF02600B93764 /* DCAPaperTrail.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A38C56A17FFF02600B93764 /* DCAPaperTrail.m */; };
 		3A84833816D5DBB200927A33 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE4181DB14B38C93000251A7 /* Foundation.framework */; };
 		3A84833F16D5DBB200927A33 /* DCAKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A84833E16D5DBB200927A33 /* DCAKit.m */; };
 		3A84834616D5DBB200927A33 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE4181D714B38C93000251A7 /* SenTestingKit.framework */; };
@@ -65,6 +67,8 @@
 /* Begin PBXFileReference section */
 		3A38C56117FFEE9700B93764 /* DCAPrivateObj.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCAPrivateObj.h; sourceTree = "<group>"; };
 		3A38C56217FFEE9700B93764 /* DCAPrivateObj.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCAPrivateObj.m; sourceTree = "<group>"; };
+		3A38C56917FFF02600B93764 /* DCAPaperTrail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCAPaperTrail.h; sourceTree = "<group>"; };
+		3A38C56A17FFF02600B93764 /* DCAPaperTrail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCAPaperTrail.m; sourceTree = "<group>"; };
 		3A84832F16D5DB2200927A33 /* DCASimpleKeychain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCASimpleKeychain.h; sourceTree = "<group>"; };
 		3A84833016D5DB2200927A33 /* DCASimpleKeychain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCASimpleKeychain.m; sourceTree = "<group>"; };
 		3A84833716D5DBB200927A33 /* libDCAKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libDCAKit.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -122,9 +126,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3A38C56817FFF01200B93764 /* PaperTrail */ = {
+			isa = PBXGroup;
+			children = (
+				3A38C56917FFF02600B93764 /* DCAPaperTrail.h */,
+				3A38C56A17FFF02600B93764 /* DCAPaperTrail.m */,
+			);
+			name = PaperTrail;
+			sourceTree = "<group>";
+		};
 		3A84833916D5DBB200927A33 /* DCAKit */ = {
 			isa = PBXGroup;
 			children = (
+				3A38C56817FFF01200B93764 /* PaperTrail */,
 				3A84839516D61EF300927A33 /* NSMapTable */,
 				3A84838516D6034C00927A33 /* KVOHelp */,
 				3A84837D16D5EA3A00927A33 /* NSError */,
@@ -294,6 +308,7 @@
 				3A84838016D5EA4A00927A33 /* NSError+LessTerrible.h in Headers */,
 				3A84838816D6035900927A33 /* NSObject+KVOHelp.h in Headers */,
 				3A84839816D61F0200927A33 /* NSMapTable+Literals.h in Headers */,
+				3A38C56B17FFF02600B93764 /* DCAPaperTrail.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -433,6 +448,7 @@
 				3A84838916D6035900927A33 /* NSObject+KVOHelp.m in Sources */,
 				3A38C56417FFEE9700B93764 /* DCAPrivateObj.m in Sources */,
 				3A84839916D61F0200927A33 /* NSMapTable+Literals.m in Sources */,
+				3A38C56C17FFF02600B93764 /* DCAPaperTrail.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -630,9 +646,13 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -645,9 +665,12 @@
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = "$(BUILD_ROOT)/../IntermediateBuildFilesPath/UninstalledProducts/include";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
@@ -738,17 +761,24 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_PREPROCESSOR_DEFINITIONS = DCA_RELEASE;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = "$(BUILD_ROOT)/../IntermediateBuildFilesPath/UninstalledProducts/include";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
@@ -825,9 +855,13 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -840,9 +874,12 @@
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = "$(BUILD_ROOT)/../IntermediateBuildFilesPath/UninstalledProducts/include";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
@@ -857,17 +894,24 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_PREPROCESSOR_DEFINITIONS = DCA_RELEASE;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = "$(BUILD_ROOT)/../IntermediateBuildFilesPath/UninstalledProducts/include";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
