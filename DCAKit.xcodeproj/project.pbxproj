@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3A20853718020F110017A0A6 /* UIView+AutoLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A20853518020F110017A0A6 /* UIView+AutoLayout.m */; };
+		3A20853818029FD20017A0A6 /* UIView+AutoLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A20853418020F110017A0A6 /* UIView+AutoLayout.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3A38C56317FFEE9700B93764 /* DCAPrivateObj.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A38C56117FFEE9700B93764 /* DCAPrivateObj.h */; };
 		3A38C56417FFEE9700B93764 /* DCAPrivateObj.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A38C56217FFEE9700B93764 /* DCAPrivateObj.m */; };
 		3A38C56517FFEEAD00B93764 /* DCAPrivateObj.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A38C56217FFEE9700B93764 /* DCAPrivateObj.m */; };
@@ -66,6 +68,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		3A20853418020F110017A0A6 /* UIView+AutoLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+AutoLayout.h"; sourceTree = "<group>"; };
+		3A20853518020F110017A0A6 /* UIView+AutoLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+AutoLayout.m"; sourceTree = "<group>"; };
 		3A38C56117FFEE9700B93764 /* DCAPrivateObj.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCAPrivateObj.h; sourceTree = "<group>"; };
 		3A38C56217FFEE9700B93764 /* DCAPrivateObj.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCAPrivateObj.m; sourceTree = "<group>"; };
 		3A38C56917FFF02600B93764 /* DCAPaperTrail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCAPaperTrail.h; sourceTree = "<group>"; };
@@ -127,6 +131,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3A20853318020EF80017A0A6 /* AutoLayout */ = {
+			isa = PBXGroup;
+			children = (
+				3A20853418020F110017A0A6 /* UIView+AutoLayout.h */,
+				3A20853518020F110017A0A6 /* UIView+AutoLayout.m */,
+			);
+			name = AutoLayout;
+			sourceTree = "<group>";
+		};
 		3A38C56817FFF01200B93764 /* PaperTrail */ = {
 			isa = PBXGroup;
 			children = (
@@ -139,6 +152,7 @@
 		3A84833916D5DBB200927A33 /* DCAKit */ = {
 			isa = PBXGroup;
 			children = (
+				3A20853318020EF80017A0A6 /* AutoLayout */,
 				3A38C56817FFF01200B93764 /* PaperTrail */,
 				3A84839516D61EF300927A33 /* NSMapTable */,
 				3A84838516D6034C00927A33 /* KVOHelp */,
@@ -321,6 +335,7 @@
 				3A84837216D5DFD600927A33 /* DCAKit.h in Headers */,
 				3A38C56D17FFFB0200B93764 /* DCAPaperTrail.h in Headers */,
 				3A84838216D5EA4D00927A33 /* NSError+LessTerrible.h in Headers */,
+				3A20853818029FD20017A0A6 /* UIView+AutoLayout.h in Headers */,
 				3A84838A16D6035C00927A33 /* NSObject+KVOHelp.h in Headers */,
 				3A84839A16D61F5A00927A33 /* NSMapTable+Literals.h in Headers */,
 			);
@@ -445,6 +460,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3A84833F16D5DBB200927A33 /* DCAKit.m in Sources */,
+				3A20853718020F110017A0A6 /* UIView+AutoLayout.m in Sources */,
 				3A84835B16D5DBC800927A33 /* DCASimpleKeychain.m in Sources */,
 				3A84838116D5EA4A00927A33 /* NSError+LessTerrible.m in Sources */,
 				3A84838916D6035900927A33 /* NSObject+KVOHelp.m in Sources */,

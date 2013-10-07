@@ -12,6 +12,7 @@
 #import <DCAKit/NSObject+KVOHelp.h>
 #import <DCAKit/NSMapTable+Literals.h>
 #import <DCAKit/DCAPaperTrail.h>
+#import <DCAKit/UIView+AutoLayout.h>
 @interface DCAKit : NSObject
 
 @end
