@@ -9,6 +9,7 @@
 #import "UIView+AutoLayout.h"
 
 /**Returns the inverse of the given direction (e.g. trailing == leading, etc.) for layout applications.*/
+NSLayoutAttribute naturalInverse(NSLayoutAttribute input);
 NSLayoutAttribute naturalInverse(NSLayoutAttribute input) {
     switch(input) {
         case NSLayoutAttributeLeading:

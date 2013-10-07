@@ -18,8 +18,5 @@
 /**Indicates that errors with this domain and code should not be logged or displayed.*/
 -(void) whitelist;
 
-//any keys you set in here will get reported with errors...
-@property (readonly) NSMutableDictionary *environment;
-
 +(void) setExceptionalAPIKey:(NSString*) exceptionalKey;
 @end
