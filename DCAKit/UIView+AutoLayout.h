@@ -33,4 +33,7 @@
 
 -(void) constrainHeight:(int) value;
 
+/**Apply constraints such that the view spreads to the full size of the superview*/
+-(void) maximize;
+
 @end
