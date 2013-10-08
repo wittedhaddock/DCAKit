@@ -118,7 +118,7 @@ NSString *hardwareString () {
     NSString *replacedLog = [[NSString alloc] initWithFormat:format arguments:args];
     NSLog(@"%@",replacedLog);
     //the iOS simulator is pretty unreliable about identifierForVendor, so it's better not to log here I guess
-#ifdef TARGET_IPHONE_SIMULATOR
+#if TARGET_IPHONE_SIMULATOR
     return;
 #endif
     dispatch_async(loggingQueue, ^{
