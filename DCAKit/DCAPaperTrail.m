@@ -64,6 +64,10 @@ NSString *hardwareString () {
 
 -(void) reconnect {
     NSLog(@"Reconnecting...");
+    if (_internalRunLoop) {
+        CFRunLoopStop((__bridge CFRunLoopRef)(_internalRunLoop));
+        
+    }
     CFReadStreamRef readStream;
     CFWriteStreamRef writeStream;
     CFStreamCreatePairWithSocketToHost(NULL, (__bridge CFStringRef) _hostname, _port, &readStream, &writeStream);
@@ -72,22 +76,23 @@ NSString *hardwareString () {
     _writeStream.delegate = self;
     //Papertrail accepts messages over TCP with TLS. Unencrypted TCP is not generally supported
     [_writeStream setProperty:NSStreamSocketSecurityLevelNegotiatedSSL forKey:NSStreamSocketSecurityLevelKey];
+    doneSettingUpSemaphore = dispatch_semaphore_create(0);
+    _internalThread = [[NSThread alloc] initWithTarget:self selector:@selector(startInternal) object:nil];
+    [_internalThread start];
+    dispatch_semaphore_wait(doneSettingUpSemaphore, DISPATCH_TIME_FOREVER);
 }
 -(id) initWithHostname:(NSString*) hostname port:(int) port {
     if (self = [super init]) {
         loggingQueue = dispatch_queue_create("DCAPaperTrailQueue", DISPATCH_QUEUE_SERIAL);
         _hostname = hostname;
         _port = port;
-        doneSettingUpSemaphore = dispatch_semaphore_create(0);
         [self reconnect];
-        _internalThread = [[NSThread alloc] initWithTarget:self selector:@selector(startInternal) object:nil];
-        [_internalThread start];
-        dispatch_semaphore_wait(doneSettingUpSemaphore, DISPATCH_TIME_FOREVER);
+        
     }
     return self;
 }
 - (void)stream:(NSStream *)theStream handleEvent:(NSStreamEvent)streamEvent {
-
+    NSLog(@"DCAPaperTrail handleEvent %d",streamEvent);
 }
 
 - (void)dealloc {
