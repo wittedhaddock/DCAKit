@@ -52,8 +52,7 @@ NSString *hardwareString () {
 -(void) startInternal {
     pthread_setname_np("DCAPaperTrailThread");
     _internalRunLoop = [NSRunLoop currentRunLoop];
-    [_writeStream scheduleInRunLoop:_internalRunLoop forMode:(NSString*)kCFRunLoopDefaultMode];
-    [_writeStream open];
+    [self reconnect];
     dispatch_semaphore_signal(doneSettingUpSemaphore);
     do {
         @autoreleasepool {
@@ -64,30 +63,28 @@ NSString *hardwareString () {
 
 -(void) reconnect {
     NSLog(@"Reconnecting...");
-    if (_internalRunLoop) {
-        CFRunLoopStop((__bridge CFRunLoopRef)(_internalRunLoop));
-        
-    }
     CFReadStreamRef readStream;
     CFWriteStreamRef writeStream;
     CFStreamCreatePairWithSocketToHost(NULL, (__bridge CFStringRef) _hostname, _port, &readStream, &writeStream);
     _readStream = (__bridge_transfer NSInputStream*)readStream;
     _writeStream = (__bridge_transfer NSOutputStream*) writeStream;
     _writeStream.delegate = self;
+    NSAssert([NSRunLoop currentRunLoop]==_internalRunLoop, @"Unexpectedly not the internal runloop??");
+    
     //Papertrail accepts messages over TCP with TLS. Unencrypted TCP is not generally supported
     [_writeStream setProperty:NSStreamSocketSecurityLevelNegotiatedSSL forKey:NSStreamSocketSecurityLevelKey];
-    doneSettingUpSemaphore = dispatch_semaphore_create(0);
-    _internalThread = [[NSThread alloc] initWithTarget:self selector:@selector(startInternal) object:nil];
-    [_internalThread start];
-    dispatch_semaphore_wait(doneSettingUpSemaphore, DISPATCH_TIME_FOREVER);
+    [_writeStream scheduleInRunLoop:_internalRunLoop forMode:(NSString*)kCFRunLoopDefaultMode];
+    [_writeStream open];
 }
 -(id) initWithHostname:(NSString*) hostname port:(int) port {
     if (self = [super init]) {
         loggingQueue = dispatch_queue_create("DCAPaperTrailQueue", DISPATCH_QUEUE_SERIAL);
         _hostname = hostname;
         _port = port;
-        [self reconnect];
-        
+        doneSettingUpSemaphore = dispatch_semaphore_create(0);
+        _internalThread = [[NSThread alloc] initWithTarget:self selector:@selector(startInternal) object:nil];
+        [_internalThread start];
+        dispatch_semaphore_wait(doneSettingUpSemaphore, DISPATCH_TIME_FOREVER);
     }
     return self;
 }
