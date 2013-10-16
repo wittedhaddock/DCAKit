@@ -54,7 +54,7 @@ NSLayoutAttribute naturalInverse(NSLayoutAttribute input) {
 
 - (void)constrainWithSuperviewInDirection:(NSLayoutAttribute)direction value:(int)value {
     NSLayoutConstraint *constraint = [self.superview constraintMatchingView:self inDirection:direction];
-    if (constraint) [self removeConstraint:constraint];
+    if (constraint) [self.superview removeConstraint:constraint];
     constraint = [NSLayoutConstraint constraintWithItem:self.superview attribute:direction relatedBy:NSLayoutRelationEqual toItem:self attribute:direction multiplier:1.0 constant:value];
     [self.superview addConstraint:constraint];
 }
