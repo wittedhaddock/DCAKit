@@ -37,6 +37,9 @@
 		3A84839816D61F0200927A33 /* NSMapTable+Literals.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A84839616D61F0200927A33 /* NSMapTable+Literals.h */; };
 		3A84839916D61F0200927A33 /* NSMapTable+Literals.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A84839716D61F0200927A33 /* NSMapTable+Literals.m */; };
 		3A84839A16D61F5A00927A33 /* NSMapTable+Literals.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A84839616D61F0200927A33 /* NSMapTable+Literals.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3AAEC39C1817756B0036F1DE /* GCD+DCA.c in Sources */ = {isa = PBXBuildFile; fileRef = 3AAEC39B1817756B0036F1DE /* GCD+DCA.c */; };
+		3AAEC39E181776070036F1DE /* GCD+DCA.h in Headers */ = {isa = PBXBuildFile; fileRef = 3AAEC39D181775810036F1DE /* GCD+DCA.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3AAEC39F181776070036F1DE /* GCD+DCA.h in Headers */ = {isa = PBXBuildFile; fileRef = 3AAEC39D181775810036F1DE /* GCD+DCA.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -96,6 +99,8 @@
 		3A84838716D6035900927A33 /* NSObject+KVOHelp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+KVOHelp.m"; sourceTree = "<group>"; };
 		3A84839616D61F0200927A33 /* NSMapTable+Literals.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMapTable+Literals.h"; sourceTree = "<group>"; };
 		3A84839716D61F0200927A33 /* NSMapTable+Literals.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMapTable+Literals.m"; sourceTree = "<group>"; };
+		3AAEC39B1817756B0036F1DE /* GCD+DCA.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "GCD+DCA.c"; sourceTree = "<group>"; };
+		3AAEC39D181775810036F1DE /* GCD+DCA.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GCD+DCA.h"; sourceTree = "<group>"; };
 		BE4181D714B38C93000251A7 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		BE4181D914B38C93000251A7 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		BE4181DB14B38C93000251A7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
@@ -153,6 +158,7 @@
 		3A84833916D5DBB200927A33 /* DCAKit */ = {
 			isa = PBXGroup;
 			children = (
+				3AAEC39A181775520036F1DE /* GCD */,
 				3A20853318020EF80017A0A6 /* AutoLayout */,
 				3A38C56817FFF01200B93764 /* PaperTrail */,
 				3A84839516D61EF300927A33 /* NSMapTable */,
@@ -261,6 +267,15 @@
 			name = NSMapTable;
 			sourceTree = "<group>";
 		};
+		3AAEC39A181775520036F1DE /* GCD */ = {
+			isa = PBXGroup;
+			children = (
+				3AAEC39D181775810036F1DE /* GCD+DCA.h */,
+				3AAEC39B1817756B0036F1DE /* GCD+DCA.c */,
+			);
+			name = GCD;
+			sourceTree = "<group>";
+		};
 		BE4181B914B38C92000251A7 = {
 			isa = PBXGroup;
 			children = (
@@ -319,6 +334,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3AAEC39E181776070036F1DE /* GCD+DCA.h in Headers */,
 				3A38C56317FFEE9700B93764 /* DCAPrivateObj.h in Headers */,
 				3A84835D16D5DBE200927A33 /* DCASimpleKeychain.h in Headers */,
 				3A84838016D5EA4A00927A33 /* NSError+LessTerrible.h in Headers */,
@@ -333,6 +349,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3AAEC39F181776070036F1DE /* GCD+DCA.h in Headers */,
 				3A84837116D5DFCF00927A33 /* DCASimpleKeychain.h in Headers */,
 				3A84837216D5DFD600927A33 /* DCAKit.h in Headers */,
 				3A38C56D17FFFB0200B93764 /* DCAPaperTrail.h in Headers */,
@@ -467,6 +484,7 @@
 				3A84838116D5EA4A00927A33 /* NSError+LessTerrible.m in Sources */,
 				3A84838916D6035900927A33 /* NSObject+KVOHelp.m in Sources */,
 				3A38C56417FFEE9700B93764 /* DCAPrivateObj.m in Sources */,
+				3AAEC39C1817756B0036F1DE /* GCD+DCA.c in Sources */,
 				3A84839916D61F0200927A33 /* NSMapTable+Literals.m in Sources */,
 				3A38C56C17FFF02600B93764 /* DCAPaperTrail.m in Sources */,
 			);
