@@ -12,10 +12,10 @@
 - (NSMutableDictionary *)searchDictionaryWithKey:(id)key {
     NSMutableDictionary *searchDictionary = [[NSMutableDictionary alloc] initWithCapacity:10];
     searchDictionary[(__bridge id)kSecClass] = (__bridge id)(kSecClassGenericPassword);
-    [searchDictionary setObject:(__bridge id)kSecMatchLimitOne forKey:(__bridge id)kSecMatchLimit];
-    [searchDictionary setObject:@"DCASimpleKeychain" forKey:(__bridge id<NSCopying>)(kSecAttrService)];
-    [searchDictionary setObject:key forKey:(__bridge id)kSecAttrAccount];
-    [searchDictionary setObject:(__bridge id)kCFBooleanTrue forKey:(__bridge id)kSecReturnData];
+    searchDictionary[(__bridge id)kSecMatchLimit] = (__bridge id)kSecMatchLimitOne;
+    searchDictionary[(__bridge id<NSCopying>)(kSecAttrService)] = @"DCASimpleKeychain";
+    searchDictionary[(__bridge id)kSecAttrAccount] = key;
+    searchDictionary[(__bridge id)kSecReturnData] = (__bridge id)kCFBooleanTrue;
     return searchDictionary;
 }
 

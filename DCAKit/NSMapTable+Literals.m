@@ -10,11 +10,11 @@
 
 @implementation NSMapTable (Literals)
 - (id)objectForKeyedSubscript:(id)key {
-    return [self objectForKey:key];
+    return self[key];
 }
 
 - (void)setObject:(id)obj forKeyedSubscript:(id)key {
-    return [self setObject:obj forKey:key];
+    self[key] = obj;
 }
 
 @end
