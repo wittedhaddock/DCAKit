@@ -14,4 +14,5 @@
 +(void) configureWithHostname:(NSString*) hostname port:(int) port;
 +(void) log:(NSString*) format, ... NS_FORMAT_FUNCTION(1,2);
 void PTLog(NSString *format, ...) NS_FORMAT_FUNCTION(1, 2);
++(NSString*) incidentID;
 @end

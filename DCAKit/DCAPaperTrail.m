@@ -97,11 +97,30 @@ NSString *hardwareString () {
     [_writeStream close];
 }
 
+static NSMutableString *incidentID;
++ (NSString *)incidentID {
+    return incidentID;
+}
+
 + (void)configureWithHostname:(NSString *)hostname port:(int)port {
     singleton = [[DCAPaperTrail alloc] initWithHostname:hostname port:port];
     PTLog(@"model %@",hardwareString());
     PTLog(@"OS version %@",[UIDevice currentDevice].systemVersion);
     PTLog(@"app version %@",[[NSBundle mainBundle]  objectForInfoDictionaryKey:(NSString*)kCFBundleVersionKey]);
+    //compute incident ID
+    incidentID = [[NSMutableString alloc] init];
+    [incidentID appendString:[[[UIDevice currentDevice] identifierForVendor].UUIDString substringToIndex:5]];
+    NSUUID *incident = [[NSUUID alloc] init];
+    [incidentID appendString:@"-"];
+    [incidentID appendString:[incident.UUIDString substringToIndex:5]];
+    [incidentID appendString:@"-"];
+    NSCalendar *gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
+    
+    NSDateComponents *components = [gregorian components:NSCalendarUnitDay | NSCalendarUnitMonth | NSCalendarUnitYear fromDate:[NSDate date]];
+    
+    [incidentID appendString:[NSString stringWithFormat:@"%ld-%ld",(long)components.month,(long)components.day]];
+    PTLog(@"Incident ID %@",incidentID);
+    
     
 }
 
