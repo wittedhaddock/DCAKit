@@ -16,6 +16,9 @@
 		3A38C56B17FFF02600B93764 /* DCAPaperTrail.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A38C56917FFF02600B93764 /* DCAPaperTrail.h */; };
 		3A38C56C17FFF02600B93764 /* DCAPaperTrail.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A38C56A17FFF02600B93764 /* DCAPaperTrail.m */; };
 		3A38C56D17FFFB0200B93764 /* DCAPaperTrail.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A38C56917FFF02600B93764 /* DCAPaperTrail.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3A43A9A4181EA854006BA2D3 /* UIView+JonathanMason.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A43A9A2181EA854006BA2D3 /* UIView+JonathanMason.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3A43A9A5181EA854006BA2D3 /* UIView+JonathanMason.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A43A9A3181EA854006BA2D3 /* UIView+JonathanMason.m */; };
+		3A43A9A6181EAB26006BA2D3 /* UIView+JonathanMason.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A43A9A2181EA854006BA2D3 /* UIView+JonathanMason.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3A84833816D5DBB200927A33 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE4181DB14B38C93000251A7 /* Foundation.framework */; };
 		3A84833F16D5DBB200927A33 /* DCAKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A84833E16D5DBB200927A33 /* DCAKit.m */; };
 		3A84834616D5DBB200927A33 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE4181D714B38C93000251A7 /* SenTestingKit.framework */; };
@@ -78,6 +81,8 @@
 		3A38C56217FFEE9700B93764 /* DCAPrivateObj.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCAPrivateObj.m; sourceTree = "<group>"; };
 		3A38C56917FFF02600B93764 /* DCAPaperTrail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCAPaperTrail.h; sourceTree = "<group>"; };
 		3A38C56A17FFF02600B93764 /* DCAPaperTrail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCAPaperTrail.m; sourceTree = "<group>"; };
+		3A43A9A2181EA854006BA2D3 /* UIView+JonathanMason.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+JonathanMason.h"; sourceTree = "<group>"; };
+		3A43A9A3181EA854006BA2D3 /* UIView+JonathanMason.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+JonathanMason.m"; sourceTree = "<group>"; };
 		3A84832F16D5DB2200927A33 /* DCASimpleKeychain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCASimpleKeychain.h; sourceTree = "<group>"; };
 		3A84833016D5DB2200927A33 /* DCASimpleKeychain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCASimpleKeychain.m; sourceTree = "<group>"; };
 		3A84833716D5DBB200927A33 /* libDCAKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libDCAKit.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -155,9 +160,19 @@
 			name = PaperTrail;
 			sourceTree = "<group>";
 		};
+		3A43A9A1181EA827006BA2D3 /* JonathanMason */ = {
+			isa = PBXGroup;
+			children = (
+				3A43A9A2181EA854006BA2D3 /* UIView+JonathanMason.h */,
+				3A43A9A3181EA854006BA2D3 /* UIView+JonathanMason.m */,
+			);
+			name = JonathanMason;
+			sourceTree = "<group>";
+		};
 		3A84833916D5DBB200927A33 /* DCAKit */ = {
 			isa = PBXGroup;
 			children = (
+				3A43A9A1181EA827006BA2D3 /* JonathanMason */,
 				3AAEC39A181775520036F1DE /* GCD */,
 				3A20853318020EF80017A0A6 /* AutoLayout */,
 				3A38C56817FFF01200B93764 /* PaperTrail */,
@@ -339,6 +354,7 @@
 				3A84835D16D5DBE200927A33 /* DCASimpleKeychain.h in Headers */,
 				3A84838016D5EA4A00927A33 /* NSError+LessTerrible.h in Headers */,
 				3A84838816D6035900927A33 /* NSObject+KVOHelp.h in Headers */,
+				3A43A9A4181EA854006BA2D3 /* UIView+JonathanMason.h in Headers */,
 				3A2085391802B6BD0017A0A6 /* UIView+AutoLayout.h in Headers */,
 				3A84839816D61F0200927A33 /* NSMapTable+Literals.h in Headers */,
 				3A38C56B17FFF02600B93764 /* DCAPaperTrail.h in Headers */,
@@ -354,6 +370,7 @@
 				3A84837216D5DFD600927A33 /* DCAKit.h in Headers */,
 				3A38C56D17FFFB0200B93764 /* DCAPaperTrail.h in Headers */,
 				3A84838216D5EA4D00927A33 /* NSError+LessTerrible.h in Headers */,
+				3A43A9A6181EAB26006BA2D3 /* UIView+JonathanMason.h in Headers */,
 				3A20853818029FD20017A0A6 /* UIView+AutoLayout.h in Headers */,
 				3A84838A16D6035C00927A33 /* NSObject+KVOHelp.h in Headers */,
 				3A84839A16D61F5A00927A33 /* NSMapTable+Literals.h in Headers */,
@@ -482,6 +499,7 @@
 				3A20853718020F110017A0A6 /* UIView+AutoLayout.m in Sources */,
 				3A84835B16D5DBC800927A33 /* DCASimpleKeychain.m in Sources */,
 				3A84838116D5EA4A00927A33 /* NSError+LessTerrible.m in Sources */,
+				3A43A9A5181EA854006BA2D3 /* UIView+JonathanMason.m in Sources */,
 				3A84838916D6035900927A33 /* NSObject+KVOHelp.m in Sources */,
 				3A38C56417FFEE9700B93764 /* DCAPrivateObj.m in Sources */,
 				3AAEC39C1817756B0036F1DE /* GCD+DCA.c in Sources */,

@@ -14,6 +14,7 @@
 #import <DCAKit/DCAPaperTrail.h>
 #import <DCAKit/UIView+AutoLayout.h>
 #import <DCAKit/GCD+DCA.h>
+#import <DCAKit/UIView+JonathanMason.h>
 @interface DCAKit : NSObject
 
 @end
