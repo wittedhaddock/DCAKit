@@ -89,6 +89,7 @@ NSString *hardwareString () {
     return self;
 }
 - (void)stream:(NSStream *)theStream handleEvent:(NSStreamEvent)streamEvent {
+    if (streamEvent==NSStreamEventHasSpaceAvailable) return;
     NSLog(@"DCAPaperTrail handleEvent %d",streamEvent);
 }
 
