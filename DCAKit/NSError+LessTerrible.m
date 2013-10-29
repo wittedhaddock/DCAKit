@@ -107,6 +107,7 @@ static NSMutableSet *whitelistedErrors;
     NSData *errData = [NSJSONSerialization dataWithJSONObject:dict options:0 error:&jsonErr];
     NSString *errString = [[NSString alloc] initWithData:errData encoding:NSUTF8StringEncoding];
     PTLog(@"%@",errString);
+    PTLog(@"Set a breakpoint at -[NSError log] to debug.");
     
     
 }
