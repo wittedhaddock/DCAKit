@@ -40,4 +40,9 @@ static const char *observerKey = "ObserverKey";
 
     [self addObserver:obj forKeyPath:keypath options:options context:context];
 }
+
+- (void)removeObserverWithRef:(id)observer_ref keypath:(NSString *)keypath {
+    ObserverObj *oldObserver =  (objc_getAssociatedObject(self, observerKey));
+    [self removeObserver:oldObserver forKeyPath:keypath];
+}
 @end

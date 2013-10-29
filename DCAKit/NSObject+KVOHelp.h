@@ -21,4 +21,6 @@ typedef void(^Observe)(id observer_ref, id object, NSString *keyPath, NSDictiona
  
  @warning Don't get capture a strong reference either to self or to the object in your block; this leads to weird memory issues.  Instead, use the values that are helpfully passed in.*/
 -(void) addObserverWithRef:(id) observer_ref keypath:(NSString*) keypath options:(NSKeyValueObservingOptions) options context:(void*) context block:(Observe) block;
+
+-(void) removeObserverWithRef:(id) observer_ref keypath:(NSString*) keypath;
 @end
