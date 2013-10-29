@@ -51,7 +51,7 @@ static NSMutableSet *whitelistedErrors;
     }
     [self log];
     NSString *title = [NSString stringWithFormat:@"%@ code %ld",self.domain,(long)self.code];
-    NSString *message = [NSString stringWithFormat:@"%@\n%@",self.lessTerribleFailureReason,self.lessTerribleRecoverySuggestion];
+    NSString *message = [NSString stringWithFormat:@"%@\n%@\nincidentID: %@",self.lessTerribleFailureReason,self.lessTerribleRecoverySuggestion,[DCAPaperTrail incidentID]];
     
     UIAlertView *uav = [[UIAlertView alloc] initWithTitle:title message:message delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
     dispatch_async(dispatch_get_main_queue(), ^{
