@@ -176,6 +176,10 @@ static NSMutableString *incidentID;
 }
 
 +(void) log:(NSString*) format arguments:(va_list) args {
+    if (!singleton) {
+        NSLogv(format, args);
+        return;
+    }
     [singleton log:format arguments:args];
 }
 
