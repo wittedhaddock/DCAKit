@@ -776,6 +776,104 @@
 			};
 			name = "Release-Live-Beta";
 		};
+		3A6C1109183CD7B7004702AC /* AppStore */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = DCA_RELEASE;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(BUILD_ROOT)/../IntermediateBuildFilesPath/UninstalledProducts/include",
+					"$(inherited)",
+				);
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				PUBLIC_HEADERS_FOLDER_PATH = include/DCAKit;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = AppStore;
+		};
+		3A6C110A183CD7B7004702AC /* AppStore */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_EMPTY_BODY = YES;
+				DSTROOT = /tmp/DCAKit.dst;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SYSTEM_APPS_DIR)/Xcode.app/Contents/Developer/Library/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DCAKit/DCAKit-Prefix.pch";
+				HEADER_SEARCH_PATHS = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = nowhere;
+				SKIP_INSTALL = YES;
+			};
+			name = AppStore;
+		};
+		3A6C110B183CD7B7004702AC /* AppStore */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_EMPTY_BODY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DCAKit/DCAKit-Prefix.pch";
+				INFOPLIST_FILE = "DCAKitTests/DCAKitTests-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = AppStore;
+		};
+		3A6C110C183CD7B7004702AC /* AppStore */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_EMPTY_BODY = YES;
+				DSTROOT = /tmp/DCAKitHeaders.dst;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SYSTEM_APPS_DIR)/Xcode.app/Contents/Developer/Library/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DCAKitHeaders/DCAKitHeaders-Prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = AppStore;
+		};
 		3A84835616D5DBB200927A33 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1221,6 +1319,7 @@
 				3A38C56F17FFFC3200B93764 /* Debug-Production-Backend */,
 				3A84837816D5E7AB00927A33 /* UnitTest */,
 				3A84835716D5DBB200927A33 /* Release */,
+				3A6C110A183CD7B7004702AC /* AppStore */,
 				3A38C6AE1800CC2300B93764 /* Release-Live-Beta */,
 				3A84838E16D60CF300927A33 /* Daily Build */,
 			);
@@ -1234,6 +1333,7 @@
 				3A38C57017FFFC3200B93764 /* Debug-Production-Backend */,
 				3A84837916D5E7AB00927A33 /* UnitTest */,
 				3A84835A16D5DBB200927A33 /* Release */,
+				3A6C110B183CD7B7004702AC /* AppStore */,
 				3A38C6AF1800CC2300B93764 /* Release-Live-Beta */,
 				3A84838F16D60CF300927A33 /* Daily Build */,
 			);
@@ -1247,6 +1347,7 @@
 				3A38C57117FFFC3200B93764 /* Debug-Production-Backend */,
 				3A84837A16D5E7AB00927A33 /* UnitTest */,
 				3A84836E16D5DFB100927A33 /* Release */,
+				3A6C110C183CD7B7004702AC /* AppStore */,
 				3A38C6B01800CC2300B93764 /* Release-Live-Beta */,
 				3A84839016D60CF300927A33 /* Daily Build */,
 			);
@@ -1260,6 +1361,7 @@
 				3A38C56E17FFFC3200B93764 /* Debug-Production-Backend */,
 				3A84837716D5E7AB00927A33 /* UnitTest */,
 				BE4181EA14B38C93000251A7 /* Release */,
+				3A6C1109183CD7B7004702AC /* AppStore */,
 				3A38C6AD1800CC2300B93764 /* Release-Live-Beta */,
 				3A84838D16D60CF300927A33 /* Daily Build */,
 			);
