@@ -21,12 +21,6 @@
 		3A43A9A6181EAB26006BA2D3 /* UIView+JonathanMason.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A43A9A2181EA854006BA2D3 /* UIView+JonathanMason.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3A84833816D5DBB200927A33 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE4181DB14B38C93000251A7 /* Foundation.framework */; };
 		3A84833F16D5DBB200927A33 /* DCAKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A84833E16D5DBB200927A33 /* DCAKit.m */; };
-		3A84834616D5DBB200927A33 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE4181D714B38C93000251A7 /* SenTestingKit.framework */; };
-		3A84834716D5DBB200927A33 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE4181D914B38C93000251A7 /* UIKit.framework */; };
-		3A84834816D5DBB200927A33 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE4181DB14B38C93000251A7 /* Foundation.framework */; };
-		3A84834B16D5DBB200927A33 /* libDCAKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A84833716D5DBB200927A33 /* libDCAKit.a */; };
-		3A84835116D5DBB200927A33 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3A84834F16D5DBB200927A33 /* InfoPlist.strings */; };
-		3A84835416D5DBB200927A33 /* DCAKitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A84835316D5DBB200927A33 /* DCAKitTests.m */; };
 		3A84835B16D5DBC800927A33 /* DCASimpleKeychain.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A84833016D5DB2200927A33 /* DCASimpleKeychain.m */; };
 		3A84835D16D5DBE200927A33 /* DCASimpleKeychain.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A84832F16D5DB2200927A33 /* DCASimpleKeychain.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3A84837116D5DFCF00927A33 /* DCASimpleKeychain.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A84832F16D5DB2200927A33 /* DCASimpleKeychain.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -43,22 +37,54 @@
 		3AAEC39C1817756B0036F1DE /* GCD+DCA.c in Sources */ = {isa = PBXBuildFile; fileRef = 3AAEC39B1817756B0036F1DE /* GCD+DCA.c */; };
 		3AAEC39E181776070036F1DE /* GCD+DCA.h in Headers */ = {isa = PBXBuildFile; fileRef = 3AAEC39D181775810036F1DE /* GCD+DCA.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3AAEC39F181776070036F1DE /* GCD+DCA.h in Headers */ = {isa = PBXBuildFile; fileRef = 3AAEC39D181775810036F1DE /* GCD+DCA.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3AC918EA184C817B004726E4 /* DCAAddressbookSerializer.h in Headers */ = {isa = PBXBuildFile; fileRef = 3AC918E8184C817B004726E4 /* DCAAddressbookSerializer.h */; };
+		3AC918F8184C8854004726E4 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AC918EF184C87A4004726E4 /* XCTest.framework */; };
+		3AC918F9184C8854004726E4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AC918F1184C8823004726E4 /* Foundation.framework */; };
+		3AC918FA184C8854004726E4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE4181D914B38C93000251A7 /* UIKit.framework */; };
+		3AC91900184C8854004726E4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3AC918FE184C8854004726E4 /* InfoPlist.strings */; };
+		3AC91902184C8854004726E4 /* DCAKitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AC91901184C8854004726E4 /* DCAKitTests.m */; };
+		3AE7DE4B184C8F3800C8B528 /* libDCAKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A84833716D5DBB200927A33 /* libDCAKit.a */; };
+		3AFC3315184C88C5007B1118 /* DCAAddressbookSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AC918E9184C817B004726E4 /* DCAAddressbookSerializer.m */; };
+		3AFC331E184C8DE4007B1118 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AC918F1184C8823004726E4 /* Foundation.framework */; };
+		3AFC3320184C8DE4007B1118 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AFC331F184C8DE4007B1118 /* CoreGraphics.framework */; };
+		3AFC3321184C8DE4007B1118 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE4181D914B38C93000251A7 /* UIKit.framework */; };
+		3AFC3323184C8DE4007B1118 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AFC3322184C8DE4007B1118 /* CoreData.framework */; };
+		3AFC3329184C8DE4007B1118 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3AFC3327184C8DE4007B1118 /* InfoPlist.strings */; };
+		3AFC332B184C8DE4007B1118 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AFC332A184C8DE4007B1118 /* main.m */; };
+		3AFC332F184C8DE4007B1118 /* DCAAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AFC332E184C8DE4007B1118 /* DCAAppDelegate.m */; };
+		3AFC3332184C8DE4007B1118 /* DCAKitTestHost.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3AFC3330184C8DE4007B1118 /* DCAKitTestHost.xcdatamodeld */; };
+		3AFC3334184C8DE4007B1118 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3AFC3333184C8DE4007B1118 /* Images.xcassets */; };
+		3AFC333A184C8DE5007B1118 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AC918EF184C87A4004726E4 /* XCTest.framework */; };
+		3AFC333B184C8DE5007B1118 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AC918F1184C8823004726E4 /* Foundation.framework */; };
+		3AFC333C184C8DE5007B1118 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE4181D914B38C93000251A7 /* UIKit.framework */; };
+		3AFC333D184C8DE5007B1118 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AFC3322184C8DE4007B1118 /* CoreData.framework */; };
+		3AFC3345184C8DE5007B1118 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3AFC3343184C8DE5007B1118 /* InfoPlist.strings */; };
+		3AFC3347184C8DE5007B1118 /* DCAKitTestHostTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AFC3346184C8DE5007B1118 /* DCAKitTestHostTests.m */; };
+		3AFC3358184C8DF7007B1118 /* DCAAddressbookSerializerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AFC3317184C88DB007B1118 /* DCAAddressbookSerializerTests.m */; };
+		3AFC3359184C8E9A007B1118 /* libDCAKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A84833716D5DBB200927A33 /* libDCAKit.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		3A84834916D5DBB200927A33 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BE4181BB14B38C92000251A7 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 3A84833616D5DBB200927A33;
-			remoteInfo = DCAKit;
-		};
 		3A84837316D5DFDC00927A33 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BE4181BB14B38C92000251A7 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 3A84836316D5DFB000927A33;
 			remoteInfo = DCAKitHeaders;
+		};
+		3AC91904184C8855004726E4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BE4181BB14B38C92000251A7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3A84833616D5DBB200927A33;
+			remoteInfo = DCAKit;
+		};
+		3AFC333E184C8DE5007B1118 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BE4181BB14B38C92000251A7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3AFC331C184C8DE3007B1118;
+			remoteInfo = DCAKitTestHost;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -89,11 +115,6 @@
 		3A84833B16D5DBB200927A33 /* DCAKit-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DCAKit-Prefix.pch"; sourceTree = "<group>"; };
 		3A84833C16D5DBB200927A33 /* DCAKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DCAKit.h; sourceTree = "<group>"; };
 		3A84833E16D5DBB200927A33 /* DCAKit.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DCAKit.m; sourceTree = "<group>"; };
-		3A84834516D5DBB200927A33 /* DCAKitTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DCAKitTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
-		3A84834E16D5DBB200927A33 /* DCAKitTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DCAKitTests-Info.plist"; sourceTree = "<group>"; };
-		3A84835016D5DBB200927A33 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		3A84835216D5DBB200927A33 /* DCAKitTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DCAKitTests.h; sourceTree = "<group>"; };
-		3A84835316D5DBB200927A33 /* DCAKitTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DCAKitTests.m; sourceTree = "<group>"; };
 		3A84836416D5DFB000927A33 /* libDCAKitHeaders.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libDCAKitHeaders.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A84836816D5DFB100927A33 /* DCAKitHeaders-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DCAKitHeaders-Prefix.pch"; sourceTree = "<group>"; };
 		3A84836916D5DFB100927A33 /* DCAKitHeaders.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DCAKitHeaders.h; sourceTree = "<group>"; };
@@ -106,13 +127,34 @@
 		3A84839716D61F0200927A33 /* NSMapTable+Literals.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMapTable+Literals.m"; sourceTree = "<group>"; };
 		3AAEC39B1817756B0036F1DE /* GCD+DCA.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "GCD+DCA.c"; sourceTree = "<group>"; };
 		3AAEC39D181775810036F1DE /* GCD+DCA.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GCD+DCA.h"; sourceTree = "<group>"; };
-		BE4181D714B38C93000251A7 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		3AC918E8184C817B004726E4 /* DCAAddressbookSerializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCAAddressbookSerializer.h; sourceTree = "<group>"; };
+		3AC918E9184C817B004726E4 /* DCAAddressbookSerializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCAAddressbookSerializer.m; sourceTree = "<group>"; };
+		3AC918EF184C87A4004726E4 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		3AC918F1184C8823004726E4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		3AC918F7184C8854004726E4 /* DCAKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DCAKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3AC918FD184C8854004726E4 /* DCAKitTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DCAKitTests-Info.plist"; sourceTree = "<group>"; };
+		3AC918FF184C8854004726E4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		3AC91901184C8854004726E4 /* DCAKitTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DCAKitTests.m; sourceTree = "<group>"; };
+		3AC91903184C8854004726E4 /* DCAKitTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DCAKitTests-Prefix.pch"; sourceTree = "<group>"; };
+		3AFC3316184C88DB007B1118 /* DCAAddressbookSerializerTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DCAAddressbookSerializerTests.h; path = ../DCAKitTests/DCAAddressbookSerializerTests.h; sourceTree = "<group>"; };
+		3AFC3317184C88DB007B1118 /* DCAAddressbookSerializerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DCAAddressbookSerializerTests.m; path = ../DCAKitTests/DCAAddressbookSerializerTests.m; sourceTree = "<group>"; };
+		3AFC331D184C8DE3007B1118 /* DCAKitTestHost.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DCAKitTestHost.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3AFC331F184C8DE4007B1118 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		3AFC3322184C8DE4007B1118 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		3AFC3326184C8DE4007B1118 /* DCAKitTestHost-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DCAKitTestHost-Info.plist"; sourceTree = "<group>"; };
+		3AFC3328184C8DE4007B1118 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		3AFC332A184C8DE4007B1118 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		3AFC332C184C8DE4007B1118 /* DCAKitTestHost-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DCAKitTestHost-Prefix.pch"; sourceTree = "<group>"; };
+		3AFC332D184C8DE4007B1118 /* DCAAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DCAAppDelegate.h; sourceTree = "<group>"; };
+		3AFC332E184C8DE4007B1118 /* DCAAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DCAAppDelegate.m; sourceTree = "<group>"; };
+		3AFC3331184C8DE4007B1118 /* DCAKitTestHost.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DCAKitTestHost.xcdatamodel; sourceTree = "<group>"; };
+		3AFC3333184C8DE4007B1118 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		3AFC3339184C8DE4007B1118 /* DCAKitTestHostTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DCAKitTestHostTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3AFC3342184C8DE5007B1118 /* DCAKitTestHostTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DCAKitTestHostTests-Info.plist"; sourceTree = "<group>"; };
+		3AFC3344184C8DE5007B1118 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		3AFC3346184C8DE5007B1118 /* DCAKitTestHostTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DCAKitTestHostTests.m; sourceTree = "<group>"; };
 		BE4181D914B38C93000251A7 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		BE4181DB14B38C93000251A7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		BE4181E214B38C93000251A7 /* DCAKitTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DCAKitTests-Info.plist"; sourceTree = "<group>"; };
-		BE4181E414B38C93000251A7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		BE4181E614B38C93000251A7 /* DCAKitTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DCAKitTests.h; sourceTree = "<group>"; };
-		BE4181E714B38C93000251A7 /* DCAKitTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DCAKitTests.m; sourceTree = "<group>"; };
 		BE754E4814B3907F007F23B9 /* NSRegularExpression+helpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSRegularExpression+helpers.h"; path = "DCAKit/NSRegularExpression+helpers.h"; sourceTree = SOURCE_ROOT; };
 		BE754E4914B3907F007F23B9 /* NSRegularExpression+helpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSRegularExpression+helpers.m"; path = "DCAKit/NSRegularExpression+helpers.m"; sourceTree = SOURCE_ROOT; };
 		BE754E4A14B3907F007F23B9 /* NSTextCheckingResult+helpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSTextCheckingResult+helpers.h"; path = "DCAKit/NSTextCheckingResult+helpers.h"; sourceTree = SOURCE_ROOT; };
@@ -128,14 +170,37 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		3A84834116D5DBB200927A33 /* Frameworks */ = {
+		3AC918F4184C8854004726E4 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3A84834616D5DBB200927A33 /* SenTestingKit.framework in Frameworks */,
-				3A84834716D5DBB200927A33 /* UIKit.framework in Frameworks */,
-				3A84834816D5DBB200927A33 /* Foundation.framework in Frameworks */,
-				3A84834B16D5DBB200927A33 /* libDCAKit.a in Frameworks */,
+				3AC918F8184C8854004726E4 /* XCTest.framework in Frameworks */,
+				3AC918FA184C8854004726E4 /* UIKit.framework in Frameworks */,
+				3AC918F9184C8854004726E4 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3AFC331A184C8DE3007B1118 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3AFC3359184C8E9A007B1118 /* libDCAKit.a in Frameworks */,
+				3AFC3320184C8DE4007B1118 /* CoreGraphics.framework in Frameworks */,
+				3AFC3323184C8DE4007B1118 /* CoreData.framework in Frameworks */,
+				3AFC3321184C8DE4007B1118 /* UIKit.framework in Frameworks */,
+				3AFC331E184C8DE4007B1118 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3AFC3336184C8DE4007B1118 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3AE7DE4B184C8F3800C8B528 /* libDCAKit.a in Frameworks */,
+				3AFC333A184C8DE5007B1118 /* XCTest.framework in Frameworks */,
+				3AFC333D184C8DE5007B1118 /* CoreData.framework in Frameworks */,
+				3AFC333C184C8DE5007B1118 /* UIKit.framework in Frameworks */,
+				3AFC333B184C8DE5007B1118 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -186,6 +251,8 @@
 				3A84833A16D5DBB200927A33 /* Supporting Files */,
 				3A38C56117FFEE9700B93764 /* DCAPrivateObj.h */,
 				3A38C56217FFEE9700B93764 /* DCAPrivateObj.m */,
+				3AC918E8184C817B004726E4 /* DCAAddressbookSerializer.h */,
+				3AC918E9184C817B004726E4 /* DCAAddressbookSerializer.m */,
 			);
 			path = DCAKit;
 			sourceTree = "<group>";
@@ -194,25 +261,6 @@
 			isa = PBXGroup;
 			children = (
 				3A84833B16D5DBB200927A33 /* DCAKit-Prefix.pch */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		3A84834C16D5DBB200927A33 /* DCAKitTests */ = {
-			isa = PBXGroup;
-			children = (
-				3A84835216D5DBB200927A33 /* DCAKitTests.h */,
-				3A84835316D5DBB200927A33 /* DCAKitTests.m */,
-				3A84834D16D5DBB200927A33 /* Supporting Files */,
-			);
-			path = DCAKitTests;
-			sourceTree = "<group>";
-		};
-		3A84834D16D5DBB200927A33 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				3A84834E16D5DBB200927A33 /* DCAKitTests-Info.plist */,
-				3A84834F16D5DBB200927A33 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -291,13 +339,76 @@
 			name = GCD;
 			sourceTree = "<group>";
 		};
+		3AC918FB184C8854004726E4 /* DCAKitTests */ = {
+			isa = PBXGroup;
+			children = (
+				3AC91901184C8854004726E4 /* DCAKitTests.m */,
+				3AC918FC184C8854004726E4 /* Supporting Files */,
+			);
+			path = DCAKitTests;
+			sourceTree = "<group>";
+		};
+		3AC918FC184C8854004726E4 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				3AC918FD184C8854004726E4 /* DCAKitTests-Info.plist */,
+				3AC918FE184C8854004726E4 /* InfoPlist.strings */,
+				3AC91903184C8854004726E4 /* DCAKitTests-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3AFC3324184C8DE4007B1118 /* DCAKitTestHost */ = {
+			isa = PBXGroup;
+			children = (
+				3AFC332D184C8DE4007B1118 /* DCAAppDelegate.h */,
+				3AFC332E184C8DE4007B1118 /* DCAAppDelegate.m */,
+				3AFC3333184C8DE4007B1118 /* Images.xcassets */,
+				3AFC3330184C8DE4007B1118 /* DCAKitTestHost.xcdatamodeld */,
+				3AFC3325184C8DE4007B1118 /* Supporting Files */,
+			);
+			path = DCAKitTestHost;
+			sourceTree = "<group>";
+		};
+		3AFC3325184C8DE4007B1118 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				3AFC3326184C8DE4007B1118 /* DCAKitTestHost-Info.plist */,
+				3AFC3327184C8DE4007B1118 /* InfoPlist.strings */,
+				3AFC332A184C8DE4007B1118 /* main.m */,
+				3AFC332C184C8DE4007B1118 /* DCAKitTestHost-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3AFC3340184C8DE5007B1118 /* DCAKitTestHostTests */ = {
+			isa = PBXGroup;
+			children = (
+				3AFC3316184C88DB007B1118 /* DCAAddressbookSerializerTests.h */,
+				3AFC3317184C88DB007B1118 /* DCAAddressbookSerializerTests.m */,
+				3AFC3346184C8DE5007B1118 /* DCAKitTestHostTests.m */,
+				3AFC3341184C8DE5007B1118 /* Supporting Files */,
+			);
+			path = DCAKitTestHostTests;
+			sourceTree = "<group>";
+		};
+		3AFC3341184C8DE5007B1118 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				3AFC3342184C8DE5007B1118 /* DCAKitTestHostTests-Info.plist */,
+				3AFC3343184C8DE5007B1118 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		BE4181B914B38C92000251A7 = {
 			isa = PBXGroup;
 			children = (
-				BE4181E014B38C93000251A7 /* DCAKitTests */,
 				3A84833916D5DBB200927A33 /* DCAKit */,
-				3A84834C16D5DBB200927A33 /* DCAKitTests */,
 				3A84836616D5DFB100927A33 /* DCAKitHeaders */,
+				3AC918FB184C8854004726E4 /* DCAKitTests */,
+				3AFC3324184C8DE4007B1118 /* DCAKitTestHost */,
+				3AFC3340184C8DE5007B1118 /* DCAKitTestHostTests */,
 				BE4181D614B38C93000251A7 /* Frameworks */,
 				BE4181C814B38C93000251A7 /* Products */,
 			);
@@ -307,8 +418,10 @@
 			isa = PBXGroup;
 			children = (
 				3A84833716D5DBB200927A33 /* libDCAKit.a */,
-				3A84834516D5DBB200927A33 /* DCAKitTests.octest */,
 				3A84836416D5DFB000927A33 /* libDCAKitHeaders.a */,
+				3AC918F7184C8854004726E4 /* DCAKitTests.xctest */,
+				3AFC331D184C8DE3007B1118 /* DCAKitTestHost.app */,
+				3AFC3339184C8DE4007B1118 /* DCAKitTestHostTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -316,30 +429,14 @@
 		BE4181D614B38C93000251A7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				BE4181D714B38C93000251A7 /* SenTestingKit.framework */,
+				3AC918F1184C8823004726E4 /* Foundation.framework */,
+				3AC918EF184C87A4004726E4 /* XCTest.framework */,
 				BE4181D914B38C93000251A7 /* UIKit.framework */,
 				BE4181DB14B38C93000251A7 /* Foundation.framework */,
+				3AFC331F184C8DE4007B1118 /* CoreGraphics.framework */,
+				3AFC3322184C8DE4007B1118 /* CoreData.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		BE4181E014B38C93000251A7 /* DCAKitTests */ = {
-			isa = PBXGroup;
-			children = (
-				BE4181E614B38C93000251A7 /* DCAKitTests.h */,
-				BE4181E714B38C93000251A7 /* DCAKitTests.m */,
-				BE4181E114B38C93000251A7 /* Supporting Files */,
-			);
-			path = DCAKitTests;
-			sourceTree = "<group>";
-		};
-		BE4181E114B38C93000251A7 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				BE4181E214B38C93000251A7 /* DCAKitTests-Info.plist */,
-				BE4181E314B38C93000251A7 /* InfoPlist.strings */,
-			);
-			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -354,6 +451,7 @@
 				3A84835D16D5DBE200927A33 /* DCASimpleKeychain.h in Headers */,
 				3A84838016D5EA4A00927A33 /* NSError+LessTerrible.h in Headers */,
 				3A84838816D6035900927A33 /* NSObject+KVOHelp.h in Headers */,
+				3AC918EA184C817B004726E4 /* DCAAddressbookSerializer.h in Headers */,
 				3A43A9A4181EA854006BA2D3 /* UIView+JonathanMason.h in Headers */,
 				3A2085391802B6BD0017A0A6 /* UIView+AutoLayout.h in Headers */,
 				3A84839816D61F0200927A33 /* NSMapTable+Literals.h in Headers */,
@@ -399,25 +497,6 @@
 			productReference = 3A84833716D5DBB200927A33 /* libDCAKit.a */;
 			productType = "com.apple.product-type.library.static";
 		};
-		3A84834416D5DBB200927A33 /* DCAKitTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 3A84835816D5DBB200927A33 /* Build configuration list for PBXNativeTarget "DCAKitTests" */;
-			buildPhases = (
-				3A84834016D5DBB200927A33 /* Sources */,
-				3A84834116D5DBB200927A33 /* Frameworks */,
-				3A84834216D5DBB200927A33 /* Resources */,
-				3A84834316D5DBB200927A33 /* ShellScript */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				3A84834A16D5DBB200927A33 /* PBXTargetDependency */,
-			);
-			name = DCAKitTests;
-			productName = DCAKitTests;
-			productReference = 3A84834516D5DBB200927A33 /* DCAKitTests.octest */;
-			productType = "com.apple.product-type.bundle";
-		};
 		3A84836316D5DFB000927A33 /* DCAKitHeaders */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3A84836F16D5DFB100927A33 /* Build configuration list for PBXNativeTarget "DCAKitHeaders" */;
@@ -434,6 +513,59 @@
 			productReference = 3A84836416D5DFB000927A33 /* libDCAKitHeaders.a */;
 			productType = "com.apple.product-type.library.static";
 		};
+		3AC918F6184C8854004726E4 /* DCAKitTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3AC91906184C8855004726E4 /* Build configuration list for PBXNativeTarget "DCAKitTests" */;
+			buildPhases = (
+				3AC918F3184C8854004726E4 /* Sources */,
+				3AC918F4184C8854004726E4 /* Frameworks */,
+				3AC918F5184C8854004726E4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3AC91905184C8855004726E4 /* PBXTargetDependency */,
+			);
+			name = DCAKitTests;
+			productName = DCAKitTests;
+			productReference = 3AC918F7184C8854004726E4 /* DCAKitTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		3AFC331C184C8DE3007B1118 /* DCAKitTestHost */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3AFC3348184C8DE6007B1118 /* Build configuration list for PBXNativeTarget "DCAKitTestHost" */;
+			buildPhases = (
+				3AFC3319184C8DE3007B1118 /* Sources */,
+				3AFC331A184C8DE3007B1118 /* Frameworks */,
+				3AFC331B184C8DE3007B1118 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DCAKitTestHost;
+			productName = DCAKitTestHost;
+			productReference = 3AFC331D184C8DE3007B1118 /* DCAKitTestHost.app */;
+			productType = "com.apple.product-type.application";
+		};
+		3AFC3338184C8DE4007B1118 /* DCAKitTestHostTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3AFC3350184C8DE6007B1118 /* Build configuration list for PBXNativeTarget "DCAKitTestHostTests" */;
+			buildPhases = (
+				3AFC3335184C8DE4007B1118 /* Sources */,
+				3AFC3336184C8DE4007B1118 /* Frameworks */,
+				3AFC3337184C8DE4007B1118 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3AFC333F184C8DE5007B1118 /* PBXTargetDependency */,
+			);
+			name = DCAKitTestHostTests;
+			productName = DCAKitTestHostTests;
+			productReference = 3AFC3339184C8DE4007B1118 /* DCAKitTestHostTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -443,6 +575,14 @@
 				CLASSPREFIX = DCA;
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = DrewCrawfordApps;
+				TargetAttributes = {
+					3AC918F6184C8854004726E4 = {
+						TestTargetID = 3AFC331C184C8DE3007B1118;
+					};
+					3AFC3338184C8DE4007B1118 = {
+						TestTargetID = 3AFC331C184C8DE3007B1118;
+					};
+				};
 			};
 			buildConfigurationList = BE4181BE14B38C92000251A7 /* Build configuration list for PBXProject "DCAKit" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -457,38 +597,41 @@
 			projectRoot = "";
 			targets = (
 				3A84833616D5DBB200927A33 /* DCAKit */,
-				3A84834416D5DBB200927A33 /* DCAKitTests */,
 				3A84836316D5DFB000927A33 /* DCAKitHeaders */,
+				3AC918F6184C8854004726E4 /* DCAKitTests */,
+				3AFC331C184C8DE3007B1118 /* DCAKitTestHost */,
+				3AFC3338184C8DE4007B1118 /* DCAKitTestHostTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		3A84834216D5DBB200927A33 /* Resources */ = {
+		3AC918F5184C8854004726E4 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3A84835116D5DBB200927A33 /* InfoPlist.strings in Resources */,
+				3AC91900184C8854004726E4 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3AFC331B184C8DE3007B1118 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3AFC3329184C8DE4007B1118 /* InfoPlist.strings in Resources */,
+				3AFC3334184C8DE4007B1118 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3AFC3337184C8DE4007B1118 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3AFC3345184C8DE5007B1118 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		3A84834316D5DBB200927A33 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "set -e\nif [ \"$RUN_UNIT_TEST_WITH_IOS_SIM\" = \"YES\" ]; then\ntest_bundle_path=\"$BUILT_PRODUCTS_DIR/$PRODUCT_NAME.$WRAPPER_EXTENSION\"\nSOURCE_DIRECTORY=$SRCROOT\nMYSDK=${SDK_NAME#\"iphonesimulator\"} #should be like \"6.1\"\n    echo sim --sdk=$MYSDK  $SDKROOT/Developer/usr/bin/otest -NSTreatUnknownArgumentsAsOpen NO -ApplePersistenceIgnoreState YES -SenTest Self $CODESIGNING_FOLDER_PATH\n    $SRCROOT/develop-environment/ios-sim --sdk=$MYSDK  $SDKROOT/Developer/usr/bin/otest -NSTreatUnknownArgumentsAsOpen NO -ApplePersistenceIgnoreState YES -SenTest Self $CODESIGNING_FOLDER_PATH\n    else\n    \"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\nfi";
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		3A84833316D5DBB200927A33 /* Sources */ = {
@@ -503,16 +646,9 @@
 				3A84838916D6035900927A33 /* NSObject+KVOHelp.m in Sources */,
 				3A38C56417FFEE9700B93764 /* DCAPrivateObj.m in Sources */,
 				3AAEC39C1817756B0036F1DE /* GCD+DCA.c in Sources */,
+				3AFC3315184C88C5007B1118 /* DCAAddressbookSerializer.m in Sources */,
 				3A84839916D61F0200927A33 /* NSMapTable+Literals.m in Sources */,
 				3A38C56C17FFF02600B93764 /* DCAPaperTrail.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		3A84834016D5DBB200927A33 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				3A84835416D5DBB200927A33 /* DCAKitTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -524,34 +660,74 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		3AC918F3184C8854004726E4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3AC91902184C8854004726E4 /* DCAKitTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3AFC3319184C8DE3007B1118 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3AFC3332184C8DE4007B1118 /* DCAKitTestHost.xcdatamodeld in Sources */,
+				3AFC332B184C8DE4007B1118 /* main.m in Sources */,
+				3AFC332F184C8DE4007B1118 /* DCAAppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3AFC3335184C8DE4007B1118 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3AFC3358184C8DF7007B1118 /* DCAAddressbookSerializerTests.m in Sources */,
+				3AFC3347184C8DE5007B1118 /* DCAKitTestHostTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		3A84834A16D5DBB200927A33 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 3A84833616D5DBB200927A33 /* DCAKit */;
-			targetProxy = 3A84834916D5DBB200927A33 /* PBXContainerItemProxy */;
-		};
 		3A84837416D5DFDC00927A33 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 3A84836316D5DFB000927A33 /* DCAKitHeaders */;
 			targetProxy = 3A84837316D5DFDC00927A33 /* PBXContainerItemProxy */;
 		};
+		3AC91905184C8855004726E4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3A84833616D5DBB200927A33 /* DCAKit */;
+			targetProxy = 3AC91904184C8855004726E4 /* PBXContainerItemProxy */;
+		};
+		3AFC333F184C8DE5007B1118 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3AFC331C184C8DE3007B1118 /* DCAKitTestHost */;
+			targetProxy = 3AFC333E184C8DE5007B1118 /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		3A84834F16D5DBB200927A33 /* InfoPlist.strings */ = {
+		3AC918FE184C8854004726E4 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				3A84835016D5DBB200927A33 /* en */,
+				3AC918FF184C8854004726E4 /* en */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		BE4181E314B38C93000251A7 /* InfoPlist.strings */ = {
+		3AFC3327184C8DE4007B1118 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				BE4181E414B38C93000251A7 /* en */,
+				3AFC3328184C8DE4007B1118 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		3AFC3343184C8DE5007B1118 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3AFC3344184C8DE5007B1118 /* en */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -596,7 +772,7 @@
 					"$(BUILD_ROOT)/../IntermediateBuildFilesPath/UninstalledProducts/include",
 					"$(inherited)",
 				);
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PUBLIC_HEADERS_FOLDER_PATH = include/DCAKit;
 				SDKROOT = iphoneos;
 			};
@@ -626,30 +802,6 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PUBLIC_HEADERS_FOLDER_PATH = nowhere;
 				SKIP_INSTALL = YES;
-			};
-			name = "Debug-Production-Backend";
-		};
-		3A38C57017FFFC3200B93764 /* Debug-Production-Backend */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_WARN_EMPTY_BODY = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
-					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "DCAKit/DCAKit-Prefix.pch";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = "DCAKitTests/DCAKitTests-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
-				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				WRAPPER_EXTENSION = octest;
 			};
 			name = "Debug-Production-Backend";
 		};
@@ -708,7 +860,7 @@
 					"$(BUILD_ROOT)/../IntermediateBuildFilesPath/UninstalledProducts/include",
 					"$(inherited)",
 				);
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PUBLIC_HEADERS_FOLDER_PATH = include/DCAKit;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -734,25 +886,6 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PUBLIC_HEADERS_FOLDER_PATH = nowhere;
 				SKIP_INSTALL = YES;
-			};
-			name = "Release-Live-Beta";
-		};
-		3A38C6AF1800CC2300B93764 /* Release-Live-Beta */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_WARN_EMPTY_BODY = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
-					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "DCAKit/DCAKit-Prefix.pch";
-				INFOPLIST_FILE = "DCAKitTests/DCAKitTests-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				WRAPPER_EXTENSION = octest;
 			};
 			name = "Release-Live-Beta";
 		};
@@ -806,7 +939,7 @@
 					"$(BUILD_ROOT)/../IntermediateBuildFilesPath/UninstalledProducts/include",
 					"$(inherited)",
 				);
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PUBLIC_HEADERS_FOLDER_PATH = include/DCAKit;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -832,25 +965,6 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PUBLIC_HEADERS_FOLDER_PATH = nowhere;
 				SKIP_INSTALL = YES;
-			};
-			name = AppStore;
-		};
-		3A6C110B183CD7B7004702AC /* AppStore */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_WARN_EMPTY_BODY = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
-					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "DCAKit/DCAKit-Prefix.pch";
-				INFOPLIST_FILE = "DCAKitTests/DCAKitTests-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				WRAPPER_EXTENSION = octest;
 			};
 			name = AppStore;
 		};
@@ -920,49 +1034,6 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PUBLIC_HEADERS_FOLDER_PATH = nowhere;
 				SKIP_INSTALL = YES;
-			};
-			name = Release;
-		};
-		3A84835916D5DBB200927A33 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_WARN_EMPTY_BODY = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
-					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "DCAKit/DCAKit-Prefix.pch";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = "DCAKitTests/DCAKitTests-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
-				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				WRAPPER_EXTENSION = octest;
-			};
-			name = Debug;
-		};
-		3A84835A16D5DBB200927A33 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_WARN_EMPTY_BODY = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
-					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "DCAKit/DCAKit-Prefix.pch";
-				INFOPLIST_FILE = "DCAKitTests/DCAKitTests-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				WRAPPER_EXTENSION = octest;
 			};
 			name = Release;
 		};
@@ -1048,7 +1119,7 @@
 					"$(BUILD_ROOT)/../IntermediateBuildFilesPath/UninstalledProducts/include",
 					"$(inherited)",
 				);
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PUBLIC_HEADERS_FOLDER_PATH = include/DCAKit;
 				SDKROOT = iphoneos;
 			};
@@ -1078,30 +1149,6 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PUBLIC_HEADERS_FOLDER_PATH = nowhere;
 				SKIP_INSTALL = YES;
-			};
-			name = UnitTest;
-		};
-		3A84837916D5E7AB00927A33 /* UnitTest */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_WARN_EMPTY_BODY = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
-					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "DCAKit/DCAKit-Prefix.pch";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = "DCAKitTests/DCAKitTests-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
-				ONLY_ACTIVE_ARCH = NO;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				WRAPPER_EXTENSION = octest;
 			};
 			name = UnitTest;
 		};
@@ -1160,7 +1207,7 @@
 					"$(BUILD_ROOT)/../IntermediateBuildFilesPath/UninstalledProducts/include",
 					"$(inherited)",
 				);
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PUBLIC_HEADERS_FOLDER_PATH = include/DCAKit;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -1189,25 +1236,6 @@
 			};
 			name = "Daily Build";
 		};
-		3A84838F16D60CF300927A33 /* Daily Build */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_WARN_EMPTY_BODY = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
-					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "DCAKit/DCAKit-Prefix.pch";
-				INFOPLIST_FILE = "DCAKitTests/DCAKitTests-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				WRAPPER_EXTENSION = octest;
-			};
-			name = "Daily Build";
-		};
 		3A84839016D60CF300927A33 /* Daily Build */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1225,6 +1253,486 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+			};
+			name = "Daily Build";
+		};
+		3AC91907184C8855004726E4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/libDCAKit.a";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DCAKitTests/DCAKitTests-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "DCAKitTests/DCAKitTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		3AC91908184C8855004726E4 /* Debug-Production-Backend */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/libDCAKit.a";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DCAKitTests/DCAKitTests-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "DCAKitTests/DCAKitTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = "Debug-Production-Backend";
+		};
+		3AC91909184C8855004726E4 /* UnitTest */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/libDCAKit.a";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				ENABLE_NS_ASSERTIONS = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DCAKitTests/DCAKitTests-Prefix.pch";
+				INFOPLIST_FILE = "DCAKitTests/DCAKitTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = UnitTest;
+		};
+		3AC9190A184C8855004726E4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/libDCAKit.a";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				ENABLE_NS_ASSERTIONS = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DCAKitTests/DCAKitTests-Prefix.pch";
+				INFOPLIST_FILE = "DCAKitTests/DCAKitTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+		3AC9190B184C8855004726E4 /* AppStore */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/libDCAKit.a";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				ENABLE_NS_ASSERTIONS = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DCAKitTests/DCAKitTests-Prefix.pch";
+				INFOPLIST_FILE = "DCAKitTests/DCAKitTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = AppStore;
+		};
+		3AC9190C184C8855004726E4 /* Release-Live-Beta */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/libDCAKit.a";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				ENABLE_NS_ASSERTIONS = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DCAKitTests/DCAKitTests-Prefix.pch";
+				INFOPLIST_FILE = "DCAKitTests/DCAKitTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = "Release-Live-Beta";
+		};
+		3AC9190D184C8855004726E4 /* Daily Build */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/libDCAKit.a";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				ENABLE_NS_ASSERTIONS = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DCAKitTests/DCAKitTests-Prefix.pch";
+				INFOPLIST_FILE = "DCAKitTests/DCAKitTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = "Daily Build";
+		};
+		3AFC3349184C8DE6007B1118 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DCAKitTestHost/DCAKitTestHost-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "DCAKitTestHost/DCAKitTestHost-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		3AFC334A184C8DE6007B1118 /* Debug-Production-Backend */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DCAKitTestHost/DCAKitTestHost-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "DCAKitTestHost/DCAKitTestHost-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = "Debug-Production-Backend";
+		};
+		3AFC334B184C8DE6007B1118 /* UnitTest */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_NS_ASSERTIONS = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DCAKitTestHost/DCAKitTestHost-Prefix.pch";
+				INFOPLIST_FILE = "DCAKitTestHost/DCAKitTestHost-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = UnitTest;
+		};
+		3AFC334C184C8DE6007B1118 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_NS_ASSERTIONS = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DCAKitTestHost/DCAKitTestHost-Prefix.pch";
+				INFOPLIST_FILE = "DCAKitTestHost/DCAKitTestHost-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		3AFC334D184C8DE6007B1118 /* AppStore */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_NS_ASSERTIONS = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DCAKitTestHost/DCAKitTestHost-Prefix.pch";
+				INFOPLIST_FILE = "DCAKitTestHost/DCAKitTestHost-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = AppStore;
+		};
+		3AFC334E184C8DE6007B1118 /* Release-Live-Beta */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_NS_ASSERTIONS = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DCAKitTestHost/DCAKitTestHost-Prefix.pch";
+				INFOPLIST_FILE = "DCAKitTestHost/DCAKitTestHost-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = "Release-Live-Beta";
+		};
+		3AFC334F184C8DE6007B1118 /* Daily Build */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_NS_ASSERTIONS = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DCAKitTestHost/DCAKitTestHost-Prefix.pch";
+				INFOPLIST_FILE = "DCAKitTestHost/DCAKitTestHost-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = "Daily Build";
+		};
+		3AFC3351184C8DE6007B1118 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/DCAKitTestHost.app/DCAKitTestHost";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DCAKitTestHost/DCAKitTestHost-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "DCAKitTestHostTests/DCAKitTestHostTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		3AFC3352184C8DE6007B1118 /* Debug-Production-Backend */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/DCAKitTestHost.app/DCAKitTestHost";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DCAKitTestHost/DCAKitTestHost-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "DCAKitTestHostTests/DCAKitTestHostTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = "Debug-Production-Backend";
+		};
+		3AFC3353184C8DE6007B1118 /* UnitTest */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/DCAKitTestHost.app/DCAKitTestHost";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				ENABLE_NS_ASSERTIONS = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DCAKitTestHost/DCAKitTestHost-Prefix.pch";
+				INFOPLIST_FILE = "DCAKitTestHostTests/DCAKitTestHostTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = UnitTest;
+		};
+		3AFC3354184C8DE6007B1118 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/DCAKitTestHost.app/DCAKitTestHost";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				ENABLE_NS_ASSERTIONS = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DCAKitTestHost/DCAKitTestHost-Prefix.pch";
+				INFOPLIST_FILE = "DCAKitTestHostTests/DCAKitTestHostTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+		3AFC3355184C8DE6007B1118 /* AppStore */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/DCAKitTestHost.app/DCAKitTestHost";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				ENABLE_NS_ASSERTIONS = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DCAKitTestHost/DCAKitTestHost-Prefix.pch";
+				INFOPLIST_FILE = "DCAKitTestHostTests/DCAKitTestHostTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = AppStore;
+		};
+		3AFC3356184C8DE6007B1118 /* Release-Live-Beta */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/DCAKitTestHost.app/DCAKitTestHost";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				ENABLE_NS_ASSERTIONS = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DCAKitTestHost/DCAKitTestHost-Prefix.pch";
+				INFOPLIST_FILE = "DCAKitTestHostTests/DCAKitTestHostTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = "Release-Live-Beta";
+		};
+		3AFC3357184C8DE6007B1118 /* Daily Build */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/DCAKitTestHost.app/DCAKitTestHost";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				ENABLE_NS_ASSERTIONS = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DCAKitTestHost/DCAKitTestHost-Prefix.pch";
+				INFOPLIST_FILE = "DCAKitTestHostTests/DCAKitTestHostTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
 			};
 			name = "Daily Build";
 		};
@@ -1265,7 +1773,7 @@
 					"$(BUILD_ROOT)/../IntermediateBuildFilesPath/UninstalledProducts/include",
 					"$(inherited)",
 				);
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				ONLY_ACTIVE_ARCH = YES;
 				PUBLIC_HEADERS_FOLDER_PATH = include/DCAKit;
 				SDKROOT = iphoneos;
@@ -1302,7 +1810,7 @@
 					"$(BUILD_ROOT)/../IntermediateBuildFilesPath/UninstalledProducts/include",
 					"$(inherited)",
 				);
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PUBLIC_HEADERS_FOLDER_PATH = include/DCAKit;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -1326,20 +1834,6 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		3A84835816D5DBB200927A33 /* Build configuration list for PBXNativeTarget "DCAKitTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				3A84835916D5DBB200927A33 /* Debug */,
-				3A38C57017FFFC3200B93764 /* Debug-Production-Backend */,
-				3A84837916D5E7AB00927A33 /* UnitTest */,
-				3A84835A16D5DBB200927A33 /* Release */,
-				3A6C110B183CD7B7004702AC /* AppStore */,
-				3A38C6AF1800CC2300B93764 /* Release-Live-Beta */,
-				3A84838F16D60CF300927A33 /* Daily Build */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		3A84836F16D5DFB100927A33 /* Build configuration list for PBXNativeTarget "DCAKitHeaders" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -1350,6 +1844,48 @@
 				3A6C110C183CD7B7004702AC /* AppStore */,
 				3A38C6B01800CC2300B93764 /* Release-Live-Beta */,
 				3A84839016D60CF300927A33 /* Daily Build */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3AC91906184C8855004726E4 /* Build configuration list for PBXNativeTarget "DCAKitTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3AC91907184C8855004726E4 /* Debug */,
+				3AC91908184C8855004726E4 /* Debug-Production-Backend */,
+				3AC91909184C8855004726E4 /* UnitTest */,
+				3AC9190A184C8855004726E4 /* Release */,
+				3AC9190B184C8855004726E4 /* AppStore */,
+				3AC9190C184C8855004726E4 /* Release-Live-Beta */,
+				3AC9190D184C8855004726E4 /* Daily Build */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3AFC3348184C8DE6007B1118 /* Build configuration list for PBXNativeTarget "DCAKitTestHost" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3AFC3349184C8DE6007B1118 /* Debug */,
+				3AFC334A184C8DE6007B1118 /* Debug-Production-Backend */,
+				3AFC334B184C8DE6007B1118 /* UnitTest */,
+				3AFC334C184C8DE6007B1118 /* Release */,
+				3AFC334D184C8DE6007B1118 /* AppStore */,
+				3AFC334E184C8DE6007B1118 /* Release-Live-Beta */,
+				3AFC334F184C8DE6007B1118 /* Daily Build */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3AFC3350184C8DE6007B1118 /* Build configuration list for PBXNativeTarget "DCAKitTestHostTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3AFC3351184C8DE6007B1118 /* Debug */,
+				3AFC3352184C8DE6007B1118 /* Debug-Production-Backend */,
+				3AFC3353184C8DE6007B1118 /* UnitTest */,
+				3AFC3354184C8DE6007B1118 /* Release */,
+				3AFC3355184C8DE6007B1118 /* AppStore */,
+				3AFC3356184C8DE6007B1118 /* Release-Live-Beta */,
+				3AFC3357184C8DE6007B1118 /* Daily Build */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1369,6 +1905,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		3AFC3330184C8DE4007B1118 /* DCAKitTestHost.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				3AFC3331184C8DE4007B1118 /* DCAKitTestHost.xcdatamodel */,
+			);
+			currentVersion = 3AFC3331184C8DE4007B1118 /* DCAKitTestHost.xcdatamodel */;
+			path = DCAKitTestHost.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = BE4181BB14B38C92000251A7 /* Project object */;
 }

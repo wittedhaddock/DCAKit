@@ -1,6 +1,6 @@
 //
-//  DCAKitTests.m
-//  DCAKitTests
+//  DCAKitTestHostTests.m
+//  DCAKitTestHostTests
 //
 //  Created by Drew Crawford on 12/2/13.
 //  Copyright (c) 2013 DrewCrawfordApps. All rights reserved.
@@ -8,11 +8,11 @@
 
 #import <XCTest/XCTest.h>
 
-@interface DCAKitTests : XCTestCase
+@interface DCAKitTestHostTests : XCTestCase
 
 @end
 
-@implementation DCAKitTests
+@implementation DCAKitTestHostTests
 
 - (void)setUp
 {

@@ -6,8 +6,8 @@
 //  Copyright (c) 2013 DrewCrawfordApps. All rights reserved.
 //
 
-#import <SenTestingKit/SenTestingKit.h>
+#import <XCTest/XCTest.h>
 
-@interface DCAKitTests : SenTestCase
+@interface DCAKitTests : XCTestCase
 
 @end

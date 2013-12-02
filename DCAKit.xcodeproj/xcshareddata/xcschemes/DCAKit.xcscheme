@@ -28,8 +28,8 @@
             buildForAnalyzing = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "3A84834416D5DBB200927A33"
-               BuildableName = "DCAKitTests.octest"
+               BlueprintIdentifier = "3AC918F6184C8854004726E4"
+               BuildableName = "DCAKitTests.xctest"
                BlueprintName = "DCAKitTests"
                ReferencedContainer = "container:DCAKit.xcodeproj">
             </BuildableReference>
@@ -43,12 +43,22 @@
       buildConfiguration = "Debug">
       <Testables>
          <TestableReference
+            skipped = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "3AC918F6184C8854004726E4"
+               BuildableName = "DCAKitTests.xctest"
+               BlueprintName = "DCAKitTests"
+               ReferencedContainer = "container:DCAKit.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "3A84834416D5DBB200927A33"
-               BuildableName = "DCAKitTests.octest"
-               BlueprintName = "DCAKitTests"
+               BlueprintIdentifier = "3AFC3338184C8DE4007B1118"
+               BuildableName = "DCAKitTestHostTests.xctest"
+               BlueprintName = "DCAKitTestHostTests"
                ReferencedContainer = "container:DCAKit.xcodeproj">
             </BuildableReference>
          </TestableReference>
