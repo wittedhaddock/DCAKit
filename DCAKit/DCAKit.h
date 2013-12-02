@@ -15,6 +15,7 @@
 #import <DCAKit/UIView+AutoLayout.h>
 #import <DCAKit/GCD+DCA.h>
 #import <DCAKit/UIView+JonathanMason.h>
+#import <DCAKit/DCAAddressBookSerializer.h>
 @interface DCAKit : NSObject
 
 @end

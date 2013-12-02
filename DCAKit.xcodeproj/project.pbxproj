@@ -37,13 +37,14 @@
 		3AAEC39C1817756B0036F1DE /* GCD+DCA.c in Sources */ = {isa = PBXBuildFile; fileRef = 3AAEC39B1817756B0036F1DE /* GCD+DCA.c */; };
 		3AAEC39E181776070036F1DE /* GCD+DCA.h in Headers */ = {isa = PBXBuildFile; fileRef = 3AAEC39D181775810036F1DE /* GCD+DCA.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3AAEC39F181776070036F1DE /* GCD+DCA.h in Headers */ = {isa = PBXBuildFile; fileRef = 3AAEC39D181775810036F1DE /* GCD+DCA.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		3AC918EA184C817B004726E4 /* DCAAddressbookSerializer.h in Headers */ = {isa = PBXBuildFile; fileRef = 3AC918E8184C817B004726E4 /* DCAAddressbookSerializer.h */; };
+		3AC918EA184C817B004726E4 /* DCAAddressbookSerializer.h in Headers */ = {isa = PBXBuildFile; fileRef = 3AC918E8184C817B004726E4 /* DCAAddressbookSerializer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3AC918F8184C8854004726E4 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AC918EF184C87A4004726E4 /* XCTest.framework */; };
 		3AC918F9184C8854004726E4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AC918F1184C8823004726E4 /* Foundation.framework */; };
 		3AC918FA184C8854004726E4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE4181D914B38C93000251A7 /* UIKit.framework */; };
 		3AC91900184C8854004726E4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3AC918FE184C8854004726E4 /* InfoPlist.strings */; };
 		3AC91902184C8854004726E4 /* DCAKitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AC91901184C8854004726E4 /* DCAKitTests.m */; };
 		3AE7DE4B184C8F3800C8B528 /* libDCAKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A84833716D5DBB200927A33 /* libDCAKit.a */; };
+		3AE7DE4C184C96EA00C8B528 /* DCAAddressbookSerializer.h in Headers */ = {isa = PBXBuildFile; fileRef = 3AC918E8184C817B004726E4 /* DCAAddressbookSerializer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3AFC3315184C88C5007B1118 /* DCAAddressbookSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AC918E9184C817B004726E4 /* DCAAddressbookSerializer.m */; };
 		3AFC331E184C8DE4007B1118 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AC918F1184C8823004726E4 /* Foundation.framework */; };
 		3AFC3320184C8DE4007B1118 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AFC331F184C8DE4007B1118 /* CoreGraphics.framework */; };
@@ -472,6 +473,7 @@
 				3A20853818029FD20017A0A6 /* UIView+AutoLayout.h in Headers */,
 				3A84838A16D6035C00927A33 /* NSObject+KVOHelp.h in Headers */,
 				3A84839A16D61F5A00927A33 /* NSMapTable+Literals.h in Headers */,
+				3AE7DE4C184C96EA00C8B528 /* DCAAddressbookSerializer.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
