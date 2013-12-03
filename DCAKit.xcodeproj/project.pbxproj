@@ -37,6 +37,8 @@
 		3AA0BBE7184E0F8B002C6AD4 /* DCAPaths.h in Headers */ = {isa = PBXBuildFile; fileRef = 3AA0BBE5184E0F8B002C6AD4 /* DCAPaths.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3AA0BBE8184E0F8B002C6AD4 /* DCAPaths.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AA0BBE6184E0F8B002C6AD4 /* DCAPaths.m */; };
 		3AA0BBEA184E0FB8002C6AD4 /* DCAPaths.h in Headers */ = {isa = PBXBuildFile; fileRef = 3AA0BBE5184E0F8B002C6AD4 /* DCAPaths.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3AA0BBEE184E13B7002C6AD4 /* NSUserDefaults+DCA.h in Headers */ = {isa = PBXBuildFile; fileRef = 3AA0BBEC184E13B7002C6AD4 /* NSUserDefaults+DCA.h */; };
+		3AA0BBEF184E13B7002C6AD4 /* NSUserDefaults+DCA.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AA0BBED184E13B7002C6AD4 /* NSUserDefaults+DCA.m */; };
 		3AAEC39C1817756B0036F1DE /* GCD+DCA.c in Sources */ = {isa = PBXBuildFile; fileRef = 3AAEC39B1817756B0036F1DE /* GCD+DCA.c */; };
 		3AAEC39E181776070036F1DE /* GCD+DCA.h in Headers */ = {isa = PBXBuildFile; fileRef = 3AAEC39D181775810036F1DE /* GCD+DCA.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3AAEC39F181776070036F1DE /* GCD+DCA.h in Headers */ = {isa = PBXBuildFile; fileRef = 3AAEC39D181775810036F1DE /* GCD+DCA.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -131,6 +133,8 @@
 		3A84839716D61F0200927A33 /* NSMapTable+Literals.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMapTable+Literals.m"; sourceTree = "<group>"; };
 		3AA0BBE5184E0F8B002C6AD4 /* DCAPaths.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCAPaths.h; sourceTree = "<group>"; };
 		3AA0BBE6184E0F8B002C6AD4 /* DCAPaths.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCAPaths.m; sourceTree = "<group>"; };
+		3AA0BBEC184E13B7002C6AD4 /* NSUserDefaults+DCA.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSUserDefaults+DCA.h"; sourceTree = "<group>"; };
+		3AA0BBED184E13B7002C6AD4 /* NSUserDefaults+DCA.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSUserDefaults+DCA.m"; sourceTree = "<group>"; };
 		3AAEC39B1817756B0036F1DE /* GCD+DCA.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "GCD+DCA.c"; sourceTree = "<group>"; };
 		3AAEC39D181775810036F1DE /* GCD+DCA.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GCD+DCA.h"; sourceTree = "<group>"; };
 		3AC918E8184C817B004726E4 /* DCAAddressbookSerializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCAAddressbookSerializer.h; sourceTree = "<group>"; };
@@ -243,6 +247,7 @@
 		3A84833916D5DBB200927A33 /* DCAKit */ = {
 			isa = PBXGroup;
 			children = (
+				3AA0BBEB184E13A6002C6AD4 /* NSUserDefaults */,
 				3AA0BBE9184E0F93002C6AD4 /* Paths */,
 				3AA0BBE4184E0F77002C6AD4 /* AddressBook */,
 				3A43A9A1181EA827006BA2D3 /* JonathanMason */,
@@ -352,6 +357,15 @@
 				3AA0BBE6184E0F8B002C6AD4 /* DCAPaths.m */,
 			);
 			name = Paths;
+			sourceTree = "<group>";
+		};
+		3AA0BBEB184E13A6002C6AD4 /* NSUserDefaults */ = {
+			isa = PBXGroup;
+			children = (
+				3AA0BBEC184E13B7002C6AD4 /* NSUserDefaults+DCA.h */,
+				3AA0BBED184E13B7002C6AD4 /* NSUserDefaults+DCA.m */,
+			);
+			name = NSUserDefaults;
 			sourceTree = "<group>";
 		};
 		3AAEC39A181775520036F1DE /* GCD */ = {
@@ -479,6 +493,7 @@
 				3A43A9A4181EA854006BA2D3 /* UIView+JonathanMason.h in Headers */,
 				3AA0BBE7184E0F8B002C6AD4 /* DCAPaths.h in Headers */,
 				3A2085391802B6BD0017A0A6 /* UIView+AutoLayout.h in Headers */,
+				3AA0BBEE184E13B7002C6AD4 /* NSUserDefaults+DCA.h in Headers */,
 				3A84839816D61F0200927A33 /* NSMapTable+Literals.h in Headers */,
 				3A38C56B17FFF02600B93764 /* DCAPaperTrail.h in Headers */,
 			);
@@ -666,6 +681,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3A84833F16D5DBB200927A33 /* DCAKit.m in Sources */,
+				3AA0BBEF184E13B7002C6AD4 /* NSUserDefaults+DCA.m in Sources */,
 				3A20853718020F110017A0A6 /* UIView+AutoLayout.m in Sources */,
 				3A84835B16D5DBC800927A33 /* DCASimpleKeychain.m in Sources */,
 				3A84838116D5EA4A00927A33 /* NSError+LessTerrible.m in Sources */,
