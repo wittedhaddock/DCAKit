@@ -34,6 +34,9 @@
 		3A84839816D61F0200927A33 /* NSMapTable+Literals.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A84839616D61F0200927A33 /* NSMapTable+Literals.h */; };
 		3A84839916D61F0200927A33 /* NSMapTable+Literals.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A84839716D61F0200927A33 /* NSMapTable+Literals.m */; };
 		3A84839A16D61F5A00927A33 /* NSMapTable+Literals.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A84839616D61F0200927A33 /* NSMapTable+Literals.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3AA0BBE7184E0F8B002C6AD4 /* DCAPaths.h in Headers */ = {isa = PBXBuildFile; fileRef = 3AA0BBE5184E0F8B002C6AD4 /* DCAPaths.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3AA0BBE8184E0F8B002C6AD4 /* DCAPaths.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AA0BBE6184E0F8B002C6AD4 /* DCAPaths.m */; };
+		3AA0BBEA184E0FB8002C6AD4 /* DCAPaths.h in Headers */ = {isa = PBXBuildFile; fileRef = 3AA0BBE5184E0F8B002C6AD4 /* DCAPaths.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3AAEC39C1817756B0036F1DE /* GCD+DCA.c in Sources */ = {isa = PBXBuildFile; fileRef = 3AAEC39B1817756B0036F1DE /* GCD+DCA.c */; };
 		3AAEC39E181776070036F1DE /* GCD+DCA.h in Headers */ = {isa = PBXBuildFile; fileRef = 3AAEC39D181775810036F1DE /* GCD+DCA.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3AAEC39F181776070036F1DE /* GCD+DCA.h in Headers */ = {isa = PBXBuildFile; fileRef = 3AAEC39D181775810036F1DE /* GCD+DCA.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -126,6 +129,8 @@
 		3A84838716D6035900927A33 /* NSObject+KVOHelp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+KVOHelp.m"; sourceTree = "<group>"; };
 		3A84839616D61F0200927A33 /* NSMapTable+Literals.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMapTable+Literals.h"; sourceTree = "<group>"; };
 		3A84839716D61F0200927A33 /* NSMapTable+Literals.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMapTable+Literals.m"; sourceTree = "<group>"; };
+		3AA0BBE5184E0F8B002C6AD4 /* DCAPaths.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCAPaths.h; sourceTree = "<group>"; };
+		3AA0BBE6184E0F8B002C6AD4 /* DCAPaths.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCAPaths.m; sourceTree = "<group>"; };
 		3AAEC39B1817756B0036F1DE /* GCD+DCA.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "GCD+DCA.c"; sourceTree = "<group>"; };
 		3AAEC39D181775810036F1DE /* GCD+DCA.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GCD+DCA.h"; sourceTree = "<group>"; };
 		3AC918E8184C817B004726E4 /* DCAAddressbookSerializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCAAddressbookSerializer.h; sourceTree = "<group>"; };
@@ -238,6 +243,8 @@
 		3A84833916D5DBB200927A33 /* DCAKit */ = {
 			isa = PBXGroup;
 			children = (
+				3AA0BBE9184E0F93002C6AD4 /* Paths */,
+				3AA0BBE4184E0F77002C6AD4 /* AddressBook */,
 				3A43A9A1181EA827006BA2D3 /* JonathanMason */,
 				3AAEC39A181775520036F1DE /* GCD */,
 				3A20853318020EF80017A0A6 /* AutoLayout */,
@@ -252,8 +259,6 @@
 				3A84833A16D5DBB200927A33 /* Supporting Files */,
 				3A38C56117FFEE9700B93764 /* DCAPrivateObj.h */,
 				3A38C56217FFEE9700B93764 /* DCAPrivateObj.m */,
-				3AC918E8184C817B004726E4 /* DCAAddressbookSerializer.h */,
-				3AC918E9184C817B004726E4 /* DCAAddressbookSerializer.m */,
 			);
 			path = DCAKit;
 			sourceTree = "<group>";
@@ -329,6 +334,24 @@
 				3A84839716D61F0200927A33 /* NSMapTable+Literals.m */,
 			);
 			name = NSMapTable;
+			sourceTree = "<group>";
+		};
+		3AA0BBE4184E0F77002C6AD4 /* AddressBook */ = {
+			isa = PBXGroup;
+			children = (
+				3AC918E8184C817B004726E4 /* DCAAddressbookSerializer.h */,
+				3AC918E9184C817B004726E4 /* DCAAddressbookSerializer.m */,
+			);
+			name = AddressBook;
+			sourceTree = "<group>";
+		};
+		3AA0BBE9184E0F93002C6AD4 /* Paths */ = {
+			isa = PBXGroup;
+			children = (
+				3AA0BBE5184E0F8B002C6AD4 /* DCAPaths.h */,
+				3AA0BBE6184E0F8B002C6AD4 /* DCAPaths.m */,
+			);
+			name = Paths;
 			sourceTree = "<group>";
 		};
 		3AAEC39A181775520036F1DE /* GCD */ = {
@@ -454,6 +477,7 @@
 				3A84838816D6035900927A33 /* NSObject+KVOHelp.h in Headers */,
 				3AC918EA184C817B004726E4 /* DCAAddressbookSerializer.h in Headers */,
 				3A43A9A4181EA854006BA2D3 /* UIView+JonathanMason.h in Headers */,
+				3AA0BBE7184E0F8B002C6AD4 /* DCAPaths.h in Headers */,
 				3A2085391802B6BD0017A0A6 /* UIView+AutoLayout.h in Headers */,
 				3A84839816D61F0200927A33 /* NSMapTable+Literals.h in Headers */,
 				3A38C56B17FFF02600B93764 /* DCAPaperTrail.h in Headers */,
@@ -471,6 +495,7 @@
 				3A84838216D5EA4D00927A33 /* NSError+LessTerrible.h in Headers */,
 				3A43A9A6181EAB26006BA2D3 /* UIView+JonathanMason.h in Headers */,
 				3A20853818029FD20017A0A6 /* UIView+AutoLayout.h in Headers */,
+				3AA0BBEA184E0FB8002C6AD4 /* DCAPaths.h in Headers */,
 				3A84838A16D6035C00927A33 /* NSObject+KVOHelp.h in Headers */,
 				3A84839A16D61F5A00927A33 /* NSMapTable+Literals.h in Headers */,
 				3AE7DE4C184C96EA00C8B528 /* DCAAddressbookSerializer.h in Headers */,
@@ -649,6 +674,7 @@
 				3A38C56417FFEE9700B93764 /* DCAPrivateObj.m in Sources */,
 				3AAEC39C1817756B0036F1DE /* GCD+DCA.c in Sources */,
 				3AFC3315184C88C5007B1118 /* DCAAddressbookSerializer.m in Sources */,
+				3AA0BBE8184E0F8B002C6AD4 /* DCAPaths.m in Sources */,
 				3A84839916D61F0200927A33 /* NSMapTable+Literals.m in Sources */,
 				3A38C56C17FFF02600B93764 /* DCAPaperTrail.m in Sources */,
 			);
