@@ -45,24 +45,42 @@ NSLayoutAttribute naturalInverse(NSLayoutAttribute input) {
     return nil;
 }
 
-- (void)constrainWith:(UIView *)view inDirection:(NSLayoutAttribute)direction value:(int) value {
+/**Attempts to find and remove any incompatible constraints */
+-(void) prepareToConstrainWith:(UIView*) view inDirection:(NSLayoutAttribute) direction {
     NSLayoutConstraint *constraint = [self constraintMatchingView:view inDirection:direction];
     if (constraint) [self removeConstraint:constraint];
-    constraint = [NSLayoutConstraint constraintWithItem:self attribute:direction relatedBy:NSLayoutRelationEqual toItem:view attribute:naturalInverse(direction) multiplier:1.0 constant:value];
+    
+    //search for alternate conflicting constraints.  e.g. NSLayoutAttributeRight conflicts with NSLayoutAttributeTrailing, etc.
+    NSLayoutAttribute alternateDirection = NSLayoutAttributeNotAnAttribute;
+    if (direction==NSLayoutAttributeLeft) {
+        alternateDirection = NSLayoutAttributeLeading;
+    }
+    else if (direction==NSLayoutAttributeRight) {
+        alternateDirection = NSLayoutAttributeTrailing;
+    }
+    //todo: others
+    if (alternateDirection != NSLayoutAttributeNotAnAttribute) {
+        constraint = [self constraintMatchingView:view inDirection:alternateDirection];
+        if (constraint) [self removeConstraint:constraint];
+    }
+    
+}
+
+- (void)constrainWith:(UIView *)view inDirection:(NSLayoutAttribute)direction value:(int) value {
+    [self prepareToConstrainWith:view inDirection:direction];
+    NSLayoutConstraint *constraint = [NSLayoutConstraint constraintWithItem:self attribute:direction relatedBy:NSLayoutRelationEqual toItem:view attribute:naturalInverse(direction) multiplier:1.0 constant:value];
     [self addConstraint:constraint];
 }
 
 - (void)constrainWithSuperviewInDirection:(NSLayoutAttribute)direction value:(int)value {
-    NSLayoutConstraint *constraint = [self.superview constraintMatchingView:self inDirection:direction];
-    if (constraint) [self.superview removeConstraint:constraint];
-    constraint = [NSLayoutConstraint constraintWithItem:self.superview attribute:direction relatedBy:NSLayoutRelationEqual toItem:self attribute:direction multiplier:1.0 constant:value];
+    [self.superview prepareToConstrainWith:self inDirection:direction];
+    NSLayoutConstraint *constraint = [NSLayoutConstraint constraintWithItem:self.superview attribute:direction relatedBy:NSLayoutRelationEqual toItem:self attribute:direction multiplier:1.0 constant:value];
     [self.superview addConstraint:constraint];
 }
 
 -(void) constrainHeight:(int) value {
-    NSLayoutConstraint *constraint = [self constraintMatchingView:nil inDirection:NSLayoutAttributeHeight];
-    if (constraint) [self removeConstraint:constraint];
-    constraint = [NSLayoutConstraint constraintWithItem:self attribute:NSLayoutAttributeHeight  relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1.0 constant:value];
+    [self prepareToConstrainWith:nil inDirection:NSLayoutAttributeHeight];
+    NSLayoutConstraint *constraint = [NSLayoutConstraint constraintWithItem:self attribute:NSLayoutAttributeHeight  relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1.0 constant:value];
     [self addConstraint:constraint];
 
 }
