@@ -36,4 +36,7 @@
 /**Apply constraints such that the view spreads to the full size of the superview*/
 -(void) maximize;
 
+/**This forces a view to be laid out synchronously.  Intended for use in animation blocks. */
+-(void) layoutForAnimation;
+
 @end

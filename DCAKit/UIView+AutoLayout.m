@@ -89,7 +89,11 @@ NSLayoutAttribute naturalInverse(NSLayoutAttribute input) {
     self.translatesAutoresizingMaskIntoConstraints = NO;
     [self.superview addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[self]|" options:0 metrics:nil views:@{@"self":self}]];
     [self.superview addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[self]|" options:0 metrics:nil views:@{@"self":self}]];
+}
 
+- (void)layoutForAnimation {
+    [self setNeedsLayout];
+    [self layoutIfNeeded];
 }
 
 @end
