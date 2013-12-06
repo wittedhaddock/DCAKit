@@ -33,6 +33,9 @@
 
 -(void) constrainHeight:(int) value;
 
+/**Sets constraints such that the view is positioned just beyond the superview (e.g. offscreen) in the given direction */
+-(void) constrainBeyondSuperviewInDirection:(NSLayoutAttribute) direction;
+
 /**Apply constraints such that the view spreads to the full size of the superview*/
 -(void) maximize;
 

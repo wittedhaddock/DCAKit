@@ -30,6 +30,23 @@ NSLayoutAttribute naturalInverse(NSLayoutAttribute input) {
     return NSLayoutAttributeNotAnAttribute;
 }
 
+BOOL constraintIsHorizontal(NSLayoutAttribute input);
+BOOL constraintIsHorizontal(NSLayoutAttribute input) {
+    if (input==NSLayoutAttributeLeft || input==NSLayoutAttributeRight || input==NSLayoutAttributeLeading || input==NSLayoutAttributeTrailing) {
+        return YES;
+    }
+    return NO;
+}
+
+BOOL constraintIsVertical(NSLayoutAttribute input);
+BOOL constraintIsVertical(NSLayoutAttribute input) {
+    if (input==NSLayoutAttributeTop || input==NSLayoutAttributeBottom) {
+        return YES;
+    }
+    return NO;
+}
+
+
 @implementation UIView (AutoLayout)
 - (NSLayoutConstraint*)constraintMatchingView:(UIView *)other inDirection:(NSLayoutAttribute)direction {
     NSLog(@"Searching for constraint between %p and %p in direction %d",self,other,direction);
@@ -94,6 +111,20 @@ NSLayoutAttribute naturalInverse(NSLayoutAttribute input) {
 - (void)layoutForAnimation {
     [self setNeedsLayout];
     [self layoutIfNeeded];
+}
+
+- (void)constrainBeyondSuperviewInDirection:(NSLayoutAttribute)direction {
+    int value = -1;
+    if (constraintIsHorizontal(direction)) {
+        value = self.bounds.size.width * -1;
+    }
+    else if (constraintIsVertical(direction)) {
+        value = self.bounds.size.height * -1;
+    }
+    else {
+        NSAssert(NO, @"Not implemented.");
+    }
+    [self constrainWithSuperviewInDirection:direction value:value];
 }
 
 @end
