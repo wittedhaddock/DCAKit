@@ -48,6 +48,9 @@
 		3AC918FA184C8854004726E4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE4181D914B38C93000251A7 /* UIKit.framework */; };
 		3AC91900184C8854004726E4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3AC918FE184C8854004726E4 /* InfoPlist.strings */; };
 		3AC91902184C8854004726E4 /* DCAKitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AC91901184C8854004726E4 /* DCAKitTests.m */; };
+		3AE43983185733720056F264 /* CGPointAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AE43982185733720056F264 /* CGPointAdditions.m */; };
+		3AE43985185734270056F264 /* CGPointAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 3AE43984185733810056F264 /* CGPointAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3AE43986185734280056F264 /* CGPointAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 3AE43984185733810056F264 /* CGPointAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3AE7DE4B184C8F3800C8B528 /* libDCAKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A84833716D5DBB200927A33 /* libDCAKit.a */; };
 		3AE7DE4C184C96EA00C8B528 /* DCAAddressbookSerializer.h in Headers */ = {isa = PBXBuildFile; fileRef = 3AC918E8184C817B004726E4 /* DCAAddressbookSerializer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3AFC3315184C88C5007B1118 /* DCAAddressbookSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AC918E9184C817B004726E4 /* DCAAddressbookSerializer.m */; };
@@ -146,6 +149,8 @@
 		3AC918FF184C8854004726E4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		3AC91901184C8854004726E4 /* DCAKitTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DCAKitTests.m; sourceTree = "<group>"; };
 		3AC91903184C8854004726E4 /* DCAKitTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DCAKitTests-Prefix.pch"; sourceTree = "<group>"; };
+		3AE43982185733720056F264 /* CGPointAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CGPointAdditions.m; sourceTree = "<group>"; };
+		3AE43984185733810056F264 /* CGPointAdditions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CGPointAdditions.h; sourceTree = "<group>"; };
 		3AFC3316184C88DB007B1118 /* DCAAddressbookSerializerTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DCAAddressbookSerializerTests.h; path = ../DCAKitTests/DCAAddressbookSerializerTests.h; sourceTree = "<group>"; };
 		3AFC3317184C88DB007B1118 /* DCAAddressbookSerializerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DCAAddressbookSerializerTests.m; path = ../DCAKitTests/DCAAddressbookSerializerTests.m; sourceTree = "<group>"; };
 		3AFC331D184C8DE3007B1118 /* DCAKitTestHost.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DCAKitTestHost.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -247,6 +252,7 @@
 		3A84833916D5DBB200927A33 /* DCAKit */ = {
 			isa = PBXGroup;
 			children = (
+				3AE43981185733610056F264 /* Foundation */,
 				3AA0BBEB184E13A6002C6AD4 /* NSUserDefaults */,
 				3AA0BBE9184E0F93002C6AD4 /* Paths */,
 				3AA0BBE4184E0F77002C6AD4 /* AddressBook */,
@@ -396,6 +402,15 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		3AE43981185733610056F264 /* Foundation */ = {
+			isa = PBXGroup;
+			children = (
+				3AE43982185733720056F264 /* CGPointAdditions.m */,
+				3AE43984185733810056F264 /* CGPointAdditions.h */,
+			);
+			name = Foundation;
+			sourceTree = "<group>";
+		};
 		3AFC3324184C8DE4007B1118 /* DCAKitTestHost */ = {
 			isa = PBXGroup;
 			children = (
@@ -490,6 +505,7 @@
 				3A84838016D5EA4A00927A33 /* NSError+LessTerrible.h in Headers */,
 				3A84838816D6035900927A33 /* NSObject+KVOHelp.h in Headers */,
 				3AC918EA184C817B004726E4 /* DCAAddressbookSerializer.h in Headers */,
+				3AE43986185734280056F264 /* CGPointAdditions.h in Headers */,
 				3A43A9A4181EA854006BA2D3 /* UIView+JonathanMason.h in Headers */,
 				3AA0BBE7184E0F8B002C6AD4 /* DCAPaths.h in Headers */,
 				3A2085391802B6BD0017A0A6 /* UIView+AutoLayout.h in Headers */,
@@ -514,6 +530,7 @@
 				3A84838A16D6035C00927A33 /* NSObject+KVOHelp.h in Headers */,
 				3A84839A16D61F5A00927A33 /* NSMapTable+Literals.h in Headers */,
 				3AE7DE4C184C96EA00C8B528 /* DCAAddressbookSerializer.h in Headers */,
+				3AE43985185734270056F264 /* CGPointAdditions.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -682,6 +699,7 @@
 			files = (
 				3A84833F16D5DBB200927A33 /* DCAKit.m in Sources */,
 				3AA0BBEF184E13B7002C6AD4 /* NSUserDefaults+DCA.m in Sources */,
+				3AE43983185733720056F264 /* CGPointAdditions.m in Sources */,
 				3A20853718020F110017A0A6 /* UIView+AutoLayout.m in Sources */,
 				3A84835B16D5DBC800927A33 /* DCASimpleKeychain.m in Sources */,
 				3A84838116D5EA4A00927A33 /* NSError+LessTerrible.m in Sources */,
