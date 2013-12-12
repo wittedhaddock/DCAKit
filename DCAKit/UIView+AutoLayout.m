@@ -7,6 +7,7 @@
 //
 
 #import "UIView+AutoLayout.h"
+//#undef DCA_CONSTRAINT_DEBUG
 
 /**Returns the inverse of the given direction (e.g. trailing == leading, etc.) for layout applications.*/
 NSLayoutAttribute naturalInverse(NSLayoutAttribute input);
@@ -49,9 +50,13 @@ BOOL constraintIsVertical(NSLayoutAttribute input) {
 
 @implementation UIView (AutoLayout)
 - (NSLayoutConstraint*)constraintMatchingView:(UIView *)other inDirection:(NSLayoutAttribute)direction {
+#if DCA_CONSTRAINT_DEBUG
     NSLog(@"Searching for constraint between %p and %p in direction %d",self,other,direction);
+#endif
     for(NSLayoutConstraint *constraint in self.constraints) {
+#if DCA_CONSTRAINT_DEBUG
         NSLog(@"Constraint between %p and %p in direction %d or %d",constraint.firstItem,constraint.secondItem,constraint.firstAttribute,constraint.secondAttribute);
+#endif
         if (constraint.firstItem==other && constraint.secondItem==self && constraint.secondAttribute==direction) {
             return constraint;
         }
