@@ -13,20 +13,20 @@
 NSLayoutAttribute naturalInverse(NSLayoutAttribute input);
 NSLayoutAttribute naturalInverse(NSLayoutAttribute input) {
     switch(input) {
-        case NSLayoutAttributeLeading:
+            case NSLayoutAttributeLeading:
             return NSLayoutAttributeTrailing;
-        case NSLayoutAttributeBottom:
+            case NSLayoutAttributeBottom:
             return NSLayoutAttributeTop;
-        case NSLayoutAttributeLeft:
+            case NSLayoutAttributeLeft:
             return NSLayoutAttributeRight;
-        case NSLayoutAttributeTop:
+            case NSLayoutAttributeTop:
             return NSLayoutAttributeBottom;
-        case NSLayoutAttributeRight:
+            case NSLayoutAttributeRight:
             return NSLayoutAttributeLeft;
-        case NSLayoutAttributeTrailing:
+            case NSLayoutAttributeTrailing:
             return NSLayoutAttributeLeading;
         default:
-            NSCAssert(NO, @"Unknown layout attribute %d",input);
+            NSCAssert(NO, @"Unknown layout attribute %d",(int)input);
     }
     return NSLayoutAttributeNotAnAttribute;
 }
@@ -67,6 +67,16 @@ BOOL constraintIsVertical(NSLayoutAttribute input) {
     return nil;
 }
 
+-(NSArray*) allConstraintsMatchingView:(UIView*) other {
+    NSMutableArray *ret = [[NSMutableArray alloc] init];
+    for(NSLayoutConstraint *constraint in self.constraints) {
+        if (constraint.firstItem==other || constraint.secondItem==other) {
+            [ret addObject:constraint];
+        }
+    }
+    return ret;
+}
+
 /**Attempts to find and remove any incompatible constraints */
 -(void) prepareToConstrainWith:(UIView*) view inDirection:(NSLayoutAttribute) direction {
     NSLayoutConstraint *constraint = [self constraintMatchingView:view inDirection:direction];
@@ -104,7 +114,19 @@ BOOL constraintIsVertical(NSLayoutAttribute input) {
     [self prepareToConstrainWith:nil inDirection:NSLayoutAttributeHeight];
     NSLayoutConstraint *constraint = [NSLayoutConstraint constraintWithItem:self attribute:NSLayoutAttributeHeight  relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1.0 constant:value];
     [self addConstraint:constraint];
+}
 
+- (void)constrainToFrame:(CGRect)frame {
+    [self constrainWidth:frame.size.width];
+    [self constrainHeight:frame.size.height];
+    [self constrainWithSuperviewInDirection:NSLayoutAttributeLeft value:-frame.origin.x];
+    [self constrainWithSuperviewInDirection:NSLayoutAttributeTop value:-frame.origin.y];
+}
+
+- (void)constrainWidth:(int)value {
+    [self prepareToConstrainWith:nil inDirection:NSLayoutAttributeWidth];
+    NSLayoutConstraint *constraint = [NSLayoutConstraint constraintWithItem:self attribute:NSLayoutAttributeWidth  relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1.0 constant:value];
+    [self addConstraint:constraint];
 }
 
 - (void)maximize {
@@ -131,5 +153,17 @@ BOOL constraintIsVertical(NSLayoutAttribute input) {
     }
     [self constrainWithSuperviewInDirection:direction value:value];
 }
+-(void) selectiveDisableAutolayoutForView:(UIView*) onView {
+    [self removeConstraints:[self allConstraintsMatchingView:onView]];
+    [self.superview selectiveDisableAutolayoutForView:onView];
+}
+
+- (void)disableAutolayout {
+    [self removeConstraints:self.constraints];
+    [self.superview selectiveDisableAutolayoutForView:self];
+    
+}
+
+
 
 @end

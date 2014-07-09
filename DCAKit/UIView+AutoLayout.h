@@ -31,7 +31,11 @@
  */
 -(void) constrainWithSuperviewInDirection:(NSLayoutAttribute) direction value:(int) value;
 
+-(void) constrainWidth:(int) value;
 -(void) constrainHeight:(int) value;
+
+/**Produces constraints such that the view has the given frame */
+-(void) constrainToFrame:(CGRect) frame;
 
 /**Sets constraints such that the view is positioned just beyond the superview (e.g. offscreen) in the given direction */
 -(void) constrainBeyondSuperviewInDirection:(NSLayoutAttribute) direction;
@@ -41,5 +45,8 @@
 
 /**This forces a view to be laid out synchronously.  Intended for use in animation blocks. */
 -(void) layoutForAnimation;
+
+/** disables autolayout on the receiver */
+- (void)disableAutolayout;
 
 @end

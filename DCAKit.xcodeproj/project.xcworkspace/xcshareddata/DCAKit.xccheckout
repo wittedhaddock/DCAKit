@@ -5,19 +5,19 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>0F224B35-74D2-473E-AAEF-C5F6D105D473</string>
+	<string>41E78470-DE4C-468A-8D22-4D7E04611C9A</string>
 	<key>IDESourceControlProjectName</key>
 	<string>DCAKit</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>79CAD43C-D0EB-49C2-A7DD-6E9027A9473E</key>
+		<key>D9CB83C5-3EB3-45B7-B9A2-E11AEC0D4C69</key>
 		<string>ssh://github.com/drewcrawford/DCAKit.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>DCAKit.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>79CAD43C-D0EB-49C2-A7DD-6E9027A9473E</key>
+		<key>D9CB83C5-3EB3-45B7-B9A2-E11AEC0D4C69</key>
 		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
@@ -25,14 +25,14 @@
 	<key>IDESourceControlProjectVersion</key>
 	<integer>110</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>79CAD43C-D0EB-49C2-A7DD-6E9027A9473E</string>
+	<string>D9CB83C5-3EB3-45B7-B9A2-E11AEC0D4C69</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>79CAD43C-D0EB-49C2-A7DD-6E9027A9473E</string>
+			<string>D9CB83C5-3EB3-45B7-B9A2-E11AEC0D4C69</string>
 			<key>IDESourceControlWCCName</key>
 			<string>DCAKit</string>
 		</dict>
