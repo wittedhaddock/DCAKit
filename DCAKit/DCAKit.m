@@ -8,6 +8,6 @@
 
 #import "DCAKit.h"
 
-@implementation DCAKit
+@implementation DCAKit : NSObject 
 
 @end
