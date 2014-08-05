@@ -23,7 +23,6 @@
 		3AFE4BC4199171A50067E69F /* NSUserDefaults+DCA.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AA0BBED184E13B7002C6AD4 /* NSUserDefaults+DCA.m */; };
 		3AFE4BC5199171A90067E69F /* DCAAddressbookSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AC918E9184C817B004726E4 /* DCAAddressbookSerializer.m */; };
 		3AFE4BC6199172430067E69F /* DCAKitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AC91901184C8854004726E4 /* DCAKitTests.m */; };
-		3AFE4BC71991730E0067E69F /* DCAKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A84833C16D5DBB200927A33 /* DCAKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -320,7 +319,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3AFE4BC71991730E0067E69F /* DCAKit.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
