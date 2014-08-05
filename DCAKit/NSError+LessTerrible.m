@@ -39,13 +39,13 @@ static NSMutableSet *whitelistedErrors;
         whitelistedErrors = [[NSMutableSet alloc] init];
     });
     @synchronized(whitelistedErrors) {
-        [whitelistedErrors addObject:[NSString stringWithFormat:@"%@_%d",self.domain,self.code]];
+        [whitelistedErrors addObject:[NSString stringWithFormat:@"%@_%ld",self.domain,(long)self.code]];
     }
 }
 
 -(void) present {
     @synchronized(whitelistedErrors) {
-        if ([whitelistedErrors containsObject:[NSString stringWithFormat:@"%@_%d",self.domain,self.code]]) {
+        if ([whitelistedErrors containsObject:[NSString stringWithFormat:@"%@_%ld",self.domain,(long)self.code]]) {
             return;
         }
     }
