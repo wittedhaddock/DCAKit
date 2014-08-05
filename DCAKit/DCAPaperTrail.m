@@ -115,7 +115,7 @@ static NSMutableString *incidentID;
     [incidentID appendString:@"-"];
     [incidentID appendString:[incident.UUIDString substringToIndex:5]];
     [incidentID appendString:@"-"];
-    NSCalendar *gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
+    NSCalendar *gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
     
     NSDateComponents *components = [gregorian components:NSCalendarUnitDay | NSCalendarUnitMonth | NSCalendarUnitYear fromDate:[NSDate date]];
     
@@ -127,8 +127,7 @@ static NSMutableString *incidentID;
 
 -(void) innerLog:(NSString*) message {
     NSData *sysLogData = [message dataUsingEncoding:NSUTF8StringEncoding];
-    
-    int bytes = [_writeStream write:[sysLogData bytes] maxLength:sysLogData.length];
+    NSInteger bytes = [_writeStream write:[sysLogData bytes] maxLength:(int)sysLogData.length];
     if (bytes==-1) {
         NSLog(@"%@",_writeStream.streamError);
         //reconnect
@@ -142,6 +141,8 @@ static NSMutableString *incidentID;
     //the iOS simulator is pretty unreliable about identifierForVendor, so it's better not to log here I guess
 #if TARGET_IPHONE_SIMULATOR
     return;
+    #pragma clang diagnostic push
+    #pragma clang diagnostic ignored "-Wunreachable-code"
 #endif
     dispatch_async(loggingQueue, ^{
         
@@ -173,6 +174,9 @@ static NSMutableString *incidentID;
         
         [self performSelector:@selector(innerLog:) onThread:_internalThread withObject:sysLog waitUntilDone:YES];
     });
+#if TARGET_IPHONE_SIMULATOR
+#pragma clang diagnostic pop
+#endif
 }
 
 +(void) log:(NSString*) format arguments:(va_list) args {
