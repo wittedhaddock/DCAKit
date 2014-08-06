@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 
 @interface NSUserDefaults (DCA)
+#warning arbitrary warning
 /** +[NSUserDefaults resetStandardUserDefaults doesn't do what you think. */
 +(void) actuallyResetStandardUserDefaults;
 @end
