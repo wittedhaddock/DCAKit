@@ -26,5 +26,9 @@
     [super tearDown];
 }
 
+- (void) testExample {
+    XCTFail(@"Debugging CaveJohnson");
+}
+
 
 @end
