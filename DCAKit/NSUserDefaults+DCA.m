@@ -15,5 +15,7 @@
         [defaults removeObjectForKey:key];
     }
     [defaults synchronize];
+    CFArrayCreate(NULL, NULL, 0, NULL);
+    
 }
 @end
