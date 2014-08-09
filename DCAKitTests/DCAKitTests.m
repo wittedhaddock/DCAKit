@@ -27,7 +27,7 @@
 }
 
 - (void) testExample {
-    XCTFail(@"Debugging CaveJohnson");
+    //XCTFail(@"Debugging CaveJohnson");
 }
 
 
