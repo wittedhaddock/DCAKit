@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		3A139D6C1994A7C200AB0990 /* SwiftPortability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A139D6B1994A7C200AB0990 /* SwiftPortability.swift */; };
 		3A139DD61994AB5C00AB0990 /* DCAKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A84833C16D5DBB200927A33 /* DCAKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3A3C2FBB199587CA00F58257 /* NSURLSession+Synchronous.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3C2FBA199587CA00F58257 /* NSURLSession+Synchronous.swift */; };
 		3AFE4BA5199171680067E69F /* DCAKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AFE4BA4199171680067E69F /* DCAKitTests.swift */; };
 		3AFE4BB6199171750067E69F /* CGPointAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AE43982185733720056F264 /* CGPointAdditions.m */; };
 		3AFE4BB81991719F0067E69F /* UIView+JonathanMason.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A43A9A3181EA854006BA2D3 /* UIView+JonathanMason.m */; };
@@ -44,6 +45,7 @@
 		3A20853518020F110017A0A6 /* UIView+AutoLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+AutoLayout.m"; sourceTree = "<group>"; };
 		3A38C56917FFF02600B93764 /* DCAPaperTrail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCAPaperTrail.h; sourceTree = "<group>"; };
 		3A38C56A17FFF02600B93764 /* DCAPaperTrail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCAPaperTrail.m; sourceTree = "<group>"; };
+		3A3C2FBA199587CA00F58257 /* NSURLSession+Synchronous.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSURLSession+Synchronous.swift"; sourceTree = "<group>"; };
 		3A43A9A2181EA854006BA2D3 /* UIView+JonathanMason.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+JonathanMason.h"; sourceTree = "<group>"; };
 		3A43A9A3181EA854006BA2D3 /* UIView+JonathanMason.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+JonathanMason.m"; sourceTree = "<group>"; };
 		3A84832F16D5DB2200927A33 /* DCASimpleKeychain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCASimpleKeychain.h; sourceTree = "<group>"; };
@@ -131,6 +133,14 @@
 			name = PaperTrail;
 			sourceTree = "<group>";
 		};
+		3A3C2FB9199587BB00F58257 /* NSURLSession */ = {
+			isa = PBXGroup;
+			children = (
+				3A3C2FBA199587CA00F58257 /* NSURLSession+Synchronous.swift */,
+			);
+			name = NSURLSession;
+			sourceTree = "<group>";
+		};
 		3A43A9A1181EA827006BA2D3 /* JonathanMason */ = {
 			isa = PBXGroup;
 			children = (
@@ -143,6 +153,7 @@
 		3A84833916D5DBB200927A33 /* DCAKit */ = {
 			isa = PBXGroup;
 			children = (
+				3A3C2FB9199587BB00F58257 /* NSURLSession */,
 				3A139D6A1994A7B600AB0990 /* SwiftPortability */,
 				3AE43981185733610056F264 /* Foundation */,
 				3AA0BBEB184E13A6002C6AD4 /* NSUserDefaults */,
@@ -462,6 +473,7 @@
 				3AFE4BBD1991719F0067E69F /* NSObject+KVOHelp.m in Sources */,
 				3A139D6C1994A7C200AB0990 /* SwiftPortability.swift in Sources */,
 				3AFE4BBE1991719F0067E69F /* NSError+LessTerrible.m in Sources */,
+				3A3C2FBB199587CA00F58257 /* NSURLSession+Synchronous.swift in Sources */,
 				3AFE4BBF1991719F0067E69F /* DCASimpleKeychain.m in Sources */,
 				3AFE4BC01991719F0067E69F /* NSRegularExpression+helpers.m in Sources */,
 				3AFE4BC11991719F0067E69F /* NSTextCheckingResult+helpers.m in Sources */,
