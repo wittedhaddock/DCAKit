@@ -135,6 +135,8 @@ static NSMutableString *incidentID;
     }
 }
 
+
+
 -(void) log:(NSString *) format arguments:(va_list) args {
     NSString *replacedLog = [[NSString alloc] initWithFormat:format arguments:args];
     NSLog(@"%@",replacedLog);
@@ -179,7 +181,7 @@ static NSMutableString *incidentID;
 #endif
 }
 
-+(void) log:(NSString*) format arguments:(va_list) args {
++(void) logFormat:(NSString*) format arguments:(va_list) args {
     if (!singleton) {
         NSLogv(format, args);
         return;
@@ -187,17 +189,21 @@ static NSMutableString *incidentID;
     [singleton log:format arguments:args];
 }
 
-+(void) log:(NSString*) format, ... {
++(void) logFormat:(NSString*) format, ... {
     va_list args;
     va_start(args, format);
-    [self log:format arguments:args];
+    [self logFormat:format arguments:args];
     va_end(args);
+}
+
++(void) logNoArgs:(NSString *)stringToLog {
+    [self logFormat:stringToLog arguments:nil];
 }
 
 void PTLog(NSString *format, ...) {
     va_list args;
     va_start(args, format);
-    [DCAPaperTrail log:format arguments:args];
+    [DCAPaperTrail logFormat:format arguments:args];
     va_end(args);
 }
 

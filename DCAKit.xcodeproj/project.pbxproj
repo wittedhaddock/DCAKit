@@ -10,6 +10,7 @@
 		3A139D6C1994A7C200AB0990 /* SwiftPortability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A139D6B1994A7C200AB0990 /* SwiftPortability.swift */; };
 		3A139DD61994AB5C00AB0990 /* DCAKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A84833C16D5DBB200927A33 /* DCAKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3A3C2FBB199587CA00F58257 /* NSURLSession+Synchronous.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3C2FBA199587CA00F58257 /* NSURLSession+Synchronous.swift */; };
+		3A3C2FC21995DB1500F58257 /* DCAPaperTrailSwiftSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3C2FC11995DB1500F58257 /* DCAPaperTrailSwiftSupport.swift */; };
 		3AFE4BA5199171680067E69F /* DCAKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AFE4BA4199171680067E69F /* DCAKitTests.swift */; };
 		3AFE4BB6199171750067E69F /* CGPointAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AE43982185733720056F264 /* CGPointAdditions.m */; };
 		3AFE4BB81991719F0067E69F /* UIView+JonathanMason.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A43A9A3181EA854006BA2D3 /* UIView+JonathanMason.m */; };
@@ -46,6 +47,7 @@
 		3A38C56917FFF02600B93764 /* DCAPaperTrail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCAPaperTrail.h; sourceTree = "<group>"; };
 		3A38C56A17FFF02600B93764 /* DCAPaperTrail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCAPaperTrail.m; sourceTree = "<group>"; };
 		3A3C2FBA199587CA00F58257 /* NSURLSession+Synchronous.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSURLSession+Synchronous.swift"; sourceTree = "<group>"; };
+		3A3C2FC11995DB1500F58257 /* DCAPaperTrailSwiftSupport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DCAPaperTrailSwiftSupport.swift; sourceTree = "<group>"; };
 		3A43A9A2181EA854006BA2D3 /* UIView+JonathanMason.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+JonathanMason.h"; sourceTree = "<group>"; };
 		3A43A9A3181EA854006BA2D3 /* UIView+JonathanMason.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+JonathanMason.m"; sourceTree = "<group>"; };
 		3A84832F16D5DB2200927A33 /* DCASimpleKeychain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCASimpleKeychain.h; sourceTree = "<group>"; };
@@ -129,6 +131,7 @@
 			children = (
 				3A38C56917FFF02600B93764 /* DCAPaperTrail.h */,
 				3A38C56A17FFF02600B93764 /* DCAPaperTrail.m */,
+				3A3C2FC11995DB1500F58257 /* DCAPaperTrailSwiftSupport.swift */,
 			);
 			name = PaperTrail;
 			sourceTree = "<group>";
@@ -463,6 +466,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A3C2FC21995DB1500F58257 /* DCAPaperTrailSwiftSupport.swift in Sources */,
 				3AFE4BC5199171A90067E69F /* DCAAddressbookSerializer.m in Sources */,
 				3AFE4BC4199171A50067E69F /* NSUserDefaults+DCA.m in Sources */,
 				3AFE4BB81991719F0067E69F /* UIView+JonathanMason.m in Sources */,

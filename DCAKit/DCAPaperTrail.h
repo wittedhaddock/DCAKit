@@ -12,7 +12,8 @@
 @interface DCAPaperTrail : NSObject
 
 +(void) configureWithHostname:(NSString*) hostname port:(int) port;
-+(void) log:(NSString*) format, ... NS_FORMAT_FUNCTION(1,2);
++(void) logFormat:(NSString*) format, ... NS_FORMAT_FUNCTION(1,2);
++(void) logNoArgs:(NSString*) stringToLog;
 void PTLog(NSString *format, ...) NS_FORMAT_FUNCTION(1, 2);
 +(NSString*) incidentID;
 @end
