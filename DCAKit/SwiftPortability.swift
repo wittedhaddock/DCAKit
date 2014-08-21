@@ -7,10 +7,3 @@
 //
 
 import Foundation
-public extension Unmanaged {
-    public var foundationConstantAsString: String {
-        get {
-            return self.takeUnretainedValue() as NSString;
-        }
-    }
-}
