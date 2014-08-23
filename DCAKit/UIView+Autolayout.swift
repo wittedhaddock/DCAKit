@@ -146,7 +146,6 @@ public extension UIView {
     }
 
     
-
     public  func constrainToSize(size: CGSize) {
         assert(self.constraints().count==0,"Not implemented")
         
@@ -157,6 +156,8 @@ public extension UIView {
 
     }
 
+/** Constrains the function beyond (outside) the superview in the specified direction).
+Note that the view must have a clean layout, since this function relies on the width/height of the receiver */
     public func constrainBeyondSuperview(inDirection: NSLayoutAttribute) {
         if let oldConstraint = self.constraintsImpactingView(inDirection).atMostOne() {
             self.removeConstraintFromSelfOrSuperview(oldConstraint)
