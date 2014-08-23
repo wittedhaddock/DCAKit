@@ -23,7 +23,6 @@ FOUNDATION_EXPORT const unsigned char DCAKitVersionString[];
 #import <DCAKit/NSObject+KVOHelp.h>
 #import <DCAKit/NSMapTable+Literals.h>
 #import <DCAKit/DCAPaperTrail.h>
-#import <DCAKit/UIView+AutoLayout.h>
 #import <DCAKit/GCD+DCA.h>
 #import <DCAKit/UIView+JonathanMason.h>
 #import <DCAKit/DCAAddressBookSerializer.h>
