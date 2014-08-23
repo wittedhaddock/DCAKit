@@ -108,5 +108,26 @@ class AutolayoutTests: XCTestCase {
         XCTAssertEqual(superview.frame.width, view.frame.origin.x, "Unexpected frame")
         
     }
+    
+    func testConstrainBeyondLeftSide(){
+        let superview = UIView(frame:CGRectMake(0, 0, 100, 100))
+        superview.constrainToSize(superview.frame.size)
+        let view = UIView(frame: CGRectMake(0, 0, 10, 10))
+        view.setTranslatesAutoresizingMaskIntoConstraints(false)
+        superview.addSubview(view)
+        let constraints = NSLayoutConstraint.constraintsWithVisualFormat("|[v]|", options: nil, metrics: nil, views: ["v":view]) as [NSLayoutConstraint]
+        let vConstraints = NSLayoutConstraint.constraintsWithVisualFormat("V:|[v]|", options: nil, metrics: nil, views: ["v":view]) as [NSLayoutConstraint]
+        XCTAssertEqual(constraints.count, 2, "Unexpected constraints")
+        superview.addConstraints(constraints)
+        superview.addConstraints(vConstraints)
+        superview.layoutNOW()
+        
+        view.constrainBeyondSuperview(.Left)
+        superview.layoutNOW()
+        println(view.frame)
+        println(superview.frame)
+        XCTAssertEqual(view.frame.origin.x + view.frame.size.width/2.0, superview.frame.origin.x, "Unexpected frame")
+        
+    }
 
 }
