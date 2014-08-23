@@ -11,11 +11,13 @@
 		3A139DD61994AB5C00AB0990 /* DCAKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A84833C16D5DBB200927A33 /* DCAKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3A3C2FBB199587CA00F58257 /* NSURLSession+Synchronous.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3C2FBA199587CA00F58257 /* NSURLSession+Synchronous.swift */; };
 		3A3C2FC21995DB1500F58257 /* DCAPaperTrailSwiftSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3C2FC11995DB1500F58257 /* DCAPaperTrailSwiftSupport.swift */; };
+		3A62176C19A886D4000AC9E1 /* DCAKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AFE4B96199171660067E69F /* DCAKit.framework */; };
+		3AD678D319A8813E00AFE020 /* UIView+Autolayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD678D219A8813E00AFE020 /* UIView+Autolayout.swift */; };
+		3AD678D519A8815F00AFE020 /* AutolayoutTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD678D419A8815F00AFE020 /* AutolayoutTests.swift */; };
 		3AFE4BA5199171680067E69F /* DCAKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AFE4BA4199171680067E69F /* DCAKitTests.swift */; };
 		3AFE4BB6199171750067E69F /* CGPointAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AE43982185733720056F264 /* CGPointAdditions.m */; };
 		3AFE4BB81991719F0067E69F /* UIView+JonathanMason.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A43A9A3181EA854006BA2D3 /* UIView+JonathanMason.m */; };
 		3AFE4BB91991719F0067E69F /* GCD+DCA.c in Sources */ = {isa = PBXBuildFile; fileRef = 3AAEC39B1817756B0036F1DE /* GCD+DCA.c */; };
-		3AFE4BBA1991719F0067E69F /* UIView+AutoLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A20853518020F110017A0A6 /* UIView+AutoLayout.m */; };
 		3AFE4BBB1991719F0067E69F /* DCAPaperTrail.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A38C56A17FFF02600B93764 /* DCAPaperTrail.m */; };
 		3AFE4BBC1991719F0067E69F /* NSMapTable+Literals.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A84839716D61F0200927A33 /* NSMapTable+Literals.m */; };
 		3AFE4BBD1991719F0067E69F /* NSObject+KVOHelp.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A84838716D6035900927A33 /* NSObject+KVOHelp.m */; };
@@ -31,7 +33,6 @@
 		3AFE4C2F19917BD80067E69F /* NSObject+KVOHelp.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A84838616D6035900927A33 /* NSObject+KVOHelp.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3AFE4C3019917BDF0067E69F /* NSMapTable+Literals.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A84839616D61F0200927A33 /* NSMapTable+Literals.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3AFE4C3119917BE20067E69F /* DCAPaperTrail.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A38C56917FFF02600B93764 /* DCAPaperTrail.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		3AFE4C3219917BE50067E69F /* UIView+AutoLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A20853418020F110017A0A6 /* UIView+AutoLayout.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3AFE4C3319917BE90067E69F /* GCD+DCA.h in Headers */ = {isa = PBXBuildFile; fileRef = 3AAEC39D181775810036F1DE /* GCD+DCA.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3AFE4C3419917BED0067E69F /* UIView+JonathanMason.h in Headers */ = {isa = PBXBuildFile; fileRef = 3A43A9A2181EA854006BA2D3 /* UIView+JonathanMason.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3AFE4C3519917BF00067E69F /* DCAAddressbookSerializer.h in Headers */ = {isa = PBXBuildFile; fileRef = 3AC918E8184C817B004726E4 /* DCAAddressbookSerializer.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -42,8 +43,6 @@
 
 /* Begin PBXFileReference section */
 		3A139D6B1994A7C200AB0990 /* SwiftPortability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftPortability.swift; sourceTree = "<group>"; };
-		3A20853418020F110017A0A6 /* UIView+AutoLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+AutoLayout.h"; sourceTree = "<group>"; };
-		3A20853518020F110017A0A6 /* UIView+AutoLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+AutoLayout.m"; sourceTree = "<group>"; };
 		3A38C56917FFF02600B93764 /* DCAPaperTrail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCAPaperTrail.h; sourceTree = "<group>"; };
 		3A38C56A17FFF02600B93764 /* DCAPaperTrail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCAPaperTrail.m; sourceTree = "<group>"; };
 		3A3C2FBA199587CA00F58257 /* NSURLSession+Synchronous.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSURLSession+Synchronous.swift"; sourceTree = "<group>"; };
@@ -74,6 +73,8 @@
 		3AC918FF184C8854004726E4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		3AC91901184C8854004726E4 /* DCAKitTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DCAKitTests.m; sourceTree = "<group>"; };
 		3AC91903184C8854004726E4 /* DCAKitTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DCAKitTests-Prefix.pch"; sourceTree = "<group>"; };
+		3AD678D219A8813E00AFE020 /* UIView+Autolayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Autolayout.swift"; sourceTree = "<group>"; };
+		3AD678D419A8815F00AFE020 /* AutolayoutTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutolayoutTests.swift; sourceTree = "<group>"; };
 		3AE43982185733720056F264 /* CGPointAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CGPointAdditions.m; sourceTree = "<group>"; };
 		3AE43984185733810056F264 /* CGPointAdditions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CGPointAdditions.h; sourceTree = "<group>"; };
 		3AFC331F184C8DE4007B1118 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -103,6 +104,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A62176C19A886D4000AC9E1 /* DCAKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -120,8 +122,7 @@
 		3A20853318020EF80017A0A6 /* AutoLayout */ = {
 			isa = PBXGroup;
 			children = (
-				3A20853418020F110017A0A6 /* UIView+AutoLayout.h */,
-				3A20853518020F110017A0A6 /* UIView+AutoLayout.m */,
+				3AD678D219A8813E00AFE020 /* UIView+Autolayout.swift */,
 			);
 			name = AutoLayout;
 			sourceTree = "<group>";
@@ -302,6 +303,7 @@
 			children = (
 				3AFE4BA4199171680067E69F /* DCAKitTests.swift */,
 				3AFE4BA2199171680067E69F /* Supporting Files */,
+				3AD678D419A8815F00AFE020 /* AutolayoutTests.swift */,
 			);
 			path = DCAKitTests;
 			sourceTree = "<group>";
@@ -363,7 +365,6 @@
 				3AFE4C3319917BE90067E69F /* GCD+DCA.h in Headers */,
 				3AFE4C2D19917BD00067E69F /* DCASimpleKeychain.h in Headers */,
 				3AFE4C3719917BF70067E69F /* NSUserDefaults+DCA.h in Headers */,
-				3AFE4C3219917BE50067E69F /* UIView+AutoLayout.h in Headers */,
 				3AFE4C3119917BE20067E69F /* DCAPaperTrail.h in Headers */,
 				3AFE4C3819917BFA0067E69F /* CGPointAdditions.h in Headers */,
 				3A139DD61994AB5C00AB0990 /* DCAKit.h in Headers */,
@@ -471,7 +472,6 @@
 				3AFE4BC4199171A50067E69F /* NSUserDefaults+DCA.m in Sources */,
 				3AFE4BB81991719F0067E69F /* UIView+JonathanMason.m in Sources */,
 				3AFE4BB91991719F0067E69F /* GCD+DCA.c in Sources */,
-				3AFE4BBA1991719F0067E69F /* UIView+AutoLayout.m in Sources */,
 				3AFE4BBB1991719F0067E69F /* DCAPaperTrail.m in Sources */,
 				3AFE4BBC1991719F0067E69F /* NSMapTable+Literals.m in Sources */,
 				3AFE4BBD1991719F0067E69F /* NSObject+KVOHelp.m in Sources */,
@@ -480,6 +480,7 @@
 				3A3C2FBB199587CA00F58257 /* NSURLSession+Synchronous.swift in Sources */,
 				3AFE4BBF1991719F0067E69F /* DCASimpleKeychain.m in Sources */,
 				3AFE4BC01991719F0067E69F /* NSRegularExpression+helpers.m in Sources */,
+				3AD678D319A8813E00AFE020 /* UIView+Autolayout.swift in Sources */,
 				3AFE4BC11991719F0067E69F /* NSTextCheckingResult+helpers.m in Sources */,
 				3AFE4BB6199171750067E69F /* CGPointAdditions.m in Sources */,
 			);
@@ -489,6 +490,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3AD678D519A8815F00AFE020 /* AutolayoutTests.swift in Sources */,
 				3AFE4BA5199171680067E69F /* DCAKitTests.swift in Sources */,
 				3AFE4BC6199172430067E69F /* DCAKitTests.m in Sources */,
 			);
@@ -547,6 +549,7 @@
 					"$(inherited)",
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				OTHER_LDFLAGS = "-ObjC";
 				SDKROOT = iphoneos;
 			};
 			name = "Debug-Production-Backend";
@@ -583,6 +586,7 @@
 					"$(inherited)",
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				OTHER_LDFLAGS = "-ObjC";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -620,6 +624,7 @@
 					"$(inherited)",
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				OTHER_LDFLAGS = "-ObjC";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -664,6 +669,7 @@
 					"$(inherited)",
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				OTHER_LDFLAGS = "-ObjC";
 				SDKROOT = iphoneos;
 			};
 			name = UnitTest;
@@ -700,6 +706,7 @@
 					"$(inherited)",
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				OTHER_LDFLAGS = "-ObjC";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -1089,6 +1096,7 @@
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "-ObjC";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -1125,6 +1133,7 @@
 					"$(inherited)",
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				OTHER_LDFLAGS = "-ObjC";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};

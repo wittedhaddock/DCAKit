@@ -20,6 +20,20 @@
                ReferencedContainer = "container:DCAKit.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "NO"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "3AFE4B9F199171670067E69F"
+               BuildableName = "DCAKitTests.xctest"
+               BlueprintName = "DCAKitTests"
+               ReferencedContainer = "container:DCAKit.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
@@ -28,7 +42,26 @@
       shouldUseLaunchSchemeArgsEnv = "YES"
       buildConfiguration = "Debug">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "3AFE4B9F199171670067E69F"
+               BuildableName = "DCAKitTests.xctest"
+               BlueprintName = "DCAKitTests"
+               ReferencedContainer = "container:DCAKit.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "3AFE4B95199171660067E69F"
+            BuildableName = "DCAKit.framework"
+            BlueprintName = "DCAKit"
+            ReferencedContainer = "container:DCAKit.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
    </TestAction>
    <LaunchAction
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
