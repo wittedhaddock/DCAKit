@@ -156,7 +156,7 @@ public extension UIView {
 
     }
 
-/** Constrains the function beyond (outside) the superview in the specified direction).
+/** Constrains the receiver beyond (outside) the superview in the specified direction).
 Note that the view must have a clean layout, since this function relies on the width/height of the receiver */
     public func constrainBeyondSuperview(inDirection: NSLayoutAttribute) {
         if let oldConstraint = self.constraintsImpactingView(inDirection).atMostOne() {
